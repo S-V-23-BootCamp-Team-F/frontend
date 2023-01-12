@@ -68,15 +68,15 @@ const MainPage = () => {
         <div id="left-fruit" className="flex md:gap-4 gap-2 justify-center">
           <img
             src={strawberry}
-            className="h-fit hover:cursor-pointer hover:shadow-xl"
+            className=" hover:cursor-pointer hover:shadow-xl"
           />
-          <img src={tomato} className="h-fit hover:cursor-pointer" />
-          <img src={cucumber} className="h-fit hover:cursor-pointer" />
+          <img src={tomato} className=" hover:cursor-pointer" />
+          <img src={cucumber} className=" hover:cursor-pointer" />
         </div>
         <div id="right-fruit" className="flex md:gap-4 gap-2 justify-center">
-          <img src={paprika} className="h-fit hover:cursor-pointer" />
-          <img src={grape} className="h-fit hover:cursor-pointer" />
-          <img src={chillypepper} className="h-fit hover:cursor-pointer" />
+          <img src={paprika} className=" hover:cursor-pointer" />
+          <img src={grape} className=" hover:cursor-pointer" />
+          <img src={chillypepper} className=" hover:cursor-pointer" />
         </div>
       </div>
       {/** Upload Contents */}
