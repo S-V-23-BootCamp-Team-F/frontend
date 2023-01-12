@@ -15,21 +15,28 @@ import chillypepper from "../images/chillypepper.svg";
 // uploadimage
 import uploadimage from "../images/uploadimage.svg";
 
-// image preview function
+// 이 코드가 없을 시 이미지 프리뷰 기능이 정상 동작하지 않음
 const imageMimeType = /image\/(png|jpg|jpeg|svg)/i;
 
+// 메인페이지 시작
 const MainPage = () => {
+  // file upload, filedata name 필드
   const [file, setFile] = useState(null);
   const [fileDataURL, setFileDataURL] = useState(null);
 
+  // 현재까지의 기능만으로도 line19 이외의 확장자는 선택되지 않지만, 예외상황을 방지하고자 하는 코드
   const changeHandler = (e: any) => {
     const file = e.target.files[0];
+    // 파일 확장자 확인 코드
     if (!file.type.match(imageMimeType)) {
       alert("Image mime type is not valid");
       return;
     }
     setFile(file);
   };
+
+  // Q. FileReader, e(event)의 타입은 무엇인가?
+  // 이미지의 경로를 받아 웹에 미리 볼 수 있도록 하는 코드
   useEffect(() => {
     let fileReader: any,
       isCancel = false;
@@ -51,6 +58,7 @@ const MainPage = () => {
     };
   }, [file]);
 
+  // Q. 현재 방법을 찾지 못해 6갈래로 처참하게 나뉘어있는 상태관리용 TF변수들
   const [isActive1, setIsActive1] = useState(false);
   const [isActive2, setIsActive2] = useState(false);
   const [isActive3, setIsActive3] = useState(false);
@@ -58,6 +66,7 @@ const MainPage = () => {
   const [isActive5, setIsActive5] = useState(false);
   const [isActive6, setIsActive6] = useState(false);
 
+  // Q. 이 또한 마찬가지, 정리를 하고 하나로 묶는 작업이 필요할 듯 하다
   const handleClick1 = (event: any) => {
     setIsActive1((current) => !current);
   };
@@ -84,9 +93,11 @@ const MainPage = () => {
 
       {/** 여기에 헤더 넣기 */}
       <div>header</div>
+      {/** 무엇을 하는 페이지인지를 알려주는 텍스트를 넣는 부분 */}
       <div id="what2do" className="text-center">
         식물 진단
       </div>
+      {/** 과일 선택 부분 시작 */}
       <div
         id="select-fruit"
         className="md:flex flex-none mt-2 justify-center md:gap-4"
@@ -151,17 +162,18 @@ const MainPage = () => {
           />
         </div>
       </div>
-      {/** Upload Contents */}
+      {/** 과일 선택 부분 끝 */}
+      {/** 이미지 업로드, 튜토리얼 부분 시작 */}
       <div
         id="contents-wrap"
         className="box-border flex flex-col md:flex-row items-center mt-2"
       >
         <div id="upload-here" className="h-full  w-8/12 mt-4">
+          {/** preview image start */}
           <div
             id="upload-place"
             className=" box-border border-8 border-dotted border-[#3CB65A] md:mx-12"
           >
-            {/** preview image */}
             {fileDataURL ? (
               <p className="img-preview-wrapper">
                 {<img src={fileDataURL} alt="preview" className="bg-contain" />}
@@ -170,6 +182,8 @@ const MainPage = () => {
               <img src={uploadimage} />
             )}
           </div>
+          {/** preview image end */}
+          {/** fileupload end */}
           <div id="buttonwrap" className="flex justify-center">
             <form>
               <p>
@@ -186,8 +200,10 @@ const MainPage = () => {
               </p>
             </form>
           </div>
+          {/** fileupload end */}
         </div>
 
+        {/** tutorial start */}
         <div id="tutorial" className="justify-center w-8/12 h-full text-xl">
           <b>Explanation</b> <br />
           이상이 생긴 식물의 부분을 분석해 <br />
@@ -200,7 +216,9 @@ const MainPage = () => {
           5. 분석된 정보를 바탕으로 방제에 도움이 되는 정보를 보여드립니다{" "}
           <br />
         </div>
+        {/** tutorial end */}
       </div>
+      {/** 이미지 업로드, 튜토리얼 부분 끝 */}
 
       {/** 배경 나무들 넣기 */}
       <div></div>
