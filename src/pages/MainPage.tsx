@@ -51,27 +51,6 @@ const MainPage = () => {
     };
   }, [file]);
 
-  const activeList = {
-    isActive1: Boolean,
-    isActive2: Boolean,
-    isActive3: Boolean,
-    isActive4: Boolean,
-    isActive5: Boolean,
-    isActive6: Boolean,
-  };
-
-  const setActiveList = {
-    setIsActive1: Boolean,
-    setIsActive2: Boolean,
-    setIsActive3: Boolean,
-    setIsActive4: Boolean,
-    setIsActive5: Boolean,
-    setIsActive6: Boolean,
-  };
-  // for (let i=0; i<6; i++){
-  //   const [activeList(i)]
-  // }
-
   const [isActive1, setIsActive1] = useState(false);
   const [isActive2, setIsActive2] = useState(false);
   const [isActive3, setIsActive3] = useState(false);
