@@ -168,53 +168,63 @@ const MainPage = () => {
         id="contents-wrap"
         className="box-border flex flex-col md:flex-row items-center mt-2"
       >
-        <div id="upload-here" className="h-full  w-8/12 mt-4">
+        <div id="upload-here" className="h-full  w-8/12 mt-4 flex justify-end">
           {/** preview image start */}
-          <div
-            id="upload-place"
-            className=" box-border border-8 border-dotted border-[#3CB65A] md:mx-12"
-          >
-            {fileDataURL ? (
-              <p className="img-preview-wrapper">
-                {<img src={fileDataURL} alt="preview" className="bg-contain" />}
-              </p>
-            ) : (
-              <img src={uploadimage} />
-            )}
-          </div>
-          {/** preview image end */}
-          {/** fileupload end */}
-          <div id="buttonwrap" className="flex justify-center">
-            <form>
-              <p>
-                <label htmlFor="image"></label>
-                <input
-                  type="file"
-                  id="image"
-                  accept=".png, .jpg, .jpeg, .svg"
-                  onChange={changeHandler}
-                />
-              </p>
-              <p>
-                <input type="submit" />
-              </p>
-            </form>
+          <div>
+            <div
+              id="upload-place"
+              className=" box-border border-8 border-dotted border-[#3CB65A] md:ml-10 w-10/12"
+            >
+              {fileDataURL ? (
+                <p className="img-preview-wrapper">
+                  {
+                    <img
+                      src={fileDataURL}
+                      alt="preview"
+                      className=" min-w-full max-h-96 object-contain"
+                    />
+                  }
+                </p>
+              ) : (
+                <img src={uploadimage} className="min-w-full max-h-96" />
+              )}
+            </div>
+            {/** preview image end */}
+            {/** fileupload start */}
+            <div id="buttonwrap" className="flex justify-center">
+              <form>
+                <p>
+                  <label htmlFor="image"></label>
+                  <input
+                    type="file"
+                    id="image"
+                    accept=".png, .jpg, .jpeg, .svg"
+                    onChange={changeHandler}
+                  />
+                </p>
+                <p>
+                  <input type="submit" />
+                </p>
+              </form>
+            </div>
           </div>
           {/** fileupload end */}
         </div>
 
         {/** tutorial start */}
-        <div id="tutorial" className="justify-center w-8/12 h-full text-xl">
-          <b>Explanation</b> <br />
-          이상이 생긴 식물의 부분을 분석해 <br />
-          질병명과 방제 방법을 알려줍니다 <br /> <br /> <br />
-          <b>Flow</b> <br />
-          1. 이상이 생긴 것으로 의심되는 곳을 촬영합니다 <br />
-          2. 분석하고자 하는 식물을 위에서 선택합니다 <br />
-          3. 촬영한 사진을 업로드 합니다 <br />
-          4. 'Diagnosis'버튼을 누르고 기다립니다 <br />
-          5. 분석된 정보를 바탕으로 방제에 도움이 되는 정보를 보여드립니다{" "}
-          <br />
+        <div id="tutorial" className="flex justify-start w-8/12 h-full text-xl">
+          <div>
+            <b>Explanation</b> <br />
+            이상이 생긴 식물의 부분을 분석해 <br />
+            질병명과 방제 방법을 알려줍니다 <br /> <br /> <br />
+            <b>Flow</b> <br />
+            1. 이상이 생긴 것으로 의심되는 곳을 촬영합니다 <br />
+            2. 분석하고자 하는 식물을 위에서 선택합니다 <br />
+            3. 촬영한 사진을 업로드 합니다 <br />
+            4. 'Diagnosis'버튼을 누르고 기다립니다 <br />
+            5. 분석된 정보를 바탕으로 방제에 도움이 되는 정보를 보여드립니다{" "}
+            <br />
+          </div>
         </div>
         {/** tutorial end */}
       </div>
