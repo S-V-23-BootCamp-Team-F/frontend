@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 // background images
 import bg_tree1 from "../assets/images/bg_tree1.svg";
@@ -15,10 +15,67 @@ import chillypepper from "../assets/images/chillypepper.svg";
 // uploadimage
 import uploadimage from "../assets/images/uploadimage.svg";
 
+// image preview function
+const imageMimeType = /image\/(png|jpg|jpeg|svg)/i;
+
 const MainPage = () => {
+  const [file, setFile] = useState(null);
+  const [fileDataURL, setFileDataURL] = useState(null);
+
+  const changeHandler = (e: any) => {
+    const file = e.target.files[0];
+    if (!file.type.match(imageMimeType)) {
+      alert("Image mime type is not valid");
+      return;
+    }
+    setFile(file);
+  };
+  useEffect(() => {
+    let fileReader: any,
+      isCancel = false;
+    if (file) {
+      fileReader = new FileReader();
+      fileReader.onload = (e: any) => {
+        const { result } = e.target;
+        if (result && !isCancel) {
+          setFileDataURL(result);
+        }
+      };
+      fileReader.readAsDataURL(file);
+    }
+    return () => {
+      isCancel = true;
+      if (fileReader && fileReader.readyState === 1) {
+        fileReader.abort();
+      }
+    };
+  }, [file]);
+
   return (
     // Content 전체 감싸는 div
     <div id="content" className="min-h-screen w-screen bg-[#EFF6F0] text-black">
+      {/** 여기에 test code 넣기 */}
+      <>
+        <form>
+          <p>
+            <label htmlFor="image"> Browse images </label>
+            <input
+              type="file"
+              id="image"
+              accept=".png, .jpg, .jpeg"
+              onChange={changeHandler}
+            />
+          </p>
+          <p>
+            <input type="submit" />
+          </p>
+        </form>
+        {fileDataURL ? (
+          <p className="img-preview-wrapper">
+            {<img src={fileDataURL} alt="preview" />}
+          </p>
+        ) : null}
+      </>
       {/** 여기에 헤더 넣기 */}
       <div>header</div>
       <div id="what2do" className="text-center">
@@ -49,15 +106,14 @@ const MainPage = () => {
             id="upload-place"
             className=" box-border border-8 border-dotted border-[#3CB65A] md:mx-12"
           >
+            {/** onclick으로 업로드 한 이미지를 띄울 예정 */}
             <img src={uploadimage} className="w-screen hover:cursor-pointer" />
           </div>
           <div id="buttonwrap" className="flex justify-center">
-            <button
-              id="upload-button"
-              className="bg-[#3CB65A] text-white text-lg justify-center mt-2"
-            >
-              업로드
-            </button>
+            <form encType="multipart/form-data">
+              <label htmlFor="file">이미지 업로드</label>
+              <input id="file" type="file" />
+            </form>
           </div>
         </div>
         <div id="tutorial" className="justify-center w-8/12 h-full text-xl">
