@@ -1,19 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
 
 // background images
-import bg_tree1 from "../assets/images/bg_tree1.svg";
-import bg_tree2 from "../assets/images/bg_tree2.svg";
+import bg_tree1 from "../images/bg_tree1.svg";
+import bg_tree2 from "../images/bg_tree2.svg";
 
 // selectimages
-import strawberry from "../assets/images/strawberry.svg";
-import tomato from "../assets/images/tomato.svg";
-import cucumber from "../assets/images/cucumber.svg";
-import paprika from "../assets/images/paprika.svg";
-import grape from "../assets/images/grape.svg";
-import chillypepper from "../assets/images/chillypepper.svg";
+import strawberry from "../images/strawberry.svg";
+import tomato from "../images/tomato.svg";
+import cucumber from "../images/cucumber.svg";
+import paprika from "../images/paprika.svg";
+import grape from "../images/grape.svg";
+import chillypepper from "../images/chillypepper.svg";
 
 // uploadimage
-import uploadimage from "../assets/images/uploadimage.svg";
+import uploadimage from "../images/uploadimage.svg";
 
 // image preview function
 const imageMimeType = /image\/(png|jpg|jpeg|svg)/i;
@@ -55,27 +55,7 @@ const MainPage = () => {
     // Content 전체 감싸는 div
     <div id="content" className="min-h-screen w-screen bg-[#EFF6F0] text-black">
       {/** 여기에 test code 넣기 */}
-      <>
-        <form>
-          <p>
-            <label htmlFor="image"> Browse images </label>
-            <input
-              type="file"
-              id="image"
-              accept=".png, .jpg, .jpeg, .svg"
-              onChange={changeHandler}
-            />
-          </p>
-          <p>
-            <input type="submit" />
-          </p>
-        </form>
-        {fileDataURL ? (
-          <p className="img-preview-wrapper">
-            {<img src={fileDataURL} alt="preview" />}
-          </p>
-        ) : null}
-      </>
+
       {/** 여기에 헤더 넣기 */}
       <div>header</div>
       <div id="what2do" className="text-center">
@@ -86,7 +66,10 @@ const MainPage = () => {
         className="md:flex flex-none mt-2 justify-center md:gap-4"
       >
         <div id="left-fruit" className="flex md:gap-4 gap-2 justify-center">
-          <img src={strawberry} className="h-fit hover:cursor-pointer" />
+          <img
+            src={strawberry}
+            className="h-fit hover:cursor-pointer hover:shadow-xl"
+          />
           <img src={tomato} className="h-fit hover:cursor-pointer" />
           <img src={cucumber} className="h-fit hover:cursor-pointer" />
         </div>
@@ -106,16 +89,39 @@ const MainPage = () => {
             id="upload-place"
             className=" box-border border-8 border-dotted border-[#3CB65A] md:mx-12"
           >
-            {/** onclick으로 업로드 한 이미지를 띄울 예정 */}
-            <img src={uploadimage} className="w-screen hover:cursor-pointer" />
+            {/** preview image */}
+            {fileDataURL ? (
+              <p className="img-preview-wrapper">
+                {
+                  <img
+                    src={fileDataURL}
+                    alt="preview"
+                    className="bg-contain w-full h-full"
+                  />
+                }
+              </p>
+            ) : (
+              <img src={uploadimage} />
+            )}
           </div>
           <div id="buttonwrap" className="flex justify-center">
-            <form encType="multipart/form-data">
-              <label htmlFor="file">이미지 업로드</label>
-              <input id="file" type="file" />
+            <form>
+              <p>
+                <label htmlFor="image"></label>
+                <input
+                  type="file"
+                  id="image"
+                  accept=".png, .jpg, .jpeg, .svg"
+                  onChange={changeHandler}
+                />
+              </p>
+              <p>
+                <input type="submit" />
+              </p>
             </form>
           </div>
         </div>
+
         <div id="tutorial" className="justify-center w-8/12 h-full text-xl">
           <b>Explanation</b> <br />
           이상이 생긴 식물의 부분을 분석해 <br />
