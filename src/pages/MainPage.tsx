@@ -62,7 +62,7 @@ const MainPage = () => {
             <input
               type="file"
               id="image"
-              accept=".png, .jpg, .jpeg"
+              accept=".png, .jpg, .jpeg, .svg"
               onChange={changeHandler}
             />
           </p>
