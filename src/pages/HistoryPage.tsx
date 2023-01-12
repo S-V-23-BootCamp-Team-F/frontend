@@ -11,7 +11,7 @@ const HistoryPage = () => {
       {/*제목*/}
       <span className='font-title top-24 w-40 absolute text-4xl text-lime-600'>히스토리</span>
       {/*히스토리 컴포넌트*/}
-      <div className="top-40 absolute flex justify-center grid sm:grid-cols-2 lg:grid-cols-4 gap-10 place-items-stretch">
+      <div className="top-40 absolute justify-center grid sm:grid-cols-2 lg:grid-cols-4 gap-10 place-items-stretch">
         <div><History /></div>
         <div><History /></div>
         <div><History /></div>
