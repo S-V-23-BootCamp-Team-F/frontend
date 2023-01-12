@@ -4,6 +4,9 @@ import History from "src/assets/components/History";
 const HistoryPage = () => {
   return (
     <div className='box-border w-screen h-screen bg-green-50 flex justify-center items-center'>
+      {/*배경이미지*/}
+      <img className='top-16 left-0 absolute' src="/src/assets/images/Backgroundgrass.svg"/>
+      <img className='bottom-0 right-0 absolute' src="/src/assets/images/Backgroundtree.png"/>
       {/*메뉴*/}
       <img className='top-5 left-5 w-8 h-8 absolute' src="/src/assets/images/menu.svg" alt="CropDRMenu"/>
       {/*로고*/}
