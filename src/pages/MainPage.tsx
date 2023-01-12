@@ -23,7 +23,15 @@ const MainPage = () => {
   // file upload, filedata name 필드
   const [file, setFile] = useState(null);
   const [fileDataURL, setFileDataURL] = useState(null);
+  let fruits = [strawberry, tomato, cucumber, paprika, grape, chillypepper];
+  let fruit = ['strawberry', 'tomato', 'cucumber', 'paprika', 'grape', 'chillypepper']
+  let [btnActive, setBtnActive] = useState(-1);
+  let colorCode = ['F8766B','F7795B', 'ABC25C', 'CE534A','B6B3BF' ,'F47775'];
 
+  const toggleActive = (idx:any, e:any) => {
+    setBtnActive(idx);
+    console.log(fruit[idx])
+  };
   // 현재까지의 기능만으로도 line19 이외의 확장자는 선택되지 않지만, 예외상황을 방지하고자 하는 코드
   const changeHandler = (e: any) => {
     const file = e.target.files[0];
@@ -34,7 +42,6 @@ const MainPage = () => {
     }
     setFile(file);
   };
-
   // Q. FileReader, e(event)의 타입은 무엇인가?
   // 이미지의 경로를 받아 웹에 미리 볼 수 있도록 하는 코드
   useEffect(() => {
@@ -58,33 +65,6 @@ const MainPage = () => {
     };
   }, [file]);
 
-  // Q. 현재 방법을 찾지 못해 6갈래로 처참하게 나뉘어있는 상태관리용 TF변수들
-  const [isActive1, setIsActive1] = useState(false);
-  const [isActive2, setIsActive2] = useState(false);
-  const [isActive3, setIsActive3] = useState(false);
-  const [isActive4, setIsActive4] = useState(false);
-  const [isActive5, setIsActive5] = useState(false);
-  const [isActive6, setIsActive6] = useState(false);
-
-  // Q. 이 또한 마찬가지, 정리를 하고 하나로 묶는 작업이 필요할 듯 하다
-  const handleClick1 = (event: any) => {
-    setIsActive1((current) => !current);
-  };
-  const handleClick2 = (event: any) => {
-    setIsActive2((current) => !current);
-  };
-  const handleClick3 = (event: any) => {
-    setIsActive3((current) => !current);
-  };
-  const handleClick4 = (event: any) => {
-    setIsActive4((current) => !current);
-  };
-  const handleClick5 = (event: any) => {
-    setIsActive5((current) => !current);
-  };
-  const handleClick6 = (event: any) => {
-    setIsActive6((current) => !current);
-  };
 
   return (
     // Content 전체 감싸는 div
@@ -103,63 +83,18 @@ const MainPage = () => {
         className="md:flex flex-none mt-2 justify-center md:gap-4"
       >
         <div id="left-fruit" className="flex md:gap-4 gap-2 justify-center">
-          <img
-            src={strawberry}
-            typeof="button"
-            className={
-              isActive1
-                ? "hover:cursor-pointer shadow-xl bg-[#F8766B] rounded-lg"
-                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
-            }
-            onClick={handleClick1}
-          />
-          <img
-            src={tomato}
-            className={
-              isActive2
-                ? "hover:cursor-pointer shadow-xl bg-[#F7795B] rounded-lg"
-                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
-            }
-            onClick={handleClick2}
-          />
-          <img
-            src={cucumber}
-            className={
-              isActive3
-                ? "hover:cursor-pointer shadow-xl bg-[#ABC25C] rounded-lg"
-                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
-            }
-            onClick={handleClick3}
-          />
-        </div>
-        <div id="right-fruit" className="flex md:gap-4 gap-2 justify-center">
-          <img
-            src={paprika}
-            className={
-              isActive4
-                ? "hover:cursor-pointer shadow-xl bg-[#CE534A] rounded-lg"
-                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
-            }
-            onClick={handleClick4}
-          />
-          <img
-            src={grape}
-            className={
-              isActive5
-                ? "hover:cursor-pointer shadow-xl bg-[#B6B3BF] rounded-lg"
-                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
-            }
-            onClick={handleClick5}
-          />
-          <img
-            src={chillypepper}
-            className={
-              isActive6
-                ? "hover:cursor-pointer shadow-xl bg-[#F47775] rounded-lg"
-                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
-            }
-            onClick={handleClick6}
-          />
+        {fruits.map((fruit: any, idx : any) => (
+                   <img
+                   src={fruit}
+                   typeof="button"
+                   className={ "btn" + 
+                    (idx == btnActive
+                      ? "hover:cursor-pointer shadow-xl bg-[#"+(colorCode[idx])+"] rounded-lg"
+                      : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg")
+                  }
+                  onClick={(e)=>toggleActive(idx,e)}
+                 />
+                ))}
         </div>
       </div>
       {/** 과일 선택 부분 끝 */}
