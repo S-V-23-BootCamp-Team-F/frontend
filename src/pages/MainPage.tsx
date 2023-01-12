@@ -51,6 +51,27 @@ const MainPage = () => {
     };
   }, [file]);
 
+  const activeList = {
+    isActive1: Boolean,
+    isActive2: Boolean,
+    isActive3: Boolean,
+    isActive4: Boolean,
+    isActive5: Boolean,
+    isActive6: Boolean,
+  };
+
+  const setActiveList = {
+    setIsActive1: Boolean,
+    setIsActive2: Boolean,
+    setIsActive3: Boolean,
+    setIsActive4: Boolean,
+    setIsActive5: Boolean,
+    setIsActive6: Boolean,
+  };
+  // for (let i=0; i<6; i++){
+  //   const [activeList(i)]
+  // }
+
   const [isActive1, setIsActive1] = useState(false);
   const [isActive2, setIsActive2] = useState(false);
   const [isActive3, setIsActive3] = useState(false);
@@ -59,27 +80,21 @@ const MainPage = () => {
   const [isActive6, setIsActive6] = useState(false);
 
   const handleClick1 = (event: any) => {
-    // 👇️ toggle isActive state on click
     setIsActive1((current) => !current);
   };
   const handleClick2 = (event: any) => {
-    // 👇️ toggle isActive state on click
     setIsActive2((current) => !current);
   };
   const handleClick3 = (event: any) => {
-    // 👇️ toggle isActive state on click
     setIsActive3((current) => !current);
   };
   const handleClick4 = (event: any) => {
-    // 👇️ toggle isActive state on click
     setIsActive4((current) => !current);
   };
   const handleClick5 = (event: any) => {
-    // 👇️ toggle isActive state on click
     setIsActive5((current) => !current);
   };
   const handleClick6 = (event: any) => {
-    // 👇️ toggle isActive state on click
     setIsActive6((current) => !current);
   };
 
@@ -103,7 +118,7 @@ const MainPage = () => {
             typeof="button"
             className={
               isActive1
-                ? "hover:cursor-pointer hover:shadow-xl bg-[#F8766B] rounded-lg"
+                ? "hover:cursor-pointer shadow-xl bg-[#F8766B] rounded-lg"
                 : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
             }
             onClick={handleClick1}
@@ -112,7 +127,7 @@ const MainPage = () => {
             src={tomato}
             className={
               isActive2
-                ? "hover:cursor-pointer hover:shadow-xl bg-[#F7795B] rounded-lg"
+                ? "hover:cursor-pointer shadow-xl bg-[#F7795B] rounded-lg"
                 : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
             }
             onClick={handleClick2}
@@ -121,7 +136,7 @@ const MainPage = () => {
             src={cucumber}
             className={
               isActive3
-                ? "hover:cursor-pointer hover:shadow-xl bg-[#ABC25C] rounded-lg"
+                ? "hover:cursor-pointer shadow-xl bg-[#ABC25C] rounded-lg"
                 : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
             }
             onClick={handleClick3}
@@ -132,7 +147,7 @@ const MainPage = () => {
             src={paprika}
             className={
               isActive4
-                ? "hover:cursor-pointer hover:shadow-xl bg-[#CE534A] rounded-lg"
+                ? "hover:cursor-pointer shadow-xl bg-[#CE534A] rounded-lg"
                 : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
             }
             onClick={handleClick4}
@@ -141,7 +156,7 @@ const MainPage = () => {
             src={grape}
             className={
               isActive5
-                ? "hover:cursor-pointer hover:shadow-xl bg-[#B6B3BF] rounded-lg"
+                ? "hover:cursor-pointer shadow-xl bg-[#B6B3BF] rounded-lg"
                 : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
             }
             onClick={handleClick5}
@@ -150,7 +165,7 @@ const MainPage = () => {
             src={chillypepper}
             className={
               isActive6
-                ? "hover:cursor-pointer hover:shadow-xl bg-[#F47775] rounded-lg"
+                ? "hover:cursor-pointer shadow-xl bg-[#F47775] rounded-lg"
                 : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
             }
             onClick={handleClick6}
