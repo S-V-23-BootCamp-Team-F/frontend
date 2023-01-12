@@ -21,12 +21,12 @@ const MainPage = () => {
     <div id="content" className="min-h-screen w-screen bg-[#EFF6F0] text-black">
       {/** 여기에 헤더 넣기 */}
       <div>header</div>
-      <div id="what2do" className="border-2 text-center">
+      <div id="what2do" className="text-center">
         식물 진단
       </div>
       <div
         id="select-fruit"
-        className="border-2 md:flex flex-none mt-2 justify-center md:gap-4"
+        className="md:flex flex-none mt-2 justify-center md:gap-4"
       >
         <div id="left-fruit" className="flex md:gap-4 gap-2 justify-center">
           <img src={strawberry} className="h-fit hover:cursor-pointer" />
@@ -44,26 +44,26 @@ const MainPage = () => {
         id="contents-wrap"
         className="box-border flex flex-col md:flex-row items-center mt-2"
       >
-        <div id="upload-here" className="border-2 h-full md:w-full w-8/12 ">
+        <div id="upload-here" className="h-full  w-8/12 mt-4">
           <div
             id="upload-place"
-            className=" border-8 border-dotted border-[#3CB65A]"
+            className=" box-border border-8 border-dotted border-[#3CB65A] md:mx-12"
           >
             <img src={uploadimage} className="w-screen hover:cursor-pointer" />
           </div>
           <div id="buttonwrap" className="flex justify-center">
             <button
               id="upload-button"
-              className="bg-[#3CB65A] text-white text-lg justify-center mt-2 w-"
+              className="bg-[#3CB65A] text-white text-lg justify-center mt-2"
             >
               업로드
             </button>
           </div>
         </div>
-        <div id="tutorial" className="justify-center border-2 w-full h-full">
+        <div id="tutorial" className="justify-center w-8/12 h-full text-xl">
           <b>Explanation</b> <br />
-          이상이 생긴 식물의 부분을 분석해 질병명과 방제 방법을 알려줍니다{" "}
-          <br />
+          이상이 생긴 식물의 부분을 분석해 <br />
+          질병명과 방제 방법을 알려줍니다 <br /> <br /> <br />
           <b>Flow</b> <br />
           1. 이상이 생긴 것으로 의심되는 곳을 촬영합니다 <br />
           2. 분석하고자 하는 식물을 위에서 선택합니다 <br />
