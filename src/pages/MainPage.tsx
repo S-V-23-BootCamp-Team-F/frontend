@@ -20,9 +20,20 @@ const imageMimeType = /image\/(png|jpg|jpeg|svg)/i;
 
 // 메인페이지 시작
 const MainPage = () => {
+  let plant = useState([
+    strawberry,
+    tomato,
+    cucumber,
+    paprika,
+    grape,
+    chillypepper,
+  ]);
   // file upload, filedata name 필드
   const [file, setFile] = useState(null);
   const [fileDataURL, setFileDataURL] = useState(null);
+  const selectPlant = plant.map((number, idx) => {
+    console.log(number);
+  });
 
   // 현재까지의 기능만으로도 line19 이외의 확장자는 선택되지 않지만, 예외상황을 방지하고자 하는 코드
   const changeHandler = (e: any) => {
@@ -57,6 +68,8 @@ const MainPage = () => {
       }
     };
   }, [file]);
+
+  const [isActive, setIsActive] = useState({});
 
   // Q. 현재 방법을 찾지 못해 6갈래로 처참하게 나뉘어있는 상태관리용 TF변수들
   const [isActive1, setIsActive1] = useState(false);
