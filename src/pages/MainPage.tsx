@@ -51,6 +51,38 @@ const MainPage = () => {
     };
   }, [file]);
 
+  const [isActive1, setIsActive1] = useState(false);
+  const [isActive2, setIsActive2] = useState(false);
+  const [isActive3, setIsActive3] = useState(false);
+  const [isActive4, setIsActive4] = useState(false);
+  const [isActive5, setIsActive5] = useState(false);
+  const [isActive6, setIsActive6] = useState(false);
+
+  const handleClick1 = (event: any) => {
+    // 👇️ toggle isActive state on click
+    setIsActive1((current) => !current);
+  };
+  const handleClick2 = (event: any) => {
+    // 👇️ toggle isActive state on click
+    setIsActive2((current) => !current);
+  };
+  const handleClick3 = (event: any) => {
+    // 👇️ toggle isActive state on click
+    setIsActive3((current) => !current);
+  };
+  const handleClick4 = (event: any) => {
+    // 👇️ toggle isActive state on click
+    setIsActive4((current) => !current);
+  };
+  const handleClick5 = (event: any) => {
+    // 👇️ toggle isActive state on click
+    setIsActive5((current) => !current);
+  };
+  const handleClick6 = (event: any) => {
+    // 👇️ toggle isActive state on click
+    setIsActive6((current) => !current);
+  };
+
   return (
     // Content 전체 감싸는 div
     <div id="content" className="min-h-screen w-screen bg-[#EFF6F0] text-black">
@@ -68,15 +100,61 @@ const MainPage = () => {
         <div id="left-fruit" className="flex md:gap-4 gap-2 justify-center">
           <img
             src={strawberry}
-            className=" hover:cursor-pointer hover:shadow-xl"
+            typeof="button"
+            className={
+              isActive1
+                ? "hover:cursor-pointer hover:shadow-xl bg-[#F8766B] rounded-lg"
+                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
+            }
+            onClick={handleClick1}
           />
-          <img src={tomato} className=" hover:cursor-pointer" />
-          <img src={cucumber} className=" hover:cursor-pointer" />
+          <img
+            src={tomato}
+            className={
+              isActive2
+                ? "hover:cursor-pointer hover:shadow-xl bg-[#F7795B] rounded-lg"
+                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
+            }
+            onClick={handleClick2}
+          />
+          <img
+            src={cucumber}
+            className={
+              isActive3
+                ? "hover:cursor-pointer hover:shadow-xl bg-[#ABC25C] rounded-lg"
+                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
+            }
+            onClick={handleClick3}
+          />
         </div>
         <div id="right-fruit" className="flex md:gap-4 gap-2 justify-center">
-          <img src={paprika} className=" hover:cursor-pointer" />
-          <img src={grape} className=" hover:cursor-pointer" />
-          <img src={chillypepper} className=" hover:cursor-pointer" />
+          <img
+            src={paprika}
+            className={
+              isActive4
+                ? "hover:cursor-pointer hover:shadow-xl bg-[#CE534A] rounded-lg"
+                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
+            }
+            onClick={handleClick4}
+          />
+          <img
+            src={grape}
+            className={
+              isActive5
+                ? "hover:cursor-pointer hover:shadow-xl bg-[#B6B3BF] rounded-lg"
+                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
+            }
+            onClick={handleClick5}
+          />
+          <img
+            src={chillypepper}
+            className={
+              isActive6
+                ? "hover:cursor-pointer hover:shadow-xl bg-[#F47775] rounded-lg"
+                : "hover:cursor-pointer bg-slate-400 grayscale rounded-lg"
+            }
+            onClick={handleClick6}
+          />
         </div>
       </div>
       {/** Upload Contents */}
@@ -92,13 +170,7 @@ const MainPage = () => {
             {/** preview image */}
             {fileDataURL ? (
               <p className="img-preview-wrapper">
-                {
-                  <img
-                    src={fileDataURL}
-                    alt="preview"
-                    className="bg-contain w-full h-full"
-                  />
-                }
+                {<img src={fileDataURL} alt="preview" className="bg-contain" />}
               </p>
             ) : (
               <img src={uploadimage} />
