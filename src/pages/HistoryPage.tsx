@@ -5,7 +5,7 @@ import Diseased from "src/assets/components/Diseased";
 const HistoryPage = () => {
   return (
     <div className='w-screen h-screen box-border bg-background bg-grass bg-no-repeat overflow-x-hidden'>
-        {/*nav바 */}
+        {/*nav바*/}
         <div className='w-screen h-auto mb-10'>
             {/*임시로고*/}
             <img className='' src="src/assets/images/logo.svg" alt="CropDRLogo"/>

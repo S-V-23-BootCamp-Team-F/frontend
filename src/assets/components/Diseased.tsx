@@ -4,8 +4,12 @@ function Diseased() {
     {
         return (
             <div className="m-auto w-80 h-80">
-                {/*이미지*/}
-                <div className="w-80 h-52 border-2 border-black rounded-lg bg-white"></div>
+                <div className="w-80 h-52 border-2 border-black rounded-lg bg-white relative">
+                    {/*이미지*/}
+                    <div className="absolute"></div>
+                    {/*삭제버튼*/}
+                    <img className="mt-2 ml-72 absolute" src="src/assets/images/delete.svg" alt="DeleteButton" />
+                </div>
                 {/*텍스트*/}
                 <div className="mt-2 flex flex-col items-center">
                     {/*작물 종류*/}
