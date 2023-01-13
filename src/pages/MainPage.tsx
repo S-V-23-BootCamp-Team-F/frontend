@@ -13,15 +13,21 @@ import example3 from "../images/example3.png";
 
 const MainPage = () => {
   return (
-    <div className="font-press-medium text-blue-900 bg-background min-h-screen">
+    <div className=" text-blue-900 bg-background min-h-screen font-press-medium">
       <div id="navbar">
         <Navbar />
       </div>
       <>
         {/** main 전체 시작 */}
-        <div id="main-wrap" className="flex lg:flex-row flex-col w-full">
+        <div
+          id="main-wrap"
+          className="md:pl-8 sm:pl-4 mt-20 flex lg:flex-row flex-col w-full"
+        >
           {/** 이미지 업로드 부분 시작 */}
-          <div id="upload-image-wrap" className="lg:w-9/12 w-full lg:h-[700px]">
+          <div
+            id="upload-image-wrap"
+            className="lg:w-12/12 w-full lg:h-[700px]"
+          >
             <select
               name="plant"
               id="plant"
@@ -37,7 +43,7 @@ const MainPage = () => {
             </select>
             <div
               id="upload-image"
-              className="box-border border-4 border-dashed border-black lg:h-[500px] h-[400px] xl:mx-30 lg:mx-12 md:mx-40 mx-12 bg-uploadImage"
+              className="box-border border-4 border-dashed border-black lg:h-[500px] h-[400px] xl:mx-30 lg:mx-12 md:mx-20 mx-12 bg-uploadImage"
             >
               <img
                 src={uploadImage}
@@ -46,7 +52,7 @@ const MainPage = () => {
             </div>
             <div
               id="diagnose-button"
-              className="w-full mt-6 text-center xl:px-30 lg:px-12 md:px-40 px-12"
+              className="w-full mt-6 text-center xl:px-30 lg:px-12 md:px-20 px-12"
             >
               <button className="text-white bg-button rounded-lg h-10 w-full">
                 <b>진단하기</b>
@@ -57,12 +63,11 @@ const MainPage = () => {
           {/** 튜토리얼 부분 시작 */}
           <div
             id="tutorial-wrap"
-            className="w-full lg:h-[700px] mt-10 lg:ml-12 md:ml-40 ml-12 text-black"
+            className="w-full lg:h-[700px] mt-[62px] lg:ml-12 md:ml-20 ml-12 text-black font-press-medium"
           >
             <>
               <b>Explanation</b> <br />
               식물의 이상 부위를 분석해 질병 및 방제방법을 알려줍니다
-              <br />
               <br />
               <br />
               <b>Flow</b> <br />
@@ -72,19 +77,18 @@ const MainPage = () => {
               4. <b>'진단하기'</b> 버튼을 누르고 기다립니다 <br />
               5. 분석된 정보를 바탕으로 작물에게 조치를 해 주시면 됩니다 <br />
               <br />
-              <br />
             </>
             <>
               <b>Expectation</b>
               <div
                 id="expectation-wrap"
-                className="flex flex-row box-border border-2 border-button rounded-xl xl:mr-40 lg:mr-12 md:mr-80 mr-32"
+                className="flex flex-row box-border border-2 border-button rounded-xl xl:mr-20 lg:mr-12 md:mr-40 mr-24"
               >
-                <div className="p-6">
+                <div className="p-6 sm:w-fit w-1/2">
                   <div className="flex justify-center">
                     <img src={example1} />
                   </div>
-                  <div className="flex flex-row">
+                  <div className="flex flex-row sm:w-fit w-1/2">
                     <img src={example2} />
                     <img src={example3} />
                   </div>
@@ -93,14 +97,22 @@ const MainPage = () => {
                   id="expectation-text"
                   className="flex flex-col justify-center"
                 >
-                  <b>원인</b>
-                  이 질병은 '어떠한 이유'로 인해 발생해요 <br />
                   <br />
-                  <b>질병</b>
-                  이 질병은 '이런 증상'을 나타내요 <br />
+                  <div className=" font-press-bold text-xl">원인</div>
+                  <div className=" font-press-medium text-sm mt-1">
+                    이 질병은 '어떠한 이유'로 인해 발생해요
+                  </div>
                   <br />
-                  <b>치료</b>
-                  이 질병은 '이런 방법'으로 치료해야 해요 <br />
+                  <div className=" font-press-bold text-xl">질병</div>
+                  <div className=" font-press-medium text-sm mt-1">
+                    이 질병은 '이런 증상'을 나타내요
+                  </div>
+                  <br />
+                  <div className=" font-press-bold text-xl">치료</div>
+                  <div className=" font-press-medium text-sm mt-1">
+                    이 질병은 '이런 방법'으로 치료해야 해요
+                  </div>
+                  <br />
                 </div>
               </div>
             </>
