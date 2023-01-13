@@ -8,6 +8,9 @@ module.exports = {
         title: ["Cafe24Ssurround", "sans-serif"],
         detail: ["Cafe24SsurroundAir"],
       },
+      colors: {
+        'project-green': '#3CB65A',
+      }
     },
   },
   plugins: [],
