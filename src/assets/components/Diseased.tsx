@@ -3,7 +3,7 @@ import React from "react";
 function Diseased() { 
     {
         return (
-            <div className="w-80 h-80">
+            <div className="m-auto w-80 h-80">
                 {/*이미지*/}
                 <div className="w-80 h-52 border-2 border-black rounded-lg bg-white"></div>
                 {/*텍스트*/}
