@@ -2,6 +2,7 @@ import React from "react";
 import tomato from "../images/tomato.jpg";
 import tomato2 from "../images/tomato2.jpg";
 import tomato3 from "../images/tomato3.jpg";
+import die from "../images/dietomato.png";
 
 const ResultPage = () => {
   return (
@@ -11,7 +12,7 @@ const ResultPage = () => {
       <div>네비게이션 자리</div>
 
       {/* 본문 */}
-      <div>
+      <div className="flex">
         {/* 본문 왼쪽 */}
         <div>
           <div>
@@ -22,14 +23,14 @@ const ResultPage = () => {
             <div className="font-press-bold">잿빛 곰팡이병</div>
           </div>
           <div>
-            <div>
+            <div className="flex">
               <img
                 src={tomato3}
-                className="sub_tomato2 rounded-xl w-72 h-356 object-cover"
+                className="sub_tomato2 rounded-xl w-72 h-356 object-cover mr-2.5"
               />
               <img
                 src={tomato2}
-                className="sub_tomato3 rounded-xl w-72 h-356 object-cover"
+                className="sub_tomato3 rounded-xl w-72 h-356 object-cover ml-2.5"
               />
             </div>
             <div className="font-press-bold">관련 사진</div>
@@ -45,9 +46,9 @@ const ResultPage = () => {
               </span>
               으로 의심됩니다.
             </div>
-            <div>
-              <img src={tomato} className="main_tomato"></img>
-              <div className="font-press-medium">
+            <div className="flex">
+              <img src={die} className="die_tomato"></img>
+              <div className="font-press-medium place-items-end flex">
                 우리의 토마토는 가셨습니다..
               </div>
             </div>
