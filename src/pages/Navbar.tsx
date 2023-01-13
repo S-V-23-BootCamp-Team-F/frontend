@@ -1,56 +1,52 @@
 import logo from "../images/logo.svg";
+import hamburger from "../images/hamburger.svg";
 
 const Navbar = () => {
   return (
-    <nav className="bg-background px-2 sm:px-4 py-2.5  flex-wrap w-full z-20 top-0 left-0 border-gray-200 dark:border-gray-600">
-      <div className="container flex flex-wrap items-center justify-between">
-        <div className="flex items-center">
-          <img src={logo} className="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-        </div>
-        <div className="flex">
-          <button
-            data-collapse-toggle="navbar-sticky"
-            type="button"
-            className="inline-flex items-center text-sm text-gray-500 rounded-lg md:hidden"
-            aria-controls="navbar-sticky"
-            aria-expanded="false"
-          >
-            <span className="sr-only">Open main menu</span>
-          </button>
-        </div>
+    <div
+      id="navbar-wrap"
+      className="flex flex-wrap justify-between w-full h-18 font-press-medium text-black"
+    >
+      <div className="md:pl-8 mt-2 pl-12">
+        <img src={logo} />
+      </div>
+      <div className="flex">
         <div
-          className="items-center justify-between hidden md:flex md:order-1"
-          id="navbar-sticky"
+          id="menue1"
+          className="xl:pr-40 lg:pr-16 md:pr-8 pr-12 mt-6 flex gap-4 max-sm:hidden"
         >
-          <ul className="flex flex-col p-4 mt-4 border rounded-lg  md:flex-row md:gap-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
-            <li>
-              <a
-                href="#"
-                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Diagnosis
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Hisories
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Login
-              </a>
-            </li>
-          </ul>
+          <div className="hover:text-button cursor-pointer">Diagnosis</div>
+          <div className="hover:text-button cursor-pointer">Histories</div>
+          <div className="hover:text-button cursor-pointer">Login</div>
+        </div>
+
+        <div className="mt-2 md:pr-8 pr-12 flex justify-center sm:hidden">
+          <img src={hamburger} />
+          <div className="hidden space-x-8 lg:flex">
+            <a href="#">Menu 1</a>
+            <a href="#">Menu 2</a>
+            <a href="#">Menu 3</a>
+            <a href="#">Menu 4</a>
+          </div>
+          <div class="flex lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

@@ -25,7 +25,7 @@ const MainPage = () => {
             <select
               name="plant"
               id="plant"
-              className=" mt-12 text-centermt-10 xl:ml-30 lg:ml-12 md:ml-40 ml-12 font-bold"
+              className=" mt-12 text-centermt-10 xl:ml-30 lg:ml-12 md:ml-40 ml-12 font-bold bg-background"
             >
               <option value="카테고리">카테고리</option>
               <option value="strawberry">딸기</option>
