@@ -14,6 +14,12 @@ module.exports = {
         button: "#2B663C",
         disease: "#F6795B",
       },
+      width: {
+        600: "37.5rem",
+      },
+      height: {
+        750: "46.875rem",
+      }
     },
   },
   plugins: [],
