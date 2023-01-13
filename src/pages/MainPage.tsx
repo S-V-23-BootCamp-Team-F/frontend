@@ -12,7 +12,7 @@ import example3 from "../images/example3.png";
 
 const MainPage = () => {
   return (
-    <div className="font-press-medium text-blue-900">
+    <div className="font-press-medium text-blue-900 bg-background h-full">
       <div id="navbar">
         <Navbar />
       </div>
@@ -24,7 +24,7 @@ const MainPage = () => {
             <select
               name="plant"
               id="plant"
-              className=" mt-12 text-centermt-10 xl:ml-30 lg:ml-12 md:ml-40 ml-12 font-bold"
+              className=" mt-12 text-centermt-10 xl:ml-30 lg:ml-12 md:ml-40 ml-12 font-bold bg-background"
             >
               <option value="카테고리">카테고리</option>
               <option value="strawberry">딸기</option>
