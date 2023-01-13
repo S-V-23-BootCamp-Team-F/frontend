@@ -1,5 +1,6 @@
 import React from "react";
-import History from "src/assets/components/History";
+import Healthy from "src/assets/components/Healthy";
+import Diseased from "src/assets/components/diseased";
 
 const HistoryPage = () => {
   return (
@@ -15,14 +16,14 @@ const HistoryPage = () => {
       <span className='font-title text-project-green top-24 w-40 absolute text-4xl'>히스토리</span>
       {/*히스토리 컴포넌트*/}
       <div className="top-40 absolute justify-center grid sm:grid-cols-2 lg:grid-cols-4 gap-10 place-items-stretch">
-        <div><History /></div>
-        <div><History /></div>
-        <div><History /></div>
-        <div><History /></div>
-        <div><History /></div>
-        <div><History /></div>
-        <div><History /></div>
-        <div><History /></div>
+        <div><Healthy /></div>
+        <div><Healthy /></div>
+        <div><Healthy /></div>
+        <div><Diseased /></div>
+        <div><Healthy /></div>
+        <div><Healthy /></div>
+        <div><Diseased /></div>
+        <div><Healthy /></div>
       </div>
     </div>
   );
