@@ -1,6 +1,8 @@
 import React from "react";
 import Healthy from "src/assets/components/Healthy";
 import Diseased from "src/assets/components/Diseased";
+import Logo from "src/assets/images/logo.svg";
+import Category from "src/assets/images/category.svg";
 
 const HistoryPage = () => {
   return (
@@ -8,11 +10,11 @@ const HistoryPage = () => {
         {/*nav바*/}
         <div className='w-screen h-auto mb-10'>
             {/*임시로고*/}
-            <img className='' src="src/assets/images/logo.svg" alt="CropDRLogo"/>
+            <img className='' src={Logo} alt="CropDRLogo"/>
         </div>
         <div className='flex flex-col'>
         {/*임시카테고리*/}
-          <img className='ml-auto' src='src/assets/images/category.svg'/>
+          <img className='ml-auto' src={Category} />
           {/*내용*/}
           <div className='flex flex-col items-center'>
             <div className='flex flex-wrap'>
