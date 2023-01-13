@@ -1,7 +1,10 @@
+import { useState } from "react"; // import state
+
 import logo from "../images/logo.svg";
 import hamburger from "../images/hamburger.svg";
 
-const Navbar = () => {
+export default function Navbar() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <div
       id="navbar-wrap"
@@ -48,6 +51,4 @@ const Navbar = () => {
       </div>
     </div>
   );
-};
-
-export default Navbar;
+}
