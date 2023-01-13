@@ -20,13 +20,10 @@ const ResultPage = () => {
               src={tomato2}
               className="sub_tomato1 rounded-xl w-600 h-356 object-cover"
             />
-<<<<<<< HEAD
             <div className="font-press-bold text-center text-xl">
               잿빛 곰팡이병
             </div>
-=======
             <div className="font-press-bold">잿빛 곰팡이병</div>
->>>>>>> #7
           </div>
           <div>
             <div className="flex">
