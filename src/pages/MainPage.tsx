@@ -2,6 +2,9 @@ import React from "react";
 import "tailwindcss/tailwind.css";
 import Navbar from "./Navbar";
 
+// images
+import uploadImage from "../images/uploadImage.svg";
+
 // exampleimages
 import example1 from "../images/example1.png";
 import example2 from "../images/example2.png";
@@ -33,9 +36,12 @@ const MainPage = () => {
             </select>
             <div
               id="upload-image"
-              className="box-border border-4 border-dashed border-black lg:h-[500px] h-[400px] xl:mx-30 lg:mx-12 md:mx-40 mx-12"
+              className="box-border border-4 border-dashed border-black lg:h-[500px] h-[400px] xl:mx-30 lg:mx-12 md:mx-40 mx-12 bg-uploadImage"
             >
-              이미지 업로드
+              <img
+                src={uploadImage}
+                className="w-full h-full object-scale-down"
+              />
             </div>
             <div
               id="diagnose-button"
