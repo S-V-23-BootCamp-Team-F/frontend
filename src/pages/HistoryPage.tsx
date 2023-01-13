@@ -1,30 +1,30 @@
 import React from "react";
-import Healthy from "@/assets/components/Healthy";
-import Diseased from "@/assets/components/Diseased";
+import Healthy from "src/assets/components/Healthy";
+import Diseased from "src/assets/components/Diseased";
 
 const HistoryPage = () => {
   return (
-    <div className=' w-screen h-screen box-border bg-background'>
+    <div className='w-screen h-screen box-border bg-background bg-grass bg-no-repeat overflow-x-hidden'>
         {/*nav바 */}
-        <div>
+        <div className='w-screen h-auto mb-10'>
             {/*임시로고*/}
             <img className='' src="src/assets/images/logo.svg" alt="CropDRLogo"/>
         </div>
-        <div className='items-center'>
+        <div className='flex flex-col'>
         {/*임시카테고리*/}
-        <img className='mr-0' src='src/assets/images/category.svg'/>
-        {/*내용*/}
-        <div className='flex flex-col items-center'>
-          <div className='flex flex-wrap'>
-            <Healthy />
-            <Diseased />
-            <Healthy />
-            <Diseased />
-            <Healthy />
-            <Diseased />
-            <Healthy />
-            <Diseased />
-          </div>
+          <img className='ml-auto' src='src/assets/images/category.svg'/>
+          {/*내용*/}
+          <div className='flex flex-col items-center'>
+            <div className='flex flex-wrap'>
+              <Healthy />
+              <Diseased />
+              <Healthy />
+              <Diseased />
+              <Healthy />
+              <Diseased />
+              <Healthy />
+              <Diseased />
+            </div>
         </div>
       </div>
     </div>

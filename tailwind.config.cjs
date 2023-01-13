@@ -14,6 +14,9 @@ module.exports = {
         button: "#2B663C",
         disease: "#F6795B",
       },
+      backgroundImage: {
+        'grass': "url('src/assets/images/grass.svg')",
+      },
     },
   },
   plugins: [],

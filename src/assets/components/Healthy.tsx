@@ -9,11 +9,11 @@ function Healthy() {
                 {/*텍스트*/}
                 <div className="mt-2 flex flex-col items-center">
                     {/*작물 종류*/}
-                    <div className="text-2xl text-press-bold">토마토</div>
+                    <div className="text-2xl font-press-medium">토마토</div>
                     {/*질병*/}
-                    <span className="text-xl text-press-bold text-button">정상</span>
+                    <span className="text-xl font-press-medium text-button">정상</span>
                     {/*날짜*/}
-                    <span className="text-xl text-press-bold">2023-1-11</span>
+                    <span className="text-xl font-press-medium">2023-1-11</span>
                 </div>
             </div>
         )
