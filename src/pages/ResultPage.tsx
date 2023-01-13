@@ -15,13 +15,22 @@ const ResultPage = () => {
         {/* 본문 왼쪽 */}
         <div>
           <div>
-            <img src={tomato2} className="sub_tomato1 rounded-xl" />
+            <img
+              src={tomato2}
+              className="sub_tomato1 rounded-xl w-600 h-356 object-cover"
+            />
             <div className="font-press-bold">잿빛 곰팡이병</div>
           </div>
           <div>
             <div>
-              <img src={tomato3} className="sub_tomato2 rounded-xl" />
-              <img src={tomato2} className="sub_tomato3 rounded-xl" />
+              <img
+                src={tomato3}
+                className="sub_tomato2 rounded-xl w-72 h-356 object-cover"
+              />
+              <img
+                src={tomato2}
+                className="sub_tomato3 rounded-xl w-72 h-356 object-cover"
+              />
             </div>
             <div className="font-press-bold">관련 사진</div>
           </div>
