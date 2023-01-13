@@ -16,7 +16,7 @@ const MainPage = () => {
             id="upload-image-wrap"
             className=" box-border border-2 md:w-9/12 w-full md:h-[700px]"
           >
-            <select name="plant" id="plant">
+            <select name="plant" id="plant" className=" text-center">
               <option value="카테고리">카테고리</option>
               <option value="strawberry">딸기</option>
               <option value="grape">포도</option>
