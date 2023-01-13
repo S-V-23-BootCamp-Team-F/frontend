@@ -10,11 +10,11 @@ const MainPage = () => {
       </div>
       <>
         {/** main 전체 시작 */}
-        <div id="main-wrap" className="flex md:flex-row flex-col w-full">
-          {/** 이미지 업로드 전체 부분 끝 */}
+        <div id="main-wrap" className="flex lg:flex-row flex-col w-full">
+          {/** 이미지 업로드 부분 시작 */}
           <div
             id="upload-image-wrap"
-            className=" box-border border-2 md:w-9/12 w-full md:h-[700px]"
+            className=" box-border border-2 lg:w-9/12 w-full lg:h-[700px]"
           >
             <select name="plant" id="plant" className=" text-center">
               <option value="카테고리">카테고리</option>
@@ -25,12 +25,18 @@ const MainPage = () => {
               <option value="chillypepper">고추</option>
               <option value="paprika">파프리카</option>
             </select>
+            <div
+              id="upload-image"
+              className="box-border border-4 border-dashed border-black lg:h-[500px] h-[400px] xl:mx-30 lg:mx-12 md:mx-40 mx-12"
+            >
+              이미지 업로드
+            </div>
           </div>
-          {/** 이미지 업로드 전체 부분 끝 */}
+          {/** 이미지 업로드 부분 끝 */}
           {/** 튜토리얼 부분 시작 */}
           <div
             id="tutorial-wrap"
-            className=" box-border border-2 w-full md:h-[700px]"
+            className=" box-border border-2 w-full lg:h-[700px]"
           >
             {" "}
             튜토리얼 묶음
