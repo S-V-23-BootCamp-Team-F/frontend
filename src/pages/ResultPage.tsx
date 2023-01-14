@@ -3,17 +3,19 @@ import tomato from "../images/tomato.jpg";
 import tomato2 from "../images/tomato2.jpg";
 import tomato3 from "../images/tomato3.jpg";
 import die from "../images/dietomato.png";
+import leaf from "../images/leaf.png";
 import "../media.css";
 
 const ResultPage = () => {
   return (
     // 전체
-    <div className=" bg-background min-h-screen w-screen flex flex-col ">
+    <div className=" bg-background min-h-screen w-screen flex flex-col relative">
       {/* nav바 */}
       <div className="mb-24">네비게이션 자리</div>
 
       {/* 본문 */}
-      <div className="flex flex-col md:flex-row place-content-evenly mt-24 items-center  ">
+      <div className="flex flex-col md:flex-row place-content-evenly mt-24 items-center ">
+        <img className="left-0 top-20 absolute" src={leaf} />
         {/* 본문 왼쪽 */}
         <div className="content-center ">
           <div className="flex flex-col ">
