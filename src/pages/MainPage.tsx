@@ -13,7 +13,7 @@ import example3 from "../images/example3.png";
 
 const MainPage = () => {
   return (
-    <div className=" text-blue-900 bg-background min-h-screen font-press-medium overflow-x-hidden">
+    <div className=" min-h-screen overflow-x-hidden bg-background font-press-medium text-blue-900">
       <div id="navbar">
         <Navbar />
       </div>
@@ -21,7 +21,7 @@ const MainPage = () => {
         {/** main 전체 시작 */}
         <div
           id="main-wrap"
-          className="md:pl-8 sm:pl-4 pt-40 flex lg:flex-row flex-col w-full"
+          className="flex w-full flex-col pt-40 sm:pl-4 md:pl-8 lg:flex-row"
         >
           {/** 이미지 업로드 부분 시작 */}
           <div
@@ -31,7 +31,7 @@ const MainPage = () => {
             <select
               name="plant"
               id="plant"
-              className=" mt-12 text-centermt-10 xl:ml-30 lg:ml-12 md:ml-20 ml-12 font-bold bg-background"
+              className=" text-centermt-10 xl:ml-30 mt-12 ml-12 bg-background font-bold md:ml-20 lg:ml-12"
             >
               <option value="카테고리">카테고리</option>
               <option value="strawberry">딸기</option>
@@ -43,18 +43,18 @@ const MainPage = () => {
             </select>
             <div
               id="upload-image"
-              className="box-border border-4 border-dashed border-black lg:h-[500px] h-[400px] xl:mx-30 lg:mx-12 md:mx-20 mx-12 bg-uploadImage"
+              className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black md:mx-20 lg:mx-12 lg:h-[500px]"
             >
               <img
                 src={uploadImage}
-                className="w-full h-full object-scale-down"
+                className="h-full w-full object-scale-down"
               />
             </div>
             <div
               id="diagnose-button"
-              className="w-full mt-6 text-center xl:px-30 lg:px-12 md:px-20 px-12"
+              className="xl:px-30 mt-6 w-full px-12 text-center md:px-20 lg:px-12"
             >
-              <button className="text-white bg-button rounded-lg h-10 w-full">
+              <button className="h-10 w-full rounded-lg bg-button text-white">
                 <b>진단하기</b>
               </button>
             </div>
@@ -63,7 +63,7 @@ const MainPage = () => {
           {/** 튜토리얼 부분 시작 */}
           <div
             id="tutorial-wrap"
-            className="w-full lg:h-[700px] mt-[62px] lg:ml-12 md:ml-20 ml-12 text-black font-press-medium"
+            className="mt-[62px] ml-12 w-full font-press-medium text-black md:ml-20 lg:ml-12 lg:h-[700px]"
           >
             <>
               <b>Explanation</b> <br />
@@ -82,13 +82,13 @@ const MainPage = () => {
               <b>Expectation</b>
               <div
                 id="expectation-wrap"
-                className="flex flex-row box-border border-2 border-button rounded-xl xl:mr-20 lg:mr-12 md:mr-40 mr-24"
+                className="mr-24 box-border flex flex-row rounded-xl border-2 border-button md:mr-40 lg:mr-12 xl:mr-20"
               >
-                <div className="p-6 sm:w-fit w-1/2">
+                <div className="w-1/2 p-6 sm:w-fit">
                   <div className="flex justify-center">
                     <img src={example1} />
                   </div>
-                  <div className="flex flex-row sm:w-fit w-1/2">
+                  <div className="flex w-1/2 flex-row sm:w-fit">
                     <img src={example2} />
                     <img src={example3} />
                   </div>
@@ -99,17 +99,17 @@ const MainPage = () => {
                 >
                   <br />
                   <div className=" font-press-bold text-xl">원인</div>
-                  <div className=" font-press-medium text-sm mt-1">
+                  <div className=" mt-1 font-press-medium text-sm">
                     이 질병은 '어떠한 이유'로 인해 발생해요
                   </div>
                   <br />
                   <div className=" font-press-bold text-xl">질병</div>
-                  <div className=" font-press-medium text-sm mt-1">
+                  <div className=" mt-1 font-press-medium text-sm">
                     이 질병은 '이런 증상'을 나타내요
                   </div>
                   <br />
                   <div className=" font-press-bold text-xl">치료</div>
-                  <div className=" font-press-medium text-sm mt-1">
+                  <div className=" mt-1 font-press-medium text-sm">
                     이 질병은 '이런 방법'으로 치료해야 해요
                   </div>
                   <br />

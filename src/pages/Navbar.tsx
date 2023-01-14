@@ -12,17 +12,17 @@ export default function Navbar() {
   return (
     <div
       id="navbar-wrap"
-      className="fixed z-20 flex flex-wrap justify-between w-full font-press-medium text-black max-sm:justify-end"
+      className="fixed z-20 flex w-full flex-wrap justify-between font-press-medium text-black max-sm:justify-end"
     >
-      <div className="pb-8 pt-10 xl:px-20 lg:px-16 px-12 bg-logo md:w-screen w-full max-sm:pl-0 flex justify-center bg-background ">
+      <div className="bg-logo flex w-full justify-center bg-background px-12 pb-8 pt-10 max-sm:pl-0 md:w-screen lg:px-16 xl:px-20 ">
         <img src={logo} />
         <div
           id="menue1"
-          className=" w-full mt-16 flex justify-end lg:gap-32 md:gap-16 gap-8 max-sm:hidden"
+          className=" mt-16 flex w-full justify-end gap-8 max-sm:hidden md:gap-16 lg:gap-32"
         >
-          <div className="hover:text-button cursor-pointer">Diagnosis</div>
-          <div className="hover:text-button cursor-pointer">Histories</div>
-          <div className="hover:text-button cursor-pointer">Logout</div>
+          <div className="cursor-pointer hover:text-button">Diagnosis</div>
+          <div className="cursor-pointer hover:text-button">Histories</div>
+          <div className="cursor-pointer hover:text-button">Logout</div>
         </div>
       </div>
       <div className="flex max-sm:flex-col-reverse">
@@ -30,7 +30,7 @@ export default function Navbar() {
           {/** hamburger */}
           <div
             className={classNames(
-              "sm:hidden h-screen bg-background shadow-2xl rounded-l-md border-l-2",
+              "h-screen rounded-l-md border-l-2 bg-background shadow-2xl sm:hidden",
               {
                 hidden: !menuToggle,
               }
@@ -40,24 +40,24 @@ export default function Navbar() {
               <div className="mt-8 flex justify-center">
                 <img src={diagnosis} />
               </div>
-              <div className="hover:text-button cursor-pointer hover:border-b-2 hover:border-button">
+              <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
                 Diagnosis
               </div>
               <div className="mt-8 flex justify-center">
                 <img src={history} />
               </div>
-              <div className="hover:text-button cursor-pointer hover:border-b-2 hover:border-button">
+              <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
                 Histories
               </div>
               <div className="mt-8 flex justify-center">
                 <img src={login} />
               </div>
-              <div className="hover:text-button cursor-pointer hover:border-b-2 hover:border-button">
+              <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
                 Logout
               </div>
             </div>
           </div>
-          <div className="sm:hidden flex items-end h-fit bg-background justify-end">
+          <div className="flex h-fit items-end justify-end bg-background sm:hidden">
             <button
               className=" w-fit"
               onClick={() => setMenuToggle(!menuToggle)}
