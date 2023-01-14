@@ -11,10 +11,10 @@ const ResultPage = () => {
     // 전체
     <div className=" bg-background min-h-screen w-screen flex flex-col relative">
       {/* nav바 */}
-      <div className="mb-24">네비게이션 자리</div>
+      <div className="mb-20">네비게이션 자리</div>
 
       {/* 본문 */}
-      <div className="flex flex-col md:flex-row place-content-evenly mt-24 items-center ">
+      <div className="flex flex-col md:flex-row place-content-evenly mt-16 items-center ">
         <img className="left-0 top-20 absolute" src={leaf} />
         {/* 본문 왼쪽 */}
         <div className="content-center ">
