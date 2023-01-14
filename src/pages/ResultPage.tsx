@@ -7,22 +7,20 @@ import die from "../images/dietomato.png";
 const ResultPage = () => {
   return (
     // 전체
-    <div className=" bg-background w-screen h-full absolute overflow-hidden ">
+    <div className=" bg-background min-h-screen w-screen absolute ">
       {/* nav바 */}
       <div className="mb-24">네비게이션 자리</div>
 
       {/* 본문 */}
-      <div className="flex place-content-evenly mt-24">
+      <div className="flex flex-row place-content-evenly mt-24 ">
         {/* 본문 왼쪽 */}
         <div className="content-center">
-          <div>
+          <div className="flex flex-col items-center">
             <img
               src={tomato2}
               className="sub_tomato1 rounded-xl w-600 h-356 object-cover"
             />
-            <div className="font-press-bold text-center text-xl mt-2">
-              잿빛 곰팡이병
-            </div>
+            <div className="font-press-bold  text-xl mt-2">잿빛 곰팡이병</div>
           </div>
           <div className="mt-5">
             <div className="flex">
@@ -35,7 +33,7 @@ const ResultPage = () => {
                 className="sub_tomato3 rounded-xl w-72 h-356 object-cover ml-2.5"
               />
             </div>
-            <div className="font-press-bold text-center text-xl mt-2">
+            <div className="font-press-bold flex flex-col items-center text-xl mt-2">
               관련 사진
             </div>
           </div>
@@ -57,7 +55,7 @@ const ResultPage = () => {
               </div>
             </div>
           </div>
-          <div className=" mt-10">
+          <div className="mt-10">
             <div className="place-content-between">
               <div className="font-press-bold text-2xl mb-2">Causation</div>
               <div className="font-press-medium border-black max-w-2xl h-130 overflow-y-auto text-xl mb-7">
