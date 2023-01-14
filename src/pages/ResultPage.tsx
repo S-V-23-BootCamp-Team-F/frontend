@@ -9,23 +9,22 @@ const ResultPage = () => {
     // 전체
     <div className=" bg-background w-screen h-full absolute overflow-hidden ">
       {/* nav바 */}
-      <div>네비게이션 자리</div>
+      <div className="mb-24">네비게이션 자리</div>
 
       {/* 본문 */}
-      <div className="flex">
+      <div className="flex place-content-evenly mt-24">
         {/* 본문 왼쪽 */}
-        <div>
+        <div className="content-center">
           <div>
             <img
               src={tomato2}
               className="sub_tomato1 rounded-xl w-600 h-356 object-cover"
             />
-            <div className="font-press-bold text-center text-xl">
+            <div className="font-press-bold text-center text-xl mt-2">
               잿빛 곰팡이병
             </div>
-            <div className="font-press-bold">잿빛 곰팡이병</div>
           </div>
-          <div>
+          <div className="mt-5">
             <div className="flex">
               <img
                 src={tomato3}
@@ -36,12 +35,14 @@ const ResultPage = () => {
                 className="sub_tomato3 rounded-xl w-72 h-356 object-cover ml-2.5"
               />
             </div>
-            <div className="font-press-bold text-center text-xl">관련 사진</div>
+            <div className="font-press-bold text-center text-xl mt-2">
+              관련 사진
+            </div>
           </div>
         </div>
         {/* 본문 오른쪽 */}
-        <div>
-          <div>
+        <div className="">
+          <div className="">
             <div className="font-press-bold text-2xl">
               진단결과&nbsp;&nbsp;
               <span className="font-press-bold text-disease">
@@ -56,23 +57,80 @@ const ResultPage = () => {
               </div>
             </div>
           </div>
-          <div>
-            <div>
+          <div className=" mt-10">
+            <div className="place-content-between">
               <div className="font-press-bold text-2xl">Causation</div>
-              <div className="font-press-medium border-black w-700 h-150 text-xl">
-                ㅎㅇㅎㅇㅎ
+              <div className="font-press-medium border-black max-w-2xl h-130 overflow-y-auto text-xl mb-7">
+                이 병은 습도가 높으면 발병이 많으므로 시설 내부가 다습하지
+                않도록 가능한 관수량을 줄이고 환기를 충분히 실시하여 재배하고,
+                저온기 재배시에는 온도조절만이 아니라 난방을 하여 습기를
+                제거한다. 불규칙적인 기상조건에서는 난방과 함께 약제살포를
+                병행처리하여 방제한다. 약제방제로는 유파렌수화제 600배액,
+                포리옥신수화제 1,000배액, 더마니수용제 5,000배액, 톱신수화제
+                1,000배액, 프로파수화제 1,000배액을 7∼8일간이 병은 습도가 높으면
+                발병이 많으므로 시설 내부가 다습하지 않도록 가능한 관수량을
+                줄이고 환기를 충분히 실시하여 재배하고, 저온기 재배시에는
+                온도조절만이 아니라 난방을 하여 습기를 제거한다. 불규칙적인
+                기상조건에서는 난방과 함께 약제살포를 병행처리하여 방제한다.
+                약제방제로는 유파렌수화제 600배액, 포리옥신수화제 1,000배액,
+                더마니수용제 5,000배액, 톱신수화제 1,000배액, 프로파수화제
+                1,000배액을 7∼8일간이 병은 습도가 높으면 발병이 많으므로 시설
+                내부가 다습하지 않도록 가능한 관수량을 줄이고 환기를 충분히
+                실시하여 재배하고, 저온기 재배시에는 온도조절만이 아니라 난방을
+                하여 습기를 제거한다. 불규칙적인 기상조건에서는 난방과 함께
+                약제살포를 병행처리하여 방제한다. 약제방제로는 유파렌수화제
+                600배액, 포리옥신수화제 1,000배액, 더마니수용제 5,000배액,
+                톱신수화제 1,000배액, 프로파수화제 1,000배액을 7∼8일간
               </div>
             </div>
             <div>
               <div className="font-press-bold text-2xl">Symptom</div>
-              <div className="font-press-medium border-black w-700 h-150 text-xl">
-                ㅎㅇㅎㅇ
+              <div className="font-press-medium border-black max-w-2xl h-130 overflow-y-auto text-xl mb-7">
+                이 병은 습도가 높으면 발병이 많으므로 시설 내부가 다습하지
+                않도록 가능한 관수량을 줄이고 환기를 충분히 실시하여 재배하고,
+                저온기 재배시에는 온도조절만이 아니라 난방을 하여 습기를
+                제거한다. 불규칙적인 기상조건에서는 난방과 함께 약제살포를
+                병행처리하여 방제한다. 약제방제로는 유파렌수화제 600배액,
+                포리옥신수화제 1,000배액, 더마니수용제 5,000배액, 톱신수화제
+                1,000배액, 프로파수화제 1,000배액을 7∼8일간이 병은 습도가 높으면
+                발병이 많으므로 시설 내부가 다습하지 않도록 가능한 관수량을
+                줄이고 환기를 충분히 실시하여 재배하고, 저온기 재배시에는
+                온도조절만이 아니라 난방을 하여 습기를 제거한다. 불규칙적인
+                기상조건에서는 난방과 함께 약제살포를 병행처리하여 방제한다.
+                약제방제로는 유파렌수화제 600배액, 포리옥신수화제 1,000배액,
+                더마니수용제 5,000배액, 톱신수화제 1,000배액, 프로파수화제
+                1,000배액을 7∼8일간이 병은 습도가 높으면 발병이 많으므로 시설
+                내부가 다습하지 않도록 가능한 관수량을 줄이고 환기를 충분히
+                실시하여 재배하고, 저온기 재배시에는 온도조절만이 아니라 난방을
+                하여 습기를 제거한다. 불규칙적인 기상조건에서는 난방과 함께
+                약제살포를 병행처리하여 방제한다. 약제방제로는 유파렌수화제
+                600배액, 포리옥신수화제 1,000배액, 더마니수용제 5,000배액,
+                톱신수화제 1,000배액, 프로파수화제 1,000배액을 7∼8일간
               </div>
             </div>
             <div>
               <div className="font-press-bold text-2xl">Cure</div>
-              <div className="font-press-medium border-black w-700 h-150 text-xl">
-                ㅎㅇㅎㅇ
+              <div className="font-press-medium border-black max-w-2xl h-130 overflow-y-auto text-xl mb-7">
+                이 병은 습도가 높으면 발병이 많으므로 시설 내부가 다습하지
+                않도록 가능한 관수량을 줄이고 환기를 충분히 실시하여 재배하고,
+                저온기 재배시에는 온도조절만이 아니라 난방을 하여 습기를
+                제거한다. 불규칙적인 기상조건에서는 난방과 함께 약제살포를
+                병행처리하여 방제한다. 약제방제로는 유파렌수화제 600배액,
+                포리옥신수화제 1,000배액, 더마니수용제 5,000배액, 톱신수화제
+                1,000배액, 프로파수화제 1,000배액을 7∼8일간이 병은 습도가 높으면
+                발병이 많으므로 시설 내부가 다습하지 않도록 가능한 관수량을
+                줄이고 환기를 충분히 실시하여 재배하고, 저온기 재배시에는
+                온도조절만이 아니라 난방을 하여 습기를 제거한다. 불규칙적인
+                기상조건에서는 난방과 함께 약제살포를 병행처리하여 방제한다.
+                약제방제로는 유파렌수화제 600배액, 포리옥신수화제 1,000배액,
+                더마니수용제 5,000배액, 톱신수화제 1,000배액, 프로파수화제
+                1,000배액을 7∼8일간이 병은 습도가 높으면 발병이 많으므로 시설
+                내부가 다습하지 않도록 가능한 관수량을 줄이고 환기를 충분히
+                실시하여 재배하고, 저온기 재배시에는 온도조절만이 아니라 난방을
+                하여 습기를 제거한다. 불규칙적인 기상조건에서는 난방과 함께
+                약제살포를 병행처리하여 방제한다. 약제방제로는 유파렌수화제
+                600배액, 포리옥신수화제 1,000배액, 더마니수용제 5,000배액,
+                톱신수화제 1,000배액, 프로파수화제 1,000배액을 7∼8일간
               </div>
             </div>
           </div>
