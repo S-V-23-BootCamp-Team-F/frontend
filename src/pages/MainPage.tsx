@@ -13,7 +13,7 @@ import example3 from "../images/example3.png";
 
 const MainPage = () => {
   return (
-    <div className=" text-blue-900 bg-background min-h-screen font-press-medium">
+    <div className=" text-blue-900 bg-background min-h-screen font-press-medium overflow-x-hidden">
       <div id="navbar">
         <Navbar />
       </div>

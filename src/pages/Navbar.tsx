@@ -12,20 +12,20 @@ export default function Navbar() {
   return (
     <div
       id="navbar-wrap"
-      className="fixed z-20 pt-8 flex flex-wrap justify-between w-full font-press-medium text-black max-sm:justify-end"
+      className="fixed z-20 flex flex-wrap justify-between w-full font-press-medium text-black max-sm:justify-end"
     >
-      <div className="mt-2 xl:pl-20 lg:pl-16 md:pl-8 pl-12 bg-logo max-sm:w-full max-sm:pl-0 flex justify-center">
+      <div className=" pt-10 xl:px-20 lg:px-16 md:px-8 px-12 bg-logo md:w-screen w-full max-sm:pl-0 flex justify-center bg-background">
         <img src={logo} />
-      </div>
-      <div className="flex max-sm:flex-col-reverse">
         <div
           id="menue1"
-          className="xl:pr-20 lg:pr-16 md:pr-8 pr-12 mt-6 flex lg:gap-32 md:gap-16 gap-8 max-sm:hidden"
+          className=" w-full mt-16 flex justify-end lg:gap-32 md:gap-16 gap-8 max-sm:hidden"
         >
           <div className="hover:text-button cursor-pointer">Diagnosis</div>
           <div className="hover:text-button cursor-pointer">Histories</div>
           <div className="hover:text-button cursor-pointer">Logout</div>
         </div>
+      </div>
+      <div className="flex max-sm:flex-col-reverse">
         <>
           {/** hamburger */}
           <div
