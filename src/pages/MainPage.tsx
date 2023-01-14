@@ -21,7 +21,7 @@ const MainPage = () => {
         {/** main 전체 시작 */}
         <div
           id="main-wrap"
-          className="md:pl-8 sm:pl-4 mt-20 flex lg:flex-row flex-col w-full"
+          className="md:pl-8 sm:pl-4 pt-40 flex lg:flex-row flex-col w-full"
         >
           {/** 이미지 업로드 부분 시작 */}
           <div
