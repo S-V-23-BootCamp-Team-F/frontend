@@ -14,7 +14,7 @@ export default function Navbar() {
       id="navbar-wrap"
       className="fixed z-20 flex flex-wrap justify-between w-full font-press-medium text-black max-sm:justify-end"
     >
-      <div className=" pt-10 xl:px-20 lg:px-16 md:px-8 px-12 bg-logo md:w-screen w-full max-sm:pl-0 flex justify-center bg-background">
+      <div className="pb-8 pt-10 xl:px-20 lg:px-16 px-12 bg-logo md:w-screen w-full max-sm:pl-0 flex justify-center bg-background ">
         <img src={logo} />
         <div
           id="menue1"
