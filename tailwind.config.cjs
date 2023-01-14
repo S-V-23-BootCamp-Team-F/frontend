@@ -23,6 +23,12 @@ module.exports = {
         150: "10rem",
         356: "22.25rem",
       },
+      fontSize: {
+        10: "10px",
+      },
+      screens: {
+        md: "800px",
+      },
     },
   },
   plugins: [],
