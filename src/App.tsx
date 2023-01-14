@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage";
-import ResultPage from "./pages/ResultPage";
+import AbnomalResultPage from "./pages/AbnomalResultPage";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/result" element={<ResultPage />} />
+        <Route path="/abnomalresult" element={<AbnomalResultPage />} />
       </Routes>
     </Router>
   );
