@@ -1,11 +1,11 @@
 import { useState } from "react"; // import state
 import classNames from "classnames";
 
-import logo from "../images/logo.svg";
+import logo from "../../images/logo.svg";
 import hamburger from "../images/hamburger.svg";
 import login from "../../images/login.svg";
-import diagnosis from "../images/diagnosis.svg";
-import history from "../images/history.svg";
+import diagnosis from "../../images/diagnosis.svg";
+import history from "../../images/history.svg";
 
 export default function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
