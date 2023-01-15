@@ -14,6 +14,20 @@ module.exports = {
         button: "#2B663C",
         disease: "#F6795B",
       },
+      width: {
+        700: "43.75rem",
+        600: "37.5rem",
+      },
+      height: {
+        130: "8.25rem",
+        150: "10rem",
+        356: "22.25rem",
+      },
+      fontSize: {
+        10: "10px",
+      },
+      screens: {
+        md: "800px",
       backgroundImage: {
         'grass': "url('src/assets/images/grass.svg')",
       },
