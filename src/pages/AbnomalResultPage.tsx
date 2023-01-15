@@ -9,7 +9,7 @@ import "../media.css";
 const ResultPage = () => {
   return (
     // 전체
-    <div className=" bg-background min-h-screen w-screen flex flex-col relative">
+    <div className="bg-background bg-grass bg-no-repeat max-h-screen w-screen flex flex-col relative overflow-y-auto">
       {/* nav바 */}
       <div className="mb-20">네비게이션 자리</div>
 
