@@ -4,7 +4,6 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"], //여기는 내가 가진 확장자 다 써주기!
   theme: {
     extend: {
-      backgroundImage: {},
       fontFamily: {
         "press-bold": ["GmarketSansTTFBold", "sans-serif"],
         "press-medium": ["GmarketSansTTFMedium", "sans-serif"],
@@ -29,6 +28,7 @@ module.exports = {
       },
       screens: {
         md: "800px",
+      },
       backgroundImage: {
         'grass': "url('src/assets/images/grass.svg')",
       },
