@@ -18,9 +18,12 @@ module.exports = {
         600:"37.5rem",
         404:"25.25rem"
       },
-      height:{
-        750:"46.875rem"
+      height: {
+        750: "46.875rem",
       },
+      screens: {
+        'xs': '650px',
+      }
     },
   },
   plugins: [],
