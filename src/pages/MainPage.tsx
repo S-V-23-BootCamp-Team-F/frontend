@@ -1,6 +1,6 @@
 import React from "react";
 import "tailwindcss/tailwind.css";
-import Navbar from "./Navbar";
+import Navbar from "../assets/components/Navbar";
 
 // images
 import uploadImage from "../images/uploadImage.svg";
