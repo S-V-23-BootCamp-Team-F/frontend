@@ -1,0 +1,15 @@
+@media (max-width: 1300px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+body {
+  overflow: hidden;
+}
