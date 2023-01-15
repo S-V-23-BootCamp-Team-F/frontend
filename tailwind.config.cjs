@@ -14,8 +14,9 @@ module.exports = {
         button: "#2B663C",
         disease: "#F6795B",
       },
-      width: {
-        600: "37.5rem",
+      width:{
+        600:"37.5rem",
+        404:"25.25rem"
       },
       height: {
         750: "46.875rem",
