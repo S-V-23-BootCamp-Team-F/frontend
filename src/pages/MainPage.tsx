@@ -1,6 +1,6 @@
 import React from "react";
 import "tailwindcss/tailwind.css";
-import Navbar from "../assets/components/Navbar";
+import Navbar from "src/components/Navbar";
 
 // images
 import uploadImage from "../images/uploadImage.svg";
@@ -13,7 +13,7 @@ import example3 from "../images/example3.png";
 
 const MainPage = () => {
   return (
-    <div className="h-screen overflow-x-hidden bg-background overflow-y-auto">
+    <div className="h-screen overflow-x-hidden bg-background bg-grass bg-no-repeat overflow-y-auto">
       <div id="navbar">
         <Navbar />
       </div>

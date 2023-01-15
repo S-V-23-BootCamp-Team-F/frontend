@@ -4,18 +4,17 @@ import tomato2 from "../images/tomato2.jpg";
 import tomato3 from "../images/tomato3.jpg";
 import die from "../images/dietomato.png";
 import leaf from "../images/leaf.png";
-import "../media.css";
+import Navbar from "src/components/Navbar";
 
 const ResultPage = () => {
   return (
     // 전체
     <div className="bg-background bg-grass bg-no-repeat max-h-screen w-screen flex flex-col relative overflow-y-auto">
       {/* nav바 */}
-      <div className="mb-20">네비게이션 자리</div>
+      <Navbar />
 
       {/* 본문 */}
-      <div className="flex flex-col md:flex-row place-content-evenly mt-16 items-center ">
-        <img className="left-0 top-20 absolute" src={leaf} />
+      <div className="flex flex-col md:flex-row place-content-evenly px-12 pt-4 items-center ">
         {/* 본문 왼쪽 */}
         <div className="content-center ">
           <div className="flex flex-col ">
@@ -63,7 +62,7 @@ const ResultPage = () => {
           <div className="mt-10">
             <div className="place-content-between">
               <div className="font-press-bold text-2xl mb-2">Causation</div>
-              <div className="font-press-medium border-black max-w-2xl h-130 overflow-y-auto text-xl mb-7 ">
+              <div className="font-press-medium border-black max-w-2xl h-130 overflow-y-auto text-xl mb-7">
                 이 병은 습도가 높으면 발병이 많으므로 시설 내부가 다습하지
                 않도록 가능한 관수량을 줄이고 환기를 충분히 실시하여 재배하고,
                 저온기 재배시에는 온도조절만이 아니라 난방을 하여 습기를

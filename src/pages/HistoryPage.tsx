@@ -1,16 +1,16 @@
 import React from "react";
 import Healthy from "src/assets/components/Healthy";
 import Diseased from "src/assets/components/Diseased";
-import Logo from "src/assets/images/logo.svg";
+import Navbar from "src/components/Navbar";
 import Category from "src/assets/images/category.svg";
 
 const HistoryPage = () => {
   return (
     <div className='w-screen h-screen box-border bg-background bg-grass bg-no-repeat overflow-x-hidden'>
         {/*nav바*/}
-        <div className='w-screen h-auto mb-10'>
-            {/*임시로고*/}
-            <img className='' src={Logo} alt="CropDRLogo"/>
+        <Navbar />
+        <div className='flex flex-col pt-32'>
+        {/*카테고리*/}
         <select className="w-auto m-auto mr-5 mb-3 bg-background font-bold text-2xl text-center">
               <option value="카테고리">카테고리</option>
               <option value="strawberry">딸기</option>
