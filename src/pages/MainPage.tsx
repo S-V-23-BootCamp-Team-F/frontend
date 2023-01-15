@@ -13,7 +13,7 @@ import example3 from "../images/example3.png";
 
 const MainPage = () => {
   return (
-    <div className=" min-h-screen overflow-x-hidden bg-background font-press-medium text-blue-900">
+    <div className="h-screen overflow-y-auto overflow-x-hidden bg-background font-press-medium text-blue-900">
       <div id="navbar">
         <Navbar />
       </div>

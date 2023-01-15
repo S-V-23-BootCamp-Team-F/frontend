@@ -9,21 +9,21 @@ import "../media.css";
 const ResultPage = () => {
   return (
     // 전체
-    <div className=" bg-background min-h-screen w-screen flex flex-col relative">
+    <div className=" relative flex h-screen w-screen flex-col overflow-y-auto bg-background">
       {/* nav바 */}
       <div className="mb-20">네비게이션 자리</div>
 
       {/* 본문 */}
-      <div className="flex flex-col md:flex-row place-content-evenly mt-16 items-center ">
-        <img className="left-0 top-20 absolute" src={leaf} />
+      <div className="mt-16 flex flex-col place-content-evenly items-center md:flex-row">
+        <img className="absolute left-0 top-20" src={leaf} />
         {/* 본문 왼쪽 */}
         <div className="content-center ">
           <div className="flex flex-col ">
             <img
               src={tomato2}
-              className="sub_tomato1 rounded-xl w-600 h-356 object-cover"
+              className="sub_tomato1 h-356 w-600 rounded-xl object-cover"
             />
-            <div className="font-press-bold  flex flex-col items-center text-xl mt-2  ">
+            <div className="mt-2  flex flex-col items-center font-press-bold text-xl  ">
               잿빛 곰팡이병
             </div>
           </div>
@@ -31,14 +31,14 @@ const ResultPage = () => {
             <div className="flex ">
               <img
                 src={tomato3}
-                className="sub_tomato2  rounded-xl w-72 h-356 object-cover mr-2.5"
+                className="sub_tomato2  mr-2.5 h-356 w-72 rounded-xl object-cover"
               />
               <img
                 src={tomato2}
-                className="sub_tomato3 rounded-xl w-72 h-356 object-cover ml-2.5"
+                className="sub_tomato3 ml-2.5 h-356 w-72 rounded-xl object-cover"
               />
             </div>
-            <div className="font-press-bold flex flex-col items-center text-xl mt-2">
+            <div className="mt-2 flex flex-col items-center font-press-bold text-xl">
               관련 사진
             </div>
           </div>
@@ -55,15 +55,15 @@ const ResultPage = () => {
             </div>
             <div className="flex">
               <img src={die} className="die_tomato"></img>
-              <div className="font-press-medium place-items-end flex">
+              <div className="flex place-items-end font-press-medium">
                 우리의 토마토는 가셨습니다..
               </div>
             </div>
           </div>
           <div className="mt-10">
             <div className="place-content-between">
-              <div className="font-press-bold text-2xl mb-2">Causation</div>
-              <div className="font-press-medium border-black max-w-2xl h-130 overflow-y-auto text-xl mb-7 ">
+              <div className="mb-2 font-press-bold text-2xl">Causation</div>
+              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-press-medium text-xl ">
                 이 병은 습도가 높으면 발병이 많으므로 시설 내부가 다습하지
                 않도록 가능한 관수량을 줄이고 환기를 충분히 실시하여 재배하고,
                 저온기 재배시에는 온도조절만이 아니라 난방을 하여 습기를
@@ -87,8 +87,8 @@ const ResultPage = () => {
               </div>
             </div>
             <div>
-              <div className="font-press-bold text-2xl mb-2">Symptom</div>
-              <div className="font-press-medium border-black max-w-2xl h-130 overflow-y-auto text-xl mb-7">
+              <div className="mb-2 font-press-bold text-2xl">Symptom</div>
+              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-press-medium text-xl">
                 이 병은 습도가 높으면 발병이 많으므로 시설 내부가 다습하지
                 않도록 가능한 관수량을 줄이고 환기를 충분히 실시하여 재배하고,
                 저온기 재배시에는 온도조절만이 아니라 난방을 하여 습기를
@@ -112,8 +112,8 @@ const ResultPage = () => {
               </div>
             </div>
             <div>
-              <div className="font-press-bold text-2xl mb-2">Cure</div>
-              <div className="font-press-medium border-black max-w-2xl h-130 overflow-y-auto text-xl mb-7">
+              <div className="mb-2 font-press-bold text-2xl">Cure</div>
+              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-press-medium text-xl">
                 이 병은 습도가 높으면 발병이 많으므로 시설 내부가 다습하지
                 않도록 가능한 관수량을 줄이고 환기를 충분히 실시하여 재배하고,
                 저온기 재배시에는 온도조절만이 아니라 난방을 하여 습기를

@@ -6,27 +6,27 @@ import Category from "src/assets/images/category.svg";
 
 const HistoryPage = () => {
   return (
-    <div className='w-screen h-screen box-border bg-background bg-grass bg-no-repeat overflow-x-hidden'>
-        {/*nav바*/}
-        <div className='w-screen h-auto mb-10'>
-            {/*임시로고*/}
-            <img className='' src={Logo} alt="CropDRLogo"/>
-        </div>
-        <div className='flex flex-col'>
+    <div className="box-border h-screen w-screen overflow-x-hidden bg-background bg-grass bg-no-repeat">
+      {/*nav바*/}
+      <div className="mb-10 h-auto w-screen">
+        {/*임시로고*/}
+        <img className="" src={Logo} alt="CropDRLogo" />
+      </div>
+      <div className="flex flex-col">
         {/*임시카테고리*/}
-          <img className='ml-auto' src={Category} />
-          {/*내용*/}
-          <div className='flex flex-col items-center'>
-            <div className='flex flex-wrap'>
-              <Healthy />
-              <Diseased />
-              <Healthy />
-              <Diseased />
-              <Healthy />
-              <Diseased />
-              <Healthy />
-              <Diseased />
-            </div>
+        <img className="ml-auto" src={Category} />
+        {/*내용*/}
+        <div className="flex flex-col items-center">
+          <div className="flex flex-wrap">
+            <Healthy />
+            <Diseased />
+            <Healthy />
+            <Diseased />
+            <Healthy />
+            <Diseased />
+            <Healthy />
+            <Diseased />
+          </div>
         </div>
       </div>
     </div>
