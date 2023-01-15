@@ -11,10 +11,15 @@ const HistoryPage = () => {
         <div className='w-screen h-auto mb-10'>
             {/*임시로고*/}
             <img className='' src={Logo} alt="CropDRLogo"/>
-        </div>
-        <div className='flex flex-col'>
-        {/*임시카테고리*/}
-          <img className='ml-auto' src={Category} />
+        <select className="w-auto m-auto mr-5 mb-3 bg-background font-bold text-2xl text-center">
+              <option value="카테고리">카테고리</option>
+              <option value="strawberry">딸기</option>
+              <option value="grape">포도</option>
+              <option value="tomato">토마토</option>
+              <option value="cucumber">오이</option>
+              <option value="chillypepper">고추</option>
+              <option value="paprika">파프리카</option>
+            </select>
           {/*내용*/}
           <div className='flex flex-col items-center'>
             <div className='flex flex-wrap'>
