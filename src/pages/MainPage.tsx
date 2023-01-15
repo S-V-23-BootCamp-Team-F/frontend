@@ -21,7 +21,7 @@ const MainPage = () => {
         {/** main 전체 시작 */}
         <div
           id="main-wrap"
-          className="flex w-full flex-col pt-40 sm:pl-4 md:pl-8 lg:flex-row"
+          className="flex w-full flex-col pt-28 sm:pl-4 md:pl-8 lg:flex-row"
         >
           {/** 이미지 업로드 부분 시작 */}
           <div
@@ -43,7 +43,7 @@ const MainPage = () => {
             </select>
             <div
               id="upload-image"
-              className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black md:mx-20 lg:mx-12 lg:h-[500px]"
+              className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black md:mx-20 lg:mx-12 lg:h-[500px] bg-background"
             >
               <img
                 src={uploadImage}

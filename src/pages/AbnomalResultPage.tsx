@@ -16,7 +16,7 @@ const ResultPage = () => {
       {/* 본문 */}
       <div className="flex flex-col md:flex-row place-content-evenly px-12 pt-4 items-center ">
         {/* 본문 왼쪽 */}
-        <div className="content-center ">
+        <div className="content-center pt-24">
           <div className="flex flex-col ">
             <img
               src={tomato2}
@@ -26,11 +26,11 @@ const ResultPage = () => {
               잿빛 곰팡이병
             </div>
           </div>
-          <div className="mt-5 ">
+          <div className="mt-5 w-600 h-356 object-cover">
             <div className="flex ">
               <img
                 src={tomato3}
-                className="sub_tomato2  rounded-xl w-72 h-356 object-cover mr-2.5"
+                className="sub_tomato2 rounded-xl w-72 h-356 object-cover mr-2.5"
               />
               <img
                 src={tomato2}
@@ -43,7 +43,7 @@ const ResultPage = () => {
           </div>
         </div>
         {/* 본문 오른쪽 */}
-        <div className="">
+        <div className="pl-4 pt-24">
           <div className="">
             <div className="font-press-bold text-2xl">
               진단결과&nbsp;&nbsp;
