@@ -8,6 +8,30 @@ const LoginPage = () => {
     const [openTab, setOpenTap] = useState(1);
 
     const { register, handleSubmit, formState: { errors }} = useForm();
+    
+    // 데이터 전송시 작동할 함수 정의
+    const onSubmit = (data:any) => { 
+        console.log(data);
+        if (data!==undefined){
+            console.log('서버 로그인')
+            axios.post('/api/v1/members/login', {
+                params: {
+                    'email': data.email,
+                    'password': data.password,
+                }
+            }).then(res => {
+                    if(res.status===200){
+                        alert('로그인 성공');
+                    }else{
+                        alert('로그인 실패')
+                    }
+                }
+            ) 
+            .catch((error) => {
+                console.log(error)
+            })
+        }
+    }
 
     return (
     <div className=" bg-background w-screen h-full absolute overflow-hidden ">
@@ -89,6 +113,7 @@ const LoginPage = () => {
 
                     {/* 버튼/ 문구 */}
                     <div className="mt-24">
+
                         <div>
                             <button className="w-full px-10 py-2 text-white rounded-md 
                             bg-button hover:drop-shadow-md duration-300 ease-in py-3" type="submit">
