@@ -26,11 +26,8 @@ module.exports = {
       fontSize: {
         10: "10px",
       },
-      screens: {
-        md: "800px",
-      },
       backgroundImage: {
-        'grass': "url('src/assets/images/grass.svg')",
+        grass: "url('src/assets/images/grass.svg')",
       },
     },
   },
