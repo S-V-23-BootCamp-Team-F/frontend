@@ -1,11 +1,11 @@
 import { useState } from "react"; // import state
 import classNames from "classnames";
 
-import logo from "../../images/logo.svg";
-import hamburger from "../images/hamburger.svg";
-import login from "../../images/login.svg";
-import diagnosis from "../../images/diagnosis.svg";
-import history from "../../images/history.svg";
+import logo from "src/images/logo.svg";
+import hamburger from "src/images/hamburger.svg";
+import login from "src/images/login.svg";
+import diagnosis from "src/images/diagnosis.svg";
+import history from "src/images/history.svg";
 
 function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);

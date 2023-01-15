@@ -1,9 +1,9 @@
 import React from "react";
-import tomato from "../images/tomato.jpg";
-import tomato2 from "../images/tomato2.jpg";
-import tomato3 from "../images/tomato3.jpg";
-import die from "../images/dietomato.png";
-import leaf from "../images/leaf.png";
+import tomato from "src/images/tomato.jpg";
+import tomato2 from "src/images/tomato2.jpg";
+import tomato3 from "src/images/tomato3.jpg";
+import die from "src/images/dietomato.png";
+import "src/media.css";
 import Navbar from "src/components/Navbar";
 
 const ResultPage = () => {

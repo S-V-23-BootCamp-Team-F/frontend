@@ -27,7 +27,7 @@ module.exports = {
         10: "10px",
       },
       backgroundImage: {
-        grass: "url('src/assets/images/grass.svg')",
+        grass: "url('src/images/grass.svg')",
       },
     },
   },

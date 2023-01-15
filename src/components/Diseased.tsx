@@ -1,5 +1,5 @@
 import React from "react";
-import Delete from "src/assets/images/delete.svg";
+import Delete from "src/images/delete.svg";
 
 function Diseased() { 
     {

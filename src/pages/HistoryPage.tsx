@@ -1,8 +1,7 @@
 import React from "react";
-import Healthy from "src/assets/components/Healthy";
-import Diseased from "src/assets/components/Diseased";
+import Healthy from "src/components/Healthy";
+import Diseased from "src/components/Diseased";
 import Navbar from "src/components/Navbar";
-import Category from "src/assets/images/category.svg";
 
 const HistoryPage = () => {
   return (

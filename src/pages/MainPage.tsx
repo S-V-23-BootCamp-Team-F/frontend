@@ -3,13 +3,13 @@ import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
 
 // images
-import uploadImage from "../images/uploadImage.svg";
-import bgImage from "../images/bgImage.svg";
+import uploadImage from "src/images/uploadImage.svg";
+import bgImage from "src/images/bgImage.svg";
 
 // exampleimages
-import example1 from "../images/example1.png";
-import example2 from "../images/example2.png";
-import example3 from "../images/example3.png";
+import example1 from "src/images/example1.png";
+import example2 from "src/images/example2.png";
+import example3 from "src/images/example3.png";
 
 const MainPage = () => {
   return (
