@@ -1,19 +1,19 @@
 import React from "react";
 import "tailwindcss/tailwind.css";
-import Navbar from "../assets/components/Navbar";
+import Navbar from "src/components/Navbar";
 
 // images
-import uploadImage from "../images/uploadImage.svg";
-import bgImage from "../images/bgImage.svg";
+import uploadImage from "src/images/uploadImage.svg";
+import bgImage from "src/images/bgImage.svg";
 
 // exampleimages
-import example1 from "../images/example1.png";
-import example2 from "../images/example2.png";
-import example3 from "../images/example3.png";
+import example1 from "src/images/example1.png";
+import example2 from "src/images/example2.png";
+import example3 from "src/images/example3.png";
 
 const MainPage = () => {
   return (
-    <div className="h-screen overflow-y-auto overflow-x-hidden bg-background font-press-medium text-blue-900">
+    <div className="h-screen overflow-x-hidden bg-background bg-grass bg-no-repeat overflow-y-auto">
       <div id="navbar">
         <Navbar />
       </div>
@@ -21,7 +21,7 @@ const MainPage = () => {
         {/** main 전체 시작 */}
         <div
           id="main-wrap"
-          className="flex w-full flex-col pt-40 sm:pl-4 md:pl-8 lg:flex-row"
+          className="flex w-full flex-col pt-28 sm:pl-4 md:pl-8 lg:flex-row"
         >
           {/** 이미지 업로드 부분 시작 */}
           <div
@@ -43,7 +43,7 @@ const MainPage = () => {
             </select>
             <div
               id="upload-image"
-              className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black md:mx-20 lg:mx-12 lg:h-[500px]"
+              className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black md:mx-20 lg:mx-12 lg:h-[500px] bg-background"
             >
               <img
                 src={uploadImage}

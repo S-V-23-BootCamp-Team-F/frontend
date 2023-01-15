@@ -1,24 +1,24 @@
 import { useState } from "react"; // import state
 import classNames from "classnames";
 
-import logo from "../../images/logo.svg";
-import hamburger from "../images/hamburger.svg";
-import login from "../../images/login.svg";
-import diagnosis from "../../images/diagnosis.svg";
-import history from "../../images/history.svg";
+import logo from "src/images/logo.svg";
+import hamburger from "src/images/hamburger.svg";
+import login from "src/images/login.svg";
+import diagnosis from "src/images/diagnosis.svg";
+import history from "src/images/history.svg";
 
-export default function Navbar() {
+function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
   return (
     <div
       id="navbar-wrap"
       className="fixed z-20 flex w-full flex-wrap justify-between font-press-medium text-black max-sm:justify-end"
     >
-      <div className="bg-logo flex w-full justify-center bg-background px-12 pb-8 pt-10 max-sm:pl-0 md:w-screen lg:px-16 xl:px-20 ">
-        <img src={logo} />
+      <div className="bg-logo flex w-full justify-center bg-background px-12 pt-4 pb-4 max-sm:pl-0 md:w-screen lg:px-16 xl:px-20 border">
+        <img className="m-auto" src={logo} />
         <div
           id="menue1"
-          className=" mt-16 flex w-full justify-end gap-8 max-sm:hidden md:gap-16 lg:gap-32"
+          className="m-auto mb-0 flex w-full justify-end gap-8 max-sm:hidden md:gap-16 lg:gap-32"
         >
           <div className="cursor-pointer hover:text-button">Diagnosis</div>
           <div className="cursor-pointer hover:text-button">Histories</div>
@@ -100,3 +100,5 @@ export default function Navbar() {
     </div>
   );
 }
+
+export default Navbar

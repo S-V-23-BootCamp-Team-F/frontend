@@ -1,23 +1,22 @@
 import React from "react";
-import tomato from "../images/tomato.jpg";
-import tomato2 from "../images/tomato2.jpg";
-import tomato3 from "../images/tomato3.jpg";
-import die from "../images/dietomato.png";
-import leaf from "../images/leaf.png";
-import "../media.css";
+import tomato from "src/images/tomato.jpg";
+import tomato2 from "src/images/tomato2.jpg";
+import tomato3 from "src/images/tomato3.jpg";
+import die from "src/images/dietomato.png";
+import "src/media.css";
+import Navbar from "src/components/Navbar";
 
 const ResultPage = () => {
   return (
     // 전체
-    <div className=" relative flex h-screen w-screen flex-col overflow-y-auto bg-background">
+    <div className="bg-background bg-grass bg-no-repeat max-h-screen w-screen flex flex-col relative overflow-y-auto">
       {/* nav바 */}
-      <div className="mb-20">네비게이션 자리</div>
+      <Navbar />
 
       {/* 본문 */}
-      <div className="mt-16 flex flex-col place-content-evenly items-center md:flex-row">
-        <img className="absolute left-0 top-20" src={leaf} />
+      <div className="flex flex-col md:flex-row place-content-evenly px-12 pt-4 items-center ">
         {/* 본문 왼쪽 */}
-        <div className="content-center ">
+        <div className="content-center pt-24">
           <div className="flex flex-col ">
             <img
               src={tomato2}
@@ -27,11 +26,11 @@ const ResultPage = () => {
               잿빛 곰팡이병
             </div>
           </div>
-          <div className="mt-5 ">
+          <div className="mt-5 w-600 h-356 object-cover">
             <div className="flex ">
               <img
                 src={tomato3}
-                className="sub_tomato2  mr-2.5 h-356 w-72 rounded-xl object-cover"
+                className="sub_tomato2 rounded-xl w-72 h-356 object-cover mr-2.5"
               />
               <img
                 src={tomato2}
@@ -44,7 +43,7 @@ const ResultPage = () => {
           </div>
         </div>
         {/* 본문 오른쪽 */}
-        <div className="">
+        <div className="pl-4 pt-24">
           <div className="">
             <div className="font-press-bold text-2xl">
               진단결과&nbsp;&nbsp;
@@ -62,8 +61,8 @@ const ResultPage = () => {
           </div>
           <div className="mt-10">
             <div className="place-content-between">
-              <div className="mb-2 font-press-bold text-2xl">Causation</div>
-              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-press-medium text-xl ">
+              <div className="font-press-bold text-2xl mb-2">Causation</div>
+              <div className="font-press-medium border-black max-w-2xl h-130 overflow-y-auto text-xl mb-7">
                 이 병은 습도가 높으면 발병이 많으므로 시설 내부가 다습하지
                 않도록 가능한 관수량을 줄이고 환기를 충분히 실시하여 재배하고,
                 저온기 재배시에는 온도조절만이 아니라 난방을 하여 습기를
