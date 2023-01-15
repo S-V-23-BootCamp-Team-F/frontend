@@ -50,7 +50,7 @@ const LoginPage = () => {
                 {/* email/password */}
                 <form className="mt-20" onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex flex-col space-y-2 m-5">
-                        <input className="w-full px-3 py-2 border-b-2 bg-transparent placeholder-white" 
+                        <input className="w-full px-3 py-2 border-b-2 bg-transparent placeholder-white text-white" 
                         placeholder="Enter your Email" 
                         {...register("email", {required: "required", pattern: {
                             value: /([\w-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,
@@ -66,7 +66,7 @@ const LoginPage = () => {
                     </div>
 
                      <div className="flex flex-col space-y-2 m-5"> 
-                        <input className="w-full px-3 py-2 border-b-2 bg-transparent placeholder-white" type="password"
+                        <input className="w-full px-3 py-2 border-b-2 bg-transparent placeholder-white text-white" type="password"
                         placeholder="Enter your Password" 
                         {...register("password", {required: "required", pattern: {
                         value: /(?=.*\d{1,50})(?=.*[~`!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,16}$/,
