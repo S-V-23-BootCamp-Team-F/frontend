@@ -28,6 +28,8 @@ module.exports = {
       },
       screens: {
         md: "800px",
+      backgroundImage: {
+        'grass': "url('src/assets/images/grass.svg')",
       },
     },
   },
