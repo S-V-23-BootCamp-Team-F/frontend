@@ -34,7 +34,7 @@ const MainPage = () => {
   };
   // Q. 클릭했을 때 드래그, 드롭부분과 함께
   const handleClick = (event: any) => {
-    let imageFile = event.dataTransfer.files[0];
+    const imageFile = event.dataTransfer.files[0];
     handleFile(imageFile);
   };
   const changeHandler = (e: any) => {
