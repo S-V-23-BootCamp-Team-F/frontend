@@ -2,6 +2,7 @@ import React from "react";
 import Healthy from "src/components/Healthy";
 import Diseased from "src/components/Diseased";
 import Navbar from "src/components/Navbar";
+import Userhistory from "src/components/Userhistory";
 
 const HistoryPage = () => {
   return (
@@ -22,14 +23,30 @@ const HistoryPage = () => {
         {/*내용*/}
         <div className="flex flex-col items-center">
           <div className="flex flex-wrap">
-            <Healthy />
-            <Diseased />
-            <Healthy />
-            <Diseased />
-            <Healthy />
-            <Diseased />
-            <Healthy />
-            <Diseased />
+            <div className="m-auto w-80 h-80">
+              <Userhistory />
+            </div>
+            <div className="m-auto w-80 h-80">
+              <Diseased />
+            </div>
+            <div className="m-auto w-80 h-80">
+              <Healthy />
+            </div>
+            <div className="m-auto w-80 h-80">
+              <Diseased />
+            </div>
+            <div className="m-auto w-80 h-80">
+              <Healthy />
+            </div>
+            <div className="m-auto w-80 h-80">
+              <Diseased />
+            </div>
+            <div className="m-auto w-80 h-80">
+              <Healthy />
+            </div>
+            <div className="m-auto w-80 h-80">
+              <Diseased />
+            </div>
           </div>
         </div>
       </div>

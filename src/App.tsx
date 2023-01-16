@@ -9,11 +9,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
-
         <Route path="/abnomalresult" element={<AbnomalResultPage />} />
-
         <Route path="/history" element={<HistoryPage />} />
-
       </Routes>
     </Router>
   );

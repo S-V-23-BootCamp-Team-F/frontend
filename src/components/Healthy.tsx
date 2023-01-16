@@ -4,7 +4,7 @@ import Delete from "src/images/delete.svg";
 function Healthy() { 
     {
         return (
-            <div className="m-auto w-80 h-80">
+            <div>
                 <div className="w-80 h-52 border-2 border-black rounded-lg bg-white">
                     {/*이미지*/}
                     <div className=""></div>
