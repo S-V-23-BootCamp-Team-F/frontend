@@ -5,9 +5,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "press-bold": ["GmarketSansTTFBold", "sans-serif"],
-        "press-medium": ["GmarketSansTTFMedium", "sans-serif"],
-        "press-light": ["GmarketSansTTFLight", "sans-serif"],
+        "eng-regular": ["Urbanist-Regular", "sans-serif"],
+        "eng-bold": ["Urbanist-SemiBold", "sans-serif"],
+        "kor-bold": ["SpoqaHanSansNeo-Bold", "sans-serif"],
+        "kor-medium": ["SpoqaHanSansNeo-Medium", "sans-serif"],
+        "kor-regular": ["SpoqaHanSansNeo-Regular", "sans-serif"],
       },
       colors: {
         background: "#F9F8F6",

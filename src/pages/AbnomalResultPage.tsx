@@ -9,12 +9,12 @@ import Navbar from "src/components/Navbar";
 const ResultPage = () => {
   return (
     // 전체
-    <div className="bg-background bg-grass bg-no-repeat max-h-screen w-screen flex flex-col relative overflow-y-auto">
+    <div className="relative flex max-h-screen w-screen flex-col overflow-y-auto bg-background bg-grass bg-no-repeat">
       {/* nav바 */}
       <Navbar />
 
       {/* 본문 */}
-      <div className="flex flex-col md:flex-row place-content-evenly px-12 pt-4 items-center ">
+      <div className="flex flex-col place-content-evenly items-center px-12 pt-4 md:flex-row ">
         {/* 본문 왼쪽 */}
         <div className="content-center pt-24">
           <div className="flex flex-col ">
@@ -22,22 +22,22 @@ const ResultPage = () => {
               src={tomato2}
               className="sub_tomato1 h-356 w-600 rounded-xl object-cover"
             />
-            <div className="mt-2  flex flex-col items-center font-press-bold text-xl  ">
+            <div className="mt-2  flex flex-col items-center font-kor-bold text-xl  ">
               잿빛 곰팡이병
             </div>
           </div>
-          <div className="mt-5 w-600 h-356 object-cover">
+          <div className="mt-5 h-356 w-600 object-cover">
             <div className="flex ">
               <img
                 src={tomato3}
-                className="sub_tomato2 rounded-xl w-72 h-356 object-cover mr-2.5"
+                className="sub_tomato2 mr-2.5 h-356 w-72 rounded-xl object-cover"
               />
               <img
                 src={tomato2}
                 className="sub_tomato3 ml-2.5 h-356 w-72 rounded-xl object-cover"
               />
             </div>
-            <div className="mt-2 flex flex-col items-center font-press-bold text-xl">
+            <div className="mt-2 flex flex-col items-center font-kor-bold text-xl">
               관련 사진
             </div>
           </div>
@@ -45,24 +45,24 @@ const ResultPage = () => {
         {/* 본문 오른쪽 */}
         <div className="pl-4 pt-24">
           <div className="">
-            <div className="font-press-bold text-2xl">
+            <div className="font-kor-bold text-2xl">
               진단결과&nbsp;&nbsp;
-              <span className="font-press-bold text-disease">
+              <span className="font-kor-bold text-disease">
                 토마토 잿빛곰팡이병
               </span>
               으로 의심됩니다.
             </div>
             <div className="flex">
               <img src={die} className="die_tomato"></img>
-              <div className="flex place-items-end font-press-medium">
+              <div className="flex place-items-end font-kor-medium">
                 우리의 토마토는 가셨습니다..
               </div>
             </div>
           </div>
           <div className="mt-10">
             <div className="place-content-between">
-              <div className="font-press-bold text-2xl mb-2">Causation</div>
-              <div className="font-press-medium border-black max-w-2xl h-130 overflow-y-auto text-xl mb-7">
+              <div className="mb-2 font-eng-bold text-2xl">Causation</div>
+              <div className="font-kor-regula mb-7 h-130 max-w-2xl overflow-y-auto border-black text-xl">
                 이 병은 습도가 높으면 발병이 많으므로 시설 내부가 다습하지
                 않도록 가능한 관수량을 줄이고 환기를 충분히 실시하여 재배하고,
                 저온기 재배시에는 온도조절만이 아니라 난방을 하여 습기를
@@ -86,8 +86,8 @@ const ResultPage = () => {
               </div>
             </div>
             <div>
-              <div className="mb-2 font-press-bold text-2xl">Symptom</div>
-              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-press-medium text-xl">
+              <div className="mb-2 font-eng-bold text-2xl">Symptom</div>
+              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
                 이 병은 습도가 높으면 발병이 많으므로 시설 내부가 다습하지
                 않도록 가능한 관수량을 줄이고 환기를 충분히 실시하여 재배하고,
                 저온기 재배시에는 온도조절만이 아니라 난방을 하여 습기를
@@ -111,8 +111,8 @@ const ResultPage = () => {
               </div>
             </div>
             <div>
-              <div className="mb-2 font-press-bold text-2xl">Cure</div>
-              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-press-medium text-xl">
+              <div className="mb-2  font-eng-bold text-2xl">Cure</div>
+              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
                 이 병은 습도가 높으면 발병이 많으므로 시설 내부가 다습하지
                 않도록 가능한 관수량을 줄이고 환기를 충분히 실시하여 재배하고,
                 저온기 재배시에는 온도조절만이 아니라 난방을 하여 습기를
