@@ -65,18 +65,20 @@ const MainPage = () => {
               className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black bg-background md:mx-20 lg:mx-12 lg:h-[500px]"
             >
               <div
-                className="drop_zone"
+                className="drop_zone flex h-full justify-center"
                 onDragOver={handleOndragOver}
                 onDrop={handleOndrop}
               >
-                <p>Drag and drop image here....</p>
+                {previewUrl && (
+                  <div className="image flex justify-center">
+                    <img
+                      src={previewUrl}
+                      alt="image"
+                      className=" max-h-[392px] w-full object-contain"
+                    />
+                  </div>
+                )}
               </div>
-              {previewUrl && (
-                <div className="image">
-                  <img src={previewUrl} alt="image" />
-                  <span> {image.name} </span>
-                </div>
-              )}
             </div>
             <div
               id="diagnose-button"
