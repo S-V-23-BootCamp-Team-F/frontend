@@ -16,22 +16,29 @@ module.exports = {
         button: "#2B663C",
         disease: "#F6795B",
       },
-      width: {
+      width:{
+        600:"37.5rem",
+        404:"25.25rem",
         700: "43.75rem",
-        600: "37.5rem",
       },
       height: {
+        750: "46.875rem",
         130: "8.25rem",
         150: "10rem",
         356: "22.25rem",
       },
-      fontSize: {
-        10: "10px",
+      screens: {
+        'xs': '650px',
       },
       backgroundImage: {
         grass: "url('src/images/grass.svg')",
+        startImg: "url('images/backImg.jpg')",
+      },
+      fontSize: {
+        10: "10px",
       },
     },
+  }
   },
   plugins: [],
 };
