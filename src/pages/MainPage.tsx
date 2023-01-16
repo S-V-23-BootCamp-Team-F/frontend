@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
 
@@ -11,7 +11,47 @@ import example1 from "src/images/example1.png";
 import example2 from "src/images/example2.png";
 import example3 from "src/images/example3.png";
 
+const imageMimeType = /image\/(png|jpg|jpeg|svg)/i;
+
 const MainPage = () => {
+  // file upload, filedata name 필드
+  const [file, setFile] = useState(null);
+  const [fileDataURL, setFileDataURL] = useState(null);
+
+  // 현재까지의 기능만으로도 line19 이외의 확장자는 선택되지 않지만, 예외상황을 방지하고자 하는 코드
+  const changeHandler = (e: any) => {
+    const file = e.target.files[0];
+    // 파일 확장자 확인 코드
+    if (!file.type.match(imageMimeType)) {
+      alert("Image mime type is not valid");
+      return;
+    }
+    setFile(file);
+  };
+  // Q. FileReader, e(event)의 타입은 무엇인가?
+  // 이미지의 경로를 받아 웹에 미리 볼 수 있도록 하는 코드
+  useEffect(() => {
+    let fileReader: any,
+      isCancel = false;
+    if (file) {
+      fileReader = new FileReader();
+      fileReader.onload = (e: any) => {
+        const { result } = e.target;
+        console.log("console", result);
+        if (result && !isCancel) {
+          setFileDataURL(result);
+        }
+      };
+      fileReader.readAsDataURL(file);
+    }
+    return () => {
+      isCancel = true;
+      if (fileReader && fileReader.readyState === 1) {
+        fileReader.abort();
+      }
+    };
+  }, [file]);
+
   return (
     <div className="h-screen overflow-y-auto overflow-x-hidden bg-background bg-grass bg-no-repeat">
       <div id="navbar">
@@ -45,10 +85,22 @@ const MainPage = () => {
               id="upload-image"
               className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black bg-background md:mx-20 lg:mx-12 lg:h-[500px]"
             >
-              <img
-                src={uploadImage}
-                className="h-full w-full object-scale-down"
-              />
+              {fileDataURL ? (
+                <p className="img-preview-wrapper">
+                  {
+                    <img
+                      src={fileDataURL}
+                      alt="preview"
+                      className=" max-h-96 min-w-full object-contain"
+                    />
+                  }
+                </p>
+              ) : (
+                <img
+                  src={uploadImage}
+                  className="h-full w-full object-scale-down"
+                />
+              )}
             </div>
             <div
               id="diagnose-button"
@@ -58,12 +110,31 @@ const MainPage = () => {
                 <b>진단하기</b>
               </button>
             </div>
+            <div id="buttonwrap" className="mt-5 flex flex-row justify-center">
+              <form>
+                <p>
+                  <label htmlFor="image"></label>
+                  <input
+                    type="file"
+                    id="image"
+                    accept=".png, .jpg, .jpeg, .svg"
+                    onChange={changeHandler}
+                  />
+                </p>
+                <p>
+                  <input
+                    type="submit"
+                    className="mt-2 mb-2 w-12 rounded-md bg-black text-white"
+                  />
+                </p>
+              </form>
+            </div>
           </div>
           {/** 이미지 업로드 부분 끝 */}
           {/** 튜토리얼 부분 시작 */}
           <div
             id="tutorial-wrap"
-            className="mt-[62px] ml-12 w-full font-press-medium text-black md:ml-20 lg:ml-12 lg:h-[700px]"
+            className="font-press-medium mt-[62px] ml-12 w-full text-black md:ml-20 lg:ml-12 lg:h-[700px]"
           >
             <>
               <b>Explanation</b> <br />
@@ -99,17 +170,17 @@ const MainPage = () => {
                 >
                   <br />
                   <div className=" font-press-bold text-xl">원인</div>
-                  <div className=" mt-1 font-press-medium text-sm">
+                  <div className=" font-press-medium mt-1 text-sm">
                     이 질병은 &quot;어떠한 이유&quot;로 인해 발생해요
                   </div>
                   <br />
                   <div className=" font-press-bold text-xl">질병</div>
-                  <div className=" mt-1 font-press-medium text-sm">
+                  <div className=" font-press-medium mt-1 text-sm">
                     이 질병은 &quot;이런 증상&quot;을 나타내요
                   </div>
                   <br />
                   <div className=" font-press-bold text-xl">치료</div>
-                  <div className=" mt-1 font-press-medium text-sm">
+                  <div className=" font-press-medium mt-1 text-sm">
                     이 질병은 &quot;이런 방법&quot;으로 치료해야 해요
                   </div>
                   <br />
