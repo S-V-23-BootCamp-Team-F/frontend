@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
 import { FileUploader } from "react-drag-drop-files";
@@ -40,6 +41,10 @@ const MainPage = () => {
     const file = e.target.files[0];
     handleFile(file);
   };
+  const navigate = useNavigate();
+  const getResult = () => {
+    navigate("/abnomalresult");
+  };
   return (
     <div className="h-screen overflow-y-auto overflow-x-hidden bg-background bg-grass bg-no-repeat">
       <div id="navbar">
@@ -75,7 +80,7 @@ const MainPage = () => {
             >
               <label htmlFor="drop_zone">
                 <div
-                  className="drop_zone relative flex h-full justify-center"
+                  className="drop_zone relative flex h-full justify-center hover:cursor-pointer"
                   onDragOver={handleOndragOver}
                   onDrop={handleOndrop}
                 >
@@ -106,7 +111,10 @@ const MainPage = () => {
               id="diagnose-button"
               className="xl:px-30 mt-6 w-full px-12 text-center md:px-20 lg:px-12"
             >
-              <button className="h-10 w-full rounded-lg bg-button text-white">
+              <button
+                className="h-10 w-full rounded-lg bg-button text-white"
+                onClick={getResult}
+              >
                 <b>진단하기</b>
               </button>
             </div>

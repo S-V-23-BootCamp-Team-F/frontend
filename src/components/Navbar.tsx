@@ -1,5 +1,6 @@
 import { useState } from "react"; // import state
 import classNames from "classnames";
+import { useNavigate } from "react-router-dom";
 
 import logo from "src/images/logo.svg";
 import hamburger from "src/images/hamburger.svg";
@@ -9,10 +10,20 @@ import history from "src/images/history.svg";
 
 function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
+  const navigate = useNavigate();
+  const moveToMain = () => {
+    navigate("/");
+  };
+  const moveToHistories = () => {
+    navigate("/history");
+  };
+  const moveToLogin = () => {
+    navigate("/abnomalresult");
+  };
   return (
     <div
       id="navbar-wrap"
-      className=" font-press-medium fixed z-20 flex w-full flex-wrap justify-between text-black max-sm:justify-end"
+      className="font-press-medium fixed z-20 flex w-full flex-wrap justify-between text-black max-sm:justify-end"
     >
       <div className="bg-logo flex w-full justify-center border bg-background px-12 pt-4 pb-4 max-sm:pl-0 md:w-screen lg:px-16 xl:px-20">
         <img className="m-auto" src={logo} />
@@ -20,9 +31,24 @@ function Navbar() {
           id="menue1"
           className="m-auto flex w-full justify-end gap-8 font-eng-regular text-xl max-sm:hidden md:gap-16 lg:gap-32"
         >
-          <div className="cursor-pointer hover:text-button">Diagnosis</div>
-          <div className="cursor-pointer hover:text-button">Histories</div>
-          <div className="cursor-pointer hover:text-button">Logout</div>
+          <div
+            className="cursor-pointer hover:text-button"
+            onClick={moveToMain}
+          >
+            Diagnosis
+          </div>
+          <div
+            className="cursor-pointer hover:text-button"
+            onClick={moveToHistories}
+          >
+            Histories
+          </div>
+          <div
+            className="cursor-pointer hover:text-button"
+            onClick={moveToLogin}
+          >
+            Logout
+          </div>
         </div>
       </div>
       <div className="flex max-sm:flex-col-reverse">

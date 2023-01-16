@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import AbnomalResultPage from "./pages/AbnomalResultPage";
-import HistoryPage from './pages/HistoryPage';
+import HistoryPage from "./pages/HistoryPage";
 
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
         <Route path="/abnomalresult" element={<AbnomalResultPage />} />
 
         <Route path="/history" element={<HistoryPage />} />
-
       </Routes>
     </Router>
   );
