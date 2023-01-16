@@ -31,6 +31,10 @@ const MainPage = () => {
     let imageFile = event.dataTransfer.files[0];
     handleFile(imageFile);
   };
+  const handleClick = (file: any) => {
+    setImage(file);
+    setPreviewUrl(URL.createObjectURL(file));
+  };
   return (
     <div className="h-screen overflow-y-auto overflow-x-hidden bg-background bg-grass bg-no-repeat">
       <div id="navbar">
@@ -65,11 +69,16 @@ const MainPage = () => {
               className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black bg-background md:mx-20 lg:mx-12 lg:h-[500px]"
             >
               <div
-                className="drop_zone flex h-full justify-center"
+                className="drop_zone relative flex h-full justify-center"
                 onDragOver={handleOndragOver}
                 onDrop={handleOndrop}
               >
-                {previewUrl && (
+                <input
+                  type="file"
+                  onClick={handleClick}
+                  className=" absolute h-full w-full border-background text-background"
+                />
+                {previewUrl ? (
                   <div className="image flex justify-center">
                     <img
                       src={previewUrl}
@@ -77,6 +86,11 @@ const MainPage = () => {
                       className=" max-h-[392px] w-full object-contain"
                     />
                   </div>
+                ) : (
+                  <img
+                    src={uploadImage}
+                    className="h-full w-full object-scale-down"
+                  />
                 )}
               </div>
             </div>
