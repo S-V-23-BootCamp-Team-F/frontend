@@ -13,7 +13,7 @@ import example3 from "src/images/example3.png";
 
 const MainPage = () => {
   return (
-    <div className="h-screen overflow-x-hidden bg-background bg-grass bg-no-repeat overflow-y-auto">
+    <div className="h-screen overflow-y-auto overflow-x-hidden bg-background bg-grass bg-no-repeat">
       <div id="navbar">
         <Navbar />
       </div>
@@ -31,7 +31,7 @@ const MainPage = () => {
             <select
               name="plant"
               id="plant"
-              className=" text-centermt-10 xl:ml-30 mt-12 ml-12 bg-background font-bold md:ml-20 lg:ml-12"
+              className=" xl:ml-30 mt-12 ml-12 bg-background text-center font-bold md:ml-20 lg:ml-12"
             >
               <option value="카테고리">카테고리</option>
               <option value="strawberry">딸기</option>
@@ -43,7 +43,7 @@ const MainPage = () => {
             </select>
             <div
               id="upload-image"
-              className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black md:mx-20 lg:mx-12 lg:h-[500px] bg-background"
+              className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black bg-background md:mx-20 lg:mx-12 lg:h-[500px]"
             >
               <img
                 src={uploadImage}
