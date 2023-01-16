@@ -91,7 +91,7 @@ const SignupPage = () =>{
                     </div>
 
                     {/* 버튼/ 문구 */}
-                    <div className="mt-24">
+                    <div className="mt-10">
                         <div>
                             <button className="w-full px-10 py-2 text-white rounded-md
                             bg-button hover:drop-shadow-md duration-300 ease-in py-3" type="submit">

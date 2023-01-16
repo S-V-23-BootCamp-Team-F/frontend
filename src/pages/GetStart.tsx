@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import "tailwindcss/tailwind.css";
-import LoginPage from "./SigninPage";
-import SignupPage from "./SignupPage";
+import SigninPage from "../components/SigninPage";
+import SignupPage from "../components/SignupPage";
 
-const GetStart = () => {
+const GetStart = () => { 
     const [openTab, setOpenTap] = useState(1);
 
   return (
     <>
-    <div className=" bg-background w-screen h-full absolute overflow-hidden ">
-        {/* nav바 */}
-        <div>네비게이션 자리</div> 
-
+    <div  className=" bg-background w-screen h-full absolute overflow-hidden bg-startImg bg-cover bg-center">
+   
         {/* 본문 */}
         <div className = "flex justify-center m-10"> 
             <div className="w-600 h-750 rounded-xl bg-black bg-opacity-30">
@@ -39,7 +37,7 @@ const GetStart = () => {
                     </a>
                 </div>
                 <div className={openTab===1 ?"px-20 block" :"px-20 hidden"} id = "signin">
-                    <LoginPage/>
+                    <SigninPage/>
                 </div>
                 <div className={openTab===2 ?"px-20 block" :"px-20 hidden"} id = "signup" >
                     <SignupPage/>

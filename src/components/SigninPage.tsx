@@ -7,7 +7,7 @@ import axios from "axios";
 const LoginPage = () => {
 
     const { register, handleSubmit, formState: { errors }, watch} = useForm();
-    
+     
     // 데이터 전송시 작동할 함수 정의
     const onSubmit = (data:any) => { 
         console.log(data);
@@ -33,7 +33,7 @@ const LoginPage = () => {
     }
 
     return (
-<>
+            <div>
                 {/* 문구 */}
                 <div className="text-left">
                     <div className="font-press-bold text-left max-xs:text-2xl sm:text-4xl text-5xl text-white p-2">
@@ -81,17 +81,16 @@ const LoginPage = () => {
                     </div> 
 
                     {/* 버튼/ 문구 */}
-                    <div className="mt-24">
-
+                    <div className="mt-14">
                         <div>
-                            <button className="w-full px-10 py-2 text-white rounded-md 
+                            <button className="w-full px-10 py-2 text-white rounded-md
                             bg-button hover:drop-shadow-md duration-300 ease-in py-3" type="submit">
                                 Login
                             </button>
                         </div>
                     </div>
                 </form>
-            </>
+            </div>
     );
   };
   
