@@ -5,9 +5,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "press-bold": ["GmarketSansTTFBold", "sans-serif"],
-        "press-medium": ["GmarketSansTTFMedium", "sans-serif"],
-        "press-light": ["GmarketSansTTFLight", "sans-serif"],
+        "eng-regular": ["Urbanist-Regular", "sans-serif"],
+        "eng-bold": ["Urbanist-SemiBold", "sans-serif"],
+        "kor-bold": ["SpoqaHanSansNeo-Bold", "sans-serif"],
+        "kor-medium": ["SpoqaHanSansNeo-Medium", "sans-serif"],
+        "kor-regular": ["SpoqaHanSansNeo-Regular", "sans-serif"],
       },
       colors: {
         background: "#F9F8F6",
@@ -16,16 +18,25 @@ module.exports = {
       },
       width:{
         600:"37.5rem",
-        404:"25.25rem"
+        404:"25.25rem",
+        700: "43.75rem",
       },
       height: {
         750: "46.875rem",
+        130: "8.25rem",
+        150: "10rem",
+        356: "22.25rem",
       },
       screens: {
         'xs': '650px',
       },
       backgroundImage: {
-        'startImg': "url('images/backImg.jpg')",
+        grass: "url('src/images/grass.svg')",
+        startImg: "url('images/backImg.jpg')",
+      },
+      fontSize: {
+        10: "10px",
+      },
     },
   }
   },
