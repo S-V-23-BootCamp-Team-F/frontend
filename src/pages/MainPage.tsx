@@ -74,7 +74,7 @@ const MainPage = () => {
               1. 식물의 이상 부위로 의심되는 곳을 촬영합니다 <br />
               2. 사진 붙히는 곳 위에 식물 카테고리를 선택합니다 <br />
               3. 촬영한 사진을 업로드 합니다 <br />
-              4. <b>'진단하기'</b> 버튼을 누르고 기다립니다 <br />
+              4. <b>&quot;진단하기&quot;</b> 버튼을 누르고 기다립니다 <br />
               5. 분석된 정보를 바탕으로 작물에게 조치를 해 주시면 됩니다 <br />
               <br />
             </>
@@ -100,17 +100,17 @@ const MainPage = () => {
                   <br />
                   <div className=" font-press-bold text-xl">원인</div>
                   <div className=" mt-1 font-press-medium text-sm">
-                    이 질병은 '어떠한 이유'로 인해 발생해요
+                    이 질병은 &quot;어떠한 이유&quot;로 인해 발생해요
                   </div>
                   <br />
                   <div className=" font-press-bold text-xl">질병</div>
                   <div className=" mt-1 font-press-medium text-sm">
-                    이 질병은 '이런 증상'을 나타내요
+                    이 질병은 &quot;이런 증상&quot;을 나타내요
                   </div>
                   <br />
                   <div className=" font-press-bold text-xl">치료</div>
                   <div className=" mt-1 font-press-medium text-sm">
-                    이 질병은 '이런 방법'으로 치료해야 해요
+                    이 질병은 &quot;이런 방법&quot;으로 치료해야 해요
                   </div>
                   <br />
                 </div>
