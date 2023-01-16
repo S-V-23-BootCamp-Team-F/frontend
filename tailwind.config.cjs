@@ -32,7 +32,7 @@ module.exports = {
       },
       backgroundImage: {
         grass: "url('src/images/grass.svg')",
-        startImg: "url('images/backImg.jpg')",
+        startImg: "url('images/backImg.svg')",
       },
       fontSize: {
         10: "10px",
