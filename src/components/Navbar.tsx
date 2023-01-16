@@ -12,13 +12,13 @@ function Navbar() {
   return (
     <div
       id="navbar-wrap"
-      className="fixed z-20 flex w-full flex-wrap justify-between font-press-medium text-black max-sm:justify-end"
+      className=" font-press-medium fixed z-20 flex w-full flex-wrap justify-between text-black max-sm:justify-end"
     >
-      <div className="bg-logo flex w-full justify-center bg-background px-12 pt-4 pb-4 max-sm:pl-0 md:w-screen lg:px-16 xl:px-20 border">
+      <div className="bg-logo flex w-full justify-center border bg-background px-12 pt-4 pb-4 max-sm:pl-0 md:w-screen lg:px-16 xl:px-20">
         <img className="m-auto" src={logo} />
         <div
           id="menue1"
-          className="m-auto mb-0 flex w-full justify-end gap-8 max-sm:hidden md:gap-16 lg:gap-32"
+          className="m-auto flex w-full justify-end gap-8 font-eng-regular text-xl max-sm:hidden md:gap-16 lg:gap-32"
         >
           <div className="cursor-pointer hover:text-button">Diagnosis</div>
           <div className="cursor-pointer hover:text-button">Histories</div>
@@ -101,4 +101,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;
