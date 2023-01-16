@@ -12,8 +12,8 @@ const GetStart = () => {
     <div  className=" bg-background w-screen h-full absolute overflow-hidden bg-startImg bg-cover bg-center">
    
         {/* 본문 */}
-        <div className = "flex justify-center m-10"> 
-            <div className="w-600 h-750 rounded-xl bg-black bg-opacity-30">
+        <div className = "flex justify-center m-20"> 
+            <div className="w-600 h-750 rounded-xl bg-black bg-opacity-30 backdrop-blur-sm"> 
 
                 {/* 로그인/회원가입 버튼 */}
                 <div className="flex justify-between mt-7"> 

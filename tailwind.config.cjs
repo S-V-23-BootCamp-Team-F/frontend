@@ -23,8 +23,11 @@ module.exports = {
       },
       screens: {
         'xs': '650px',
-      }
+      },
+      backgroundImage: {
+        'startImg': "url('images/backImg.jpg')",
     },
+  }
   },
   plugins: [],
 };
