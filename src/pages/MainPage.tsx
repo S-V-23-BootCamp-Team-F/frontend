@@ -31,9 +31,14 @@ const MainPage = () => {
     let imageFile = event.dataTransfer.files[0];
     handleFile(imageFile);
   };
-  const handleClick = (file: any) => {
-    setImage(file);
-    setPreviewUrl(URL.createObjectURL(file));
+  // Q. 클릭했을 때 드래그, 드롭부분과 함께
+  const handleClick = (event: any) => {
+    let imageFile = event.dataTransfer.files[0];
+    handleFile(imageFile);
+  };
+  const changeHandler = (e: any) => {
+    const file = e.target.files[0];
+    handleFile(file);
   };
   return (
     <div className="h-screen overflow-y-auto overflow-x-hidden bg-background bg-grass bg-no-repeat">
@@ -68,31 +73,34 @@ const MainPage = () => {
               id="upload-image"
               className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black bg-background md:mx-20 lg:mx-12 lg:h-[500px]"
             >
-              <div
-                className="drop_zone relative flex h-full justify-center"
-                onDragOver={handleOndragOver}
-                onDrop={handleOndrop}
-              >
-                <input
-                  type="file"
-                  onClick={handleClick}
-                  className=" absolute h-full w-full border-background text-background"
-                />
-                {previewUrl ? (
-                  <div className="image flex justify-center">
+              <label htmlFor="drop_zone">
+                <div
+                  className="drop_zone relative flex h-full justify-center"
+                  onDragOver={handleOndragOver}
+                  onDrop={handleOndrop}
+                >
+                  {previewUrl ? (
+                    <div className="image flex justify-center">
+                      <img
+                        src={previewUrl}
+                        alt="image"
+                        className=" max-h-[392px] w-full object-contain"
+                      />
+                    </div>
+                  ) : (
                     <img
-                      src={previewUrl}
-                      alt="image"
-                      className=" max-h-[392px] w-full object-contain"
+                      src={uploadImage}
+                      className="h-full w-full object-scale-down"
                     />
-                  </div>
-                ) : (
-                  <img
-                    src={uploadImage}
-                    className="h-full w-full object-scale-down"
-                  />
-                )}
-              </div>
+                  )}
+                </div>
+                <input
+                  id="drop_zone"
+                  type="file"
+                  className="hidden"
+                  onChange={changeHandler}
+                />
+              </label>
             </div>
             <div
               id="diagnose-button"
