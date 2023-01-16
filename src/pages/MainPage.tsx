@@ -89,7 +89,7 @@ const MainPage = () => {
                       <img
                         src={previewUrl}
                         alt="image"
-                        className=" max-h-[392px] w-full object-contain"
+                        className="max-h-[500px] w-full object-contain max-md:max-h-[392px]"
                       />
                     </div>
                   ) : (
