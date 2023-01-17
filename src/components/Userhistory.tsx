@@ -19,7 +19,7 @@ function Userhistory() {
         // loading 상태 true
         setLoading(true);
         const response = await axios.get(
-          'https://api/v1/plants/history HTTP 1.1'
+          'http://localhost:8000/api/v1/plants/history'
         );
         setUsers(response.data);
       } catch (error) {
