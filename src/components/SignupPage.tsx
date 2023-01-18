@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
 import axios from "axios";
 
@@ -6,20 +6,20 @@ const SignupPage = () =>{
 
     const {register, handleSubmit, formState: {errors}, watch} = useForm();
 
-    const onSubmit = (data:any) => { 
+    const onSubmit = async (data:any) => { 
         console.log(data);
         if (data!==undefined){
-            console.log('서버 회원가입')
-            axios.post('http://localhost:8000/api/v1/members/signup/', {
+            await axios.post('http://localhost:8000/api/v1/members/signup/', {
                 params: {
-                    'email': data.email,
-                    'password': data.password,
+                    email: data.email,
+                    password: data.password,
                 }
             }).then(res => {
                     if(res.status===201){
+                        console.log(res.data)
                         alert('회원가입 성공');
                     }else{
-                        alert('회원가입 실패')
+                        alert('이미 존재한 회원입니다')
                     }
                 }
             ) 
