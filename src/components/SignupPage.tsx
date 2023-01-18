@@ -10,7 +10,7 @@ const SignupPage = () =>{
         console.log(data);
         if (data!==undefined){
             console.log('서버 회원가입')
-            axios.post('/api/v1/members/signup', {
+            axios.post('http://localhost:8000/api/v1/members/signup/', {
                 params: {
                     'email': data.email,
                     'password': data.password,
@@ -94,7 +94,7 @@ const SignupPage = () =>{
                     <div className="mt-10">
                         <div>
                             <button className="w-full px-10 py-2 text-white rounded-md
-                            bg-button hover:drop-shadow-md duration-300 ease-in py-3" type="submit">
+                            bg-button hover:drop-shadow-md duration-300 ease-in" type="submit">
                                 Sign Up
                             </button>
                         </div>

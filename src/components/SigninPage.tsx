@@ -16,8 +16,7 @@ const LoginPage = () => {
     console.log(data);
     if (data !== undefined) {
       console.log("서버 로그인");
-      axios
-        .post("/api/v1/members/login", {
+      axios.post("http://localhost:8000/api/v1/members/login/", {
           params: {
             email: data.email,
             password: data.password,
