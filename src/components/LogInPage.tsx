@@ -11,14 +11,16 @@ const LogInPage = () => {
     watch,
   } = useForm();
 
-  // 토큰을 쿠키에 저장하면됨
+  // 토큰을 쿠키에 저장하면됨 이거는
   const onSubmit = (data: any) => {
     const datas = {
       email: data.email,
       password: data.password,
     };
     axios
-      .post("http://localhost:8000/api/v1/members/login/", { datas })
+      .post("http://localhost:8000/api/v1/members/login/", datas, {
+        withCredentials: true, //끅끠를 주고받는 명령어
+      })
       .then((res) => {
         const { accessToken } = res.data;
         console.log(res.data);
@@ -107,10 +109,10 @@ const LogInPage = () => {
             {...register("password", {
               required: "required",
               pattern: {
-                // value:
-                //   /(?=.*\d{1,50})(?=.*[~`!@#$%^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,16}$/,
-                // message:
-                //   "비밀번호를 8~16자로 영문 대소문자, 숫자, 특수기호를 조합해서 사용하세요. ",
+                value:
+                  /(?=.*\d{1,50})(?=.*[~`!@#$%^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,16}$/,
+                message:
+                  "비밀번호를 8~16자로 영문 대소문자, 숫자, 특수기호를 조합해서 사용하세요. ",
               },
             })}
           />
