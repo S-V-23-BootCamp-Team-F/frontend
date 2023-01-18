@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, } from "react";
 import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
@@ -12,25 +12,46 @@ import bgImage from "src/images/bgImage.svg";
 import example1 from "src/images/example1.png";
 import example2 from "src/images/example2.png";
 import example3 from "src/images/example3.png";
+import axios from "axios";
 
 const MainPage = () => {
   const [image, setImage]: any = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
-  const handleFile = (file: any) => {
-    //you can carry out any file validations here...
+
+  const handleFile = async (file: any) => {
+
     setImage(file);
     setPreviewUrl(URL.createObjectURL(file));
+      const formData = new FormData();
+      formData.append("picture", file);
+
+     await axios({
+      method:"post",
+      url : "http://localhost:8000/api/v1/plants/pictures/",
+      data : formData,
+      headers : {
+        "Content-Type" : "multipart/form-data"
+      }
+        })
+        .then(function (response: any) {
+          console.log(response.data);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });  
   };
+
+
   const handleOndragOver = (event: any) => {
     event.preventDefault();
   };
   const handleOndrop = (event: any) => {
     //prevent the browser from opening the image
     event.preventDefault();
-    event.stopPropagation();
+    event.stopPropagation();  
     //let's grab the image file
     let imageFile = event.dataTransfer.files[0];
-    handleFile(imageFile);
+    handleFile(imageFile); 
   };
   // Q. 클릭했을 때 드래그, 드롭부분과 함께
   const handleClick = (event: any) => {
@@ -45,6 +66,7 @@ const MainPage = () => {
   const getResult = () => {
     navigate("/abnomalresult");
   };
+  
   return (
     <div className="h-screen overflow-y-auto overflow-x-hidden bg-background bg-grass bg-no-repeat">
       <div id="navbar">
@@ -57,6 +79,7 @@ const MainPage = () => {
           className="flex w-full flex-col pt-28 sm:pl-4 md:pl-8 lg:flex-row"
         >
           {/** 이미지 업로드 부분 시작 */}
+          <form>
           <div
             id="upload-image-wrap"
             className="lg:w-12/12 w-full lg:h-[700px]"
@@ -104,6 +127,7 @@ const MainPage = () => {
                   type="file"
                   className="hidden"
                   onChange={changeHandler}
+                  name="files"
                 />
               </label>
             </div>
@@ -124,6 +148,7 @@ const MainPage = () => {
             ></div>
           </div>
           {/** 이미지 업로드 부분 끝 */}
+          </form>
           {/** 튜토리얼 부분 시작 */}
           <div
             id="tutorial-wrap"
