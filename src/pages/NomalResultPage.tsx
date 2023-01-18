@@ -4,29 +4,12 @@ import nomal from "src/images/nomal.png";
 import Navbar from "src/components/Navbar";
 import "src/media.css";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 const NomalResultPage = () => {
-  const picture ="pepper1.jpeg";
-  const type = 0;
+  const { state } = useLocation();
+  console.log(state)
 
-  useEffect(() => {
-    (async () => {
-      await axios
-        .get(
-          'http://localhost:8000/api/v1/plants/ais/',
-          { params : 
-            {picture : picture,
-            type : type }
-        } 
-          )
-        .then((res) => {
-          console.log(res.data)
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    })();
-  }, []);
   return (
     // 전체
     <div className=" flex min-h-screen w-full flex-col overflow-y-auto bg-background bg-grass bg-no-repeat">
