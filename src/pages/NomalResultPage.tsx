@@ -6,21 +6,21 @@ import "src/media.css";
 import axios from "axios";
 
 const NomalResultPage = () => {
-  const picture ="pepper1.jpeg";
+  const picture = "pepper1.jpeg";
   const type = 0;
 
   useEffect(() => {
     (async () => {
       await axios
-        .get(
-          'http://localhost:8000/api/v1/plants/ais/',
-          { params : 
-            {picture : picture,
-            type : type }
-        } 
-          )
+        .get("http://localhost:8000/api/v1/plants/ais/", {
+          params: { picture: picture, type: type },
+        })
         .then((res) => {
-          console.log(res.data)
+          console.log(res.data);
+          if (res.status == 202) {
+            alert("분석에 실패하였습니다.");
+            return null;
+          }
         })
         .catch((error) => {
           console.log(error);
