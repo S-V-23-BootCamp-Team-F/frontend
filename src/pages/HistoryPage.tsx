@@ -5,8 +5,54 @@ import Navbar from "src/components/Navbar";
 import axios from "axios"
 
 const HistoryPage = () => {
-
-  const [history, setHistory] = useState("");
+const [history, setHistory] = useState([
+    { "id": 1, //정상
+             "disease": {
+                 "id": 1,
+                 "created_at": "2023-01-15T14:02:56Z",
+                 "name": "test_name",
+                 "cause": "test_cause",
+                 "feature": "test_feature",
+                 "solution": "test_solution",
+                 "updated_at": "2023-01-15T14:02:56Z"
+             },
+             "plant": {
+                 "id": 1,
+                 "created_at": "2023-01-15T14:04:14Z",
+                 "type": "test_type",
+                 "explaination": "text_explaination",
+                 "updated_at": "2023-01-15T14:04:14Z"
+             },
+             "picture": "test_picture",
+             "result_picture": "test_result_picture",
+             "status": "OK",
+             "created_at": "2023-01-15T14:06:34Z",
+             "updated_at": "2023-01-15T14:06:34Z",
+             "member": 1},
+        {"id": 1, //정상
+             "disease": {
+                 "id": 1,
+                 "created_at": "2023-01-15T14:02:56Z",
+                 "name": "test_name",
+                 "cause": "test_cause",
+                 "feature": "test_feature",
+                 "solution": "test_solution",
+                 "updated_at": "2023-01-15T14:02:56Z"
+             },
+             "plant": {
+                 "id": 1,
+                 "created_at": "2023-01-15T14:04:14Z",
+                 "type": "test_type",
+                 "explaination": "text_explaination",
+                 "updated_at": "2023-01-15T14:04:14Z"
+             },
+             "picture": "test_picture",
+             "result_picture": "test_result_picture",
+             "status": "OK",
+             "created_at": "2023-01-15T14:06:34Z",
+             "updated_at": "2023-01-15T14:06:34Z",
+             "member": 1}
+   ])
   const email = "test3@gmail.com";
   //데이터 가져올 함수 정의
   useEffect(() => {
@@ -17,12 +63,14 @@ const HistoryPage = () => {
         }
       })
       .then((res) => {
-        console.log(res.data);
-        setHistory(res.data);
+        //console.log(res.data);
+       //setHistory = res.data;
+        // console.log(history.result)
+       setHistory([...res.data.result]);
       }) // 응답
      .catch((error) => {
       console.log(error);
-      setHistory(error);
+      //setHistory(error);
      })
   })();
 },[]);
@@ -44,7 +92,15 @@ return (
       {/*내용*/}
       <div className="flex flex-col items-center">
         <div className="flex flex-wrap">
-          <Diseased Json={history.result[0]}/>
+          {history.map((item:any) => (
+            return ((item.id===1 )? <Healthy/> : <Diseased/>))
+          ))
+          }
+          {/* {history.map((his:any, index: Number) => (
+          return his.id===1 ? <Healthy/>  : <Diseased/>
+          // <Diseased key = {index} Json={his}/>
+          ))} */}
+         
         </div>
       </div>
     </div>
