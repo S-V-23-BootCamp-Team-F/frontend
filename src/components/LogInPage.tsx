@@ -108,12 +108,12 @@ const LogInPage = () => {
             placeholder="Enter your Password"
             {...register("password", {
               required: "required",
-              pattern: {
-                value:
-                  /(?=.*\d{1,50})(?=.*[~`!@#$%^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,16}$/,
-                message:
-                  "비밀번호를 8~16자로 영문 대소문자, 숫자, 특수기호를 조합해서 사용하세요. ",
-              },
+              // pattern: {
+              //   value:
+              //     /(?=.*\d{1,50})(?=.*[~`!@#$%^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,16}$/,
+              //   message:
+              //     "비밀번호를 8~16자로 영문 대소문자, 숫자, 특수기호를 조합해서 사용하세요. ",
+              // },
             })}
           />
           <div className="mt-px text-red-600">
