@@ -9,7 +9,7 @@ const SignupPage = () =>{
     const onSubmit = async (data:any) => { 
         console.log(data);
         if (data!==undefined){
-            await axios.post('http://localhost:8000/api/v1/members/signup/', {
+            await axios.post('http://54.250.133.67/api/v1/members/signup/', {
                 params: {
                     email: data.email,
                     password: data.password,
