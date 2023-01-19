@@ -69,7 +69,7 @@ const MainPage = () => {
   };
   const getResult = async () => {
     await axios
-      .get("http://localhost:80/api/v1/plants/ais/", {
+      .get("http://54.250.133.67/api/v1/plants/ais/", {
         params: { picture: imageName, type: plantIndex },
       })
       .then((res) => {
