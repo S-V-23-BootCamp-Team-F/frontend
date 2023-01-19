@@ -54,7 +54,9 @@ const MainPage = () => {
   const handleOndragOver: React.DragEventHandler<HTMLDivElement> = (event) => {
     event.preventDefault();
   };
-  const handleOndrop = (event: any) => {
+  const handleOndrop: React.DragEventHandler<HTMLDivElement> | undefined = (
+    event
+  ) => {
     //prevent the browser from opening the image
     event.preventDefault();
     event.stopPropagation();
