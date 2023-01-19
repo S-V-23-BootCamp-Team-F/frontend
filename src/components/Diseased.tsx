@@ -8,7 +8,7 @@ function Diseased(props : any) {
             <div className="m-auto w-80 h-80">
                 <div className="w-80 h-52 bg-white relative">
                     {/*이미지*/}
-                    <img className="w-80 h-52 object-fit rounded-lg absolute" src={props.items.picture}/>
+                    <img className="w-80 h-52 object-fit rounded-lg absolute" src={props.items.result_picture}/>
                     {/*삭제버튼*/}
                    {/*<img className="m-auto mt-2 mr-2" src={Delete} alt="DeleteButton" />*/}
                 </div>
