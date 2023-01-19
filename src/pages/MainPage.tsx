@@ -78,8 +78,11 @@ const MainPage = () => {
         } 
           )
         .then((res) => {
-          navigate("/abnomalresult", { state: res.status });
-          console.log(res.data)
+          if(res.data.disease_name === "정상"){
+            navigate("/nomalresult", { state: res.data });
+          }else{
+            navigate("/abnomalresult", { state: res.data });
+          }
           
         })
         .catch((error) => {
@@ -164,8 +167,6 @@ const plantIndexHandler = (e:any) => {
               <button
                 className="h-10 w-full rounded-lg bg-button text-white"
                  onClick={getResult}
-                 
-      
               >
                 <b>진단하기</b>
               </button>
