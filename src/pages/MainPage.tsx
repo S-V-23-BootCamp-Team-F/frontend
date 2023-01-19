@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, } from "react";
 import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
@@ -12,22 +12,46 @@ import bgImage from "src/images/bgImage.svg";
 import example1 from "src/images/example1.png";
 import example2 from "src/images/example2.png";
 import example3 from "src/images/example3.png";
+import axios from "axios";
 
 const MainPage = () => {
+  const [imageName, setImageName] = useState<any>(null);
+  const [plantIndex, setPlantIndex] = useState<Number>(-1);
   const [image, setImage]: any = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
-  const handleFile = (file: any) => {
-    //you can carry out any file validations here...
+  const navigate = useNavigate();
+  const handleFile = async (file: any) => {
+
     setImage(file);
     setPreviewUrl(URL.createObjectURL(file));
+      const formData = new FormData();
+      formData.append("picture", file);
+
+     await axios({
+      method:"post",
+      url : "http://localhost:8000/api/v1/plants/pictures/",
+      data : formData,
+      headers : {
+        "Content-Type" : "multipart/form-data"
+      }
+        })
+        .then(function (response: any) {
+          console.log(response.data);
+          setImageName(response.data.url)
+        })
+        .catch(function (error) {
+          console.log(error);
+        });  
   };
+
+
   const handleOndragOver = (event: any) => {
     event.preventDefault();
   };
   const handleOndrop = (event: any) => {
     //prevent the browser from opening the image
     event.preventDefault();
-    event.stopPropagation();
+    event.stopPropagation();  
     //let's grab the image file
     const imageFile = event.dataTransfer.files[0];
     handleFile(imageFile);
@@ -38,13 +62,39 @@ const MainPage = () => {
     handleFile(imageFile);
   };
   const changeHandler = (e: any) => {
+    console.log(e)
     const file = e.target.files[0];
     handleFile(file);
   };
-  const navigate = useNavigate();
-  const getResult = () => {
-    navigate("/abnomalresult");
-  };
+
+  const getResult = async () => {
+
+   await axios
+        .get(
+          'http://localhost:8000/api/v1/plants/ais/',
+          { params : 
+            {picture : imageName,
+            type : plantIndex }
+        } 
+          )
+        .then((res) => {
+          if(res.data.disease_name === "정상"){
+            navigate("/nomalresult", { state: res.data });
+          }else{
+            navigate("/abnomalresult", { state: res.data });
+          }
+          
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    
+}
+
+const plantIndexHandler = (e:any) => {
+  setPlantIndex(e.target.value) // 작물 인덱스 
+}
+  
   return (
     <div className="h-screen overflow-y-auto overflow-x-hidden bg-background bg-grass bg-no-repeat">
       <div id="navbar">
@@ -57,6 +107,7 @@ const MainPage = () => {
           className="flex w-full flex-col pt-28 sm:pl-4 md:pl-8 lg:flex-row"
         >
           {/** 이미지 업로드 부분 시작 */}
+          <div>
           <div
             id="upload-image-wrap"
             className="lg:w-12/12 w-full lg:h-[700px]"
@@ -65,14 +116,15 @@ const MainPage = () => {
               name="plant"
               id="plant"
               className=" xl:ml-30 mt-12 ml-12 bg-background text-center font-bold md:ml-20 lg:ml-12"
+              onChange={plantIndexHandler}
             >
-              <option value="카테고리">카테고리</option>
-              <option value="strawberry">딸기</option>
-              <option value="grape">포도</option>
-              <option value="tomato">토마토</option>
-              <option value="cucumber">오이</option>
-              <option value="chillypepper">고추</option>
-              <option value="paprika">파프리카</option>
+              <option value="-1">카테고리</option>
+              <option value="0">고추</option>
+              <option value="1">포도</option>
+              <option value="2">딸기</option>
+              <option value="3">오이</option>
+              <option value="4">파프리카</option>
+              <option value="5">토마토</option>
             </select>
             <div
               id="upload-image"
@@ -104,6 +156,7 @@ const MainPage = () => {
                   type="file"
                   className="hidden"
                   onChange={changeHandler}
+                  name="files"
                 />
               </label>
             </div>
@@ -113,7 +166,7 @@ const MainPage = () => {
             >
               <button
                 className="h-10 w-full rounded-lg bg-button text-white"
-                onClick={getResult}
+                 onClick={getResult}
               >
                 <b>진단하기</b>
               </button>
@@ -124,6 +177,7 @@ const MainPage = () => {
             ></div>
           </div>
           {/** 이미지 업로드 부분 끝 */}
+          </div>
           {/** 튜토리얼 부분 시작 */}
           <div
             id="tutorial-wrap"

@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import tomato2 from "src/images/tomato2.jpg";
 import nomal from "src/images/nomal.png";
 import Navbar from "src/components/Navbar";
 import "src/media.css";
+import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 const NomalResultPage = () => {
+  const { state } = useLocation();
+  console.log(state)
+
   return (
     // 전체
     <div className=" flex min-h-screen w-full flex-col overflow-y-auto bg-background bg-grass bg-no-repeat">
