@@ -1,57 +1,58 @@
-import React, { useState, useEffect, } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
 import { FileUploader } from "react-drag-drop-files";
-
 // images
 import uploadImage from "src/images/uploadImage.svg";
 import bgImage from "src/images/bgImage.svg";
-
 // exampleimages
 import example1 from "src/images/example1.png";
 import example2 from "src/images/example2.png";
 import example3 from "src/images/example3.png";
 import axios from "axios";
-
 const MainPage = () => {
   const [imageName, setImageName] = useState<any>(null);
   const [plantIndex, setPlantIndex] = useState<Number>(-1);
   const [image, setImage]: any = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
+  const [buttonOn, setButtonOn] = useState(false);
   const navigate = useNavigate();
   const handleFile = async (file: any) => {
-
+    if (plantIndex === -1) {
+      alert("카테고리를 선택해 주세요");
+      return;
+    }
+    if (file != null) {
+      setButtonOn(true);
+    }
     setImage(file);
     setPreviewUrl(URL.createObjectURL(file));
-      const formData = new FormData();
-      formData.append("picture", file);
-
-     await axios({
-      method:"post",
-      url : "http://localhost:8000/api/v1/plants/pictures/",
-      data : formData,
-      headers : {
-        "Content-Type" : "multipart/form-data"
-      }
-        })
-        .then(function (response: any) {
-          console.log(response.data);
-          setImageName(response.data.url)
-        })
-        .catch(function (error) {
-          console.log(error);
-        });  
+    const formData = new FormData();
+    formData.append("picture", file);
+    await axios({
+      method: "post",
+      url: "http://localhost:80/api/v1/plants/pictures/",
+      data: formData,
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+      .then(function (response: any) {
+        console.log(response.data);
+        setImageName(response.data.url);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
-
-
   const handleOndragOver = (event: any) => {
     event.preventDefault();
   };
   const handleOndrop = (event: any) => {
     //prevent the browser from opening the image
     event.preventDefault();
-    event.stopPropagation();  
+    event.stopPropagation();
     //let's grab the image file
     const imageFile = event.dataTransfer.files[0];
     handleFile(imageFile);
@@ -62,39 +63,29 @@ const MainPage = () => {
     handleFile(imageFile);
   };
   const changeHandler = (e: any) => {
-    console.log(e)
+    console.log(e);
     const file = e.target.files[0];
     handleFile(file);
   };
-
   const getResult = async () => {
-
-   await axios
-        .get(
-          'http://localhost:8000/api/v1/plants/ais/',
-          { params : 
-            {picture : imageName,
-            type : plantIndex }
-        } 
-          )
-        .then((res) => {
-          if(res.data.disease_name === "정상"){
-            navigate("/nomalresult", { state: res.data });
-          }else{
-            navigate("/abnomalresult", { state: res.data });
-          }
-          
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    
-}
-
-const plantIndexHandler = (e:any) => {
-  setPlantIndex(e.target.value) // 작물 인덱스 
-}
-  
+    await axios
+      .get("http://localhost:80/api/v1/plants/ais/", {
+        params: { picture: imageName, type: plantIndex },
+      })
+      .then((res) => {
+        if (res.data.disease_name === "정상") {
+          navigate("/nomalresult", { state: res.data });
+        } else {
+          navigate("/nomalresult", { state: res.data });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const plantIndexHandler = (e: any) => {
+    setPlantIndex(e.target.value); // 작물 인덱스
+  };
   return (
     <div className="h-screen overflow-y-auto overflow-x-hidden bg-background bg-grass bg-no-repeat">
       <div id="navbar">
@@ -108,75 +99,82 @@ const plantIndexHandler = (e:any) => {
         >
           {/** 이미지 업로드 부분 시작 */}
           <div>
-          <div
-            id="upload-image-wrap"
-            className="lg:w-12/12 w-full lg:h-[700px]"
-          >
-            <select
-              name="plant"
-              id="plant"
-              className=" xl:ml-30 mt-12 ml-12 bg-background text-center font-bold md:ml-20 lg:ml-12"
-              onChange={plantIndexHandler}
-            >
-              <option value="-1">카테고리</option>
-              <option value="0">고추</option>
-              <option value="1">포도</option>
-              <option value="2">딸기</option>
-              <option value="3">오이</option>
-              <option value="4">파프리카</option>
-              <option value="5">토마토</option>
-            </select>
             <div
-              id="upload-image"
-              className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black bg-background md:mx-20 lg:mx-12 lg:h-[500px]"
+              id="upload-image-wrap"
+              className="lg:w-12/12 w-full lg:h-[700px]"
             >
-              <label htmlFor="drop_zone">
-                <div
-                  className="drop_zone relative flex h-full justify-center hover:cursor-pointer"
-                  onDragOver={handleOndragOver}
-                  onDrop={handleOndrop}
-                >
-                  {previewUrl ? (
-                    <div className="image flex justify-center">
-                      <img
-                        src={previewUrl}
-                        alt="image"
-                        className="max-h-[500px] w-full object-contain max-md:max-h-[392px]"
-                      />
-                    </div>
-                  ) : (
-                    <img
-                      src={uploadImage}
-                      className="h-full w-full object-scale-down"
-                    />
-                  )}
-                </div>
-                <input
-                  id="drop_zone"
-                  type="file"
-                  className="hidden"
-                  onChange={changeHandler}
-                  name="files"
-                />
-              </label>
-            </div>
-            <div
-              id="diagnose-button"
-              className="xl:px-30 mt-6 w-full px-12 text-center md:px-20 lg:px-12"
-            >
-              <button
-                className="h-10 w-full rounded-lg bg-button text-white"
-                 onClick={getResult}
+              <select
+                name="plant"
+                id="plant"
+                className=" xl:ml-30 mt-12 ml-12 bg-background text-center font-bold md:ml-20 lg:ml-12"
+                onChange={plantIndexHandler}
+                required
               >
-                <b>진단하기</b>
-              </button>
+                <option value="">카테고리</option>
+                <option value="0">고추</option>
+                <option value="1">포도</option>
+                <option value="2">딸기</option>
+                <option value="3">오이</option>
+                <option value="4">파프리카</option>
+                <option value="5">토마토</option>
+              </select>
+              <div
+                id="upload-image"
+                className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black bg-background md:mx-20 lg:mx-12 lg:h-[500px]"
+              >
+                <label htmlFor="drop_zone">
+                  <div
+                    className="drop_zone relative flex h-full justify-center hover:cursor-pointer"
+                    onDragOver={handleOndragOver}
+                    onDrop={handleOndrop}
+                  >
+                    {previewUrl ? (
+                      <div className="image flex justify-center">
+                        <img
+                          src={previewUrl}
+                          alt="image"
+                          className="max-h-[500px] w-full object-contain max-md:max-h-[392px]"
+                        />
+                      </div>
+                    ) : (
+                      <img
+                        src={uploadImage}
+                        className="h-full w-full object-scale-down"
+                      />
+                    )}
+                  </div>
+                  <input
+                    id="drop_zone"
+                    type="file"
+                    className="hidden"
+                    onChange={changeHandler}
+                    name="files"
+                  />
+                </label>
+              </div>
+              <div
+                id="diagnose-button"
+                className="xl:px-30 mt-6 w-full px-12 text-center md:px-20 lg:px-12"
+              >
+                {buttonOn ? (
+                  <button
+                    className="h-10 w-full rounded-lg bg-button text-white"
+                    onClick={getResult}
+                  >
+                    <b>진단하기</b>
+                  </button>
+                ) : (
+                  <button className="h-10 w-full cursor-default rounded-lg bg-gray-500 text-white">
+                    <b>진단하기</b>
+                  </button>
+                )}
+              </div>
+              <div
+                id="buttonwrap"
+                className="mt-5 flex flex-row justify-center"
+              ></div>
             </div>
-            <div
-              id="buttonwrap"
-              className="mt-5 flex flex-row justify-center"
-            ></div>
-          </div>
-          {/** 이미지 업로드 부분 끝 */}
+            {/** 이미지 업로드 부분 끝 */}
           </div>
           {/** 튜토리얼 부분 시작 */}
           <div
@@ -242,5 +240,4 @@ const plantIndexHandler = (e:any) => {
     </div>
   );
 };
-
 export default MainPage;
