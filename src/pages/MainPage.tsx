@@ -53,8 +53,8 @@ const MainPage = () => {
     event.preventDefault();
     event.stopPropagation();  
     //let's grab the image file
-    let imageFile = event.dataTransfer.files[0];
-    handleFile(imageFile); 
+    const imageFile = event.dataTransfer.files[0];
+    handleFile(imageFile);
   };
   // Q. 클릭했을 때 드래그, 드롭부분과 함께
   const handleClick = (event: any) => {
