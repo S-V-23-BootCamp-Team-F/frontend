@@ -36,7 +36,7 @@ const MainPage = () => {
     formData.append("picture", file);
     await axios({
       method: "post",
-      url: "http://localhost:8000/api/v1/plants/pictures/",
+      url: "http://54.250.133.67/api/v1/plants/pictures/",
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
