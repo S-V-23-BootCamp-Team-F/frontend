@@ -11,7 +11,7 @@ const HistoryPage = () => {
   //데이터 가져올 함수 정의
   useEffect(() => {
     (async () => { //
-      await axios.get('http://localhost:8000/api/v1/plants/histories/', { // 요청
+      await axios.get('http://54.250.133.67/v1/plants/histories/', { // 요청
         params:{
           email: email,
         }
