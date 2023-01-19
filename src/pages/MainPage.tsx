@@ -51,7 +51,7 @@ const MainPage = () => {
       });
   };
 
-  const handleOndragOver = (event: any) => {
+  const handleOndragOver: React.DragEventHandler<HTMLDivElement> = (event) => {
     event.preventDefault();
   };
   const handleOndrop = (event: any) => {
