@@ -3,17 +3,14 @@ import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
 import { FileUploader } from "react-drag-drop-files";
-
 // images
 import uploadImage from "src/images/uploadImage.svg";
 import bgImage from "src/images/bgImage.svg";
-
 // exampleimages
 import example1 from "src/images/example1.png";
 import example2 from "src/images/example2.png";
 import example3 from "src/images/example3.png";
 import axios from "axios";
-
 const MainPage = () => {
   const [imageName, setImageName] = useState<any>(null);
   const [plantIndex, setPlantIndex] = useState<Number>(-1);
@@ -21,7 +18,6 @@ const MainPage = () => {
   const [previewUrl, setPreviewUrl] = useState("");
   const [buttonOn, setButtonOn] = useState(false);
   const navigate = useNavigate();
-
   const handleFile = async (file: any) => {
     if (plantIndex === -1) {
       alert("카테고리를 선택해 주세요");
@@ -36,7 +32,7 @@ const MainPage = () => {
     formData.append("picture", file);
     await axios({
       method: "post",
-      url: "http://54.250.133.67/api/v1/plants/pictures/",
+      url: "http://localhost:80/api/v1/plants/pictures/",
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
@@ -50,7 +46,6 @@ const MainPage = () => {
         console.log(error);
       });
   };
-
   const handleOndragOver = (event: any) => {
     event.preventDefault();
   };
@@ -72,28 +67,25 @@ const MainPage = () => {
     const file = e.target.files[0];
     handleFile(file);
   };
-
   const getResult = async () => {
     await axios
-      .get("http://54.250.133.67/api/v1/plants/ais/", {
+      .get("http://localhost:80/api/v1/plants/ais/", {
         params: { picture: imageName, type: plantIndex },
       })
       .then((res) => {
         if (res.data.disease_name === "정상") {
           navigate("/nomalresult", { state: res.data });
         } else {
-          navigate("/abnomalresult", { state: res.data });
+          navigate("/nomalresult", { state: res.data });
         }
       })
       .catch((error) => {
         console.log(error);
       });
   };
-
   const plantIndexHandler = (e: any) => {
     setPlantIndex(e.target.value); // 작물 인덱스
   };
-
   return (
     <div className="h-screen overflow-y-auto overflow-x-hidden bg-background bg-grass bg-no-repeat">
       <div id="navbar">
@@ -160,7 +152,6 @@ const MainPage = () => {
                   />
                 </label>
               </div>
-
               <div
                 id="diagnose-button"
                 className="xl:px-30 mt-6 w-full px-12 text-center md:px-20 lg:px-12"
@@ -249,5 +240,4 @@ const MainPage = () => {
     </div>
   );
 };
-
 export default MainPage;

@@ -7,8 +7,8 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 
 const NomalResultPage = () => {
-  const { state } = useLocation();
-  console.log(state)
+  const location = useLocation();
+  // console.log(state);
 
   return (
     // 전체
@@ -19,7 +19,10 @@ const NomalResultPage = () => {
       <div className="mt-40 flex flex-col place-content-evenly content-center items-center px-12 pt-4 md:flex-row ">
         {/* 왼쪽 */}
         <div className="flex items-center ">
-          <img src={tomato2} className="h-356 w-600 rounded-xl object-cover" />
+          <img
+            src={location.state.url}
+            className="h-356  w-600  rounded-xl object-cover"
+          />
         </div>
         {/* 오른쪽 */}
         <div className="place-content-center text-center md:text-left lg:text-left">
@@ -30,7 +33,7 @@ const NomalResultPage = () => {
           </div>
           <img src={nomal} className="h-356 w-600 object-contain" />
           <div className="mt-24 font-kor-bold text-2xl md:text-left lg:text-left">
-            우리의 작물은 건강합니다.
+            우리의 {location.state.plant_name}는 건강합니다.
           </div>
         </div>
       </div>
