@@ -13,7 +13,7 @@ const HistoryPage = () => {
     (async () => { //
       await axios.get('http://54.250.133.67/api/v1/plants/histories/', { // 요청
         params:{
-          email: email,
+          email: decodeURI(email),
         }
       })
       .then((res) => {
