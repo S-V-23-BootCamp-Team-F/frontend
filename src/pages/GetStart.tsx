@@ -46,7 +46,7 @@ const GetStart = () => {
               className={openTab === 2 ? "block px-20" : "hidden px-20"}
               id="signup"
             >
-              <SignupPage />
+              <SignupPage setTap = {setOpenTap}/>
             </div>
           </div>
         </div>

@@ -2,9 +2,10 @@ import React,{useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
 import axios from "axios";
 
-const SignupPage = () =>{
+const SignupPage = (props : any) =>{
 
     const {register, handleSubmit, formState: {errors}, watch} = useForm();
+    const setTap = props.setTap;
 
     const onSubmit = async (data:any) => { 
         console.log(data);
@@ -18,6 +19,8 @@ const SignupPage = () =>{
                     if(res.status===201){
                         console.log(res.data)
                         alert('회원가입 성공');
+                        setTap(1)
+
                     }else{
                         alert('이미 존재한 회원입니다')
                     }
