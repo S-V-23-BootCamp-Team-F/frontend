@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Diseased from "src/components/Diseased";
+import Historycard from "src/components/Historycard";
 import Navbar from "src/components/Navbar";
 import axios from "axios"
 
@@ -33,7 +33,7 @@ return (
       <div className="flex flex-col items-center">
         <div className="flex flex-wrap">
           {history.map((item:any, index:number) => (
-             (<Diseased items={item} key={index}/>)
+             (<Historycard items={item} key={index}/>)
           ))
           }
         </div>

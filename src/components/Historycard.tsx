@@ -1,7 +1,7 @@
 import React from "react";
 import Delete from "src/images/delete.svg";
 
-function Diseased(props : any) {
+function Historycard(props : any) {
     console.log(props.items)
     {
         return (
@@ -26,4 +26,4 @@ function Diseased(props : any) {
     }
 }
 
-export default Diseased;
+export default Historycard;
