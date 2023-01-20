@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Healthy from "src/components/Healthy";
 import Diseased from "src/components/Diseased";
 import Navbar from "src/components/Navbar";
 import axios from "axios"
 
 const HistoryPage = () => {
- const [history,setHistory] = useState([])
+  const [history,setHistory] = useState([])
   const email = "test3@gmail.com";
 
   //데이터 가져올 함수 정의
