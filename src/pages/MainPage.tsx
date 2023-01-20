@@ -73,10 +73,11 @@ const MainPage = () => {
         params: { picture: imageName, type: plantIndex },
       })
       .then((res) => {
+        console.log(res.data)
         if (res.data.disease_name === "정상") {
           navigate("/nomalresult", { state: res.data });
         } else {
-          navigate("/nomalresult", { state: res.data });
+          navigate("/abnomalresult", { state: res.data });
         }
       })
       .catch((error) => {
