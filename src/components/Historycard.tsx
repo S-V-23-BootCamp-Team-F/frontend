@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Deletebutton from "src/components/Deletebutton";
 import axios from "axios"
 
 
 function Historycard(props : any) {
+    const [check,setCheck] = useState(false);
     console.log(props.items)
     {
         return (
@@ -12,8 +13,15 @@ function Historycard(props : any) {
                     {/*삭제버튼*/}
                     <Deletebutton
                     className="m-auto mt-2 mr-2"
-                    onClick={() => axios.delete(`http://54.250.133.67/api/v1/plants/histories/${props.items.id}/`)
-                                .then(res => {console.log(res);})} />
+                    onClick={() => axios.delete(`http://18.179.229.39/api/v1/plants/histories/${props.items.id}/`)
+                    .then((res) => {
+                        console.log(res)
+                        setCheck(true)
+                      })
+                    .catch((error) => {
+                        console.log(error);
+                        alert('Deleting history failed');
+                       })} />
                     {/*이미지*/}
                     <img className="w-80 h-52 object-fit rounded-lg absolute" src={props.items.result_picture}/>
                 </div>
