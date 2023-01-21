@@ -6,6 +6,7 @@ import axios from "axios"
 const HistoryPage = () => {
   const [history,setHistory] = useState([])
   const email = "test3@gmail.com";
+  const reversed = [...history].reverse();
 
   //데이터 가져올 함수 정의
   useEffect(() => {
@@ -32,7 +33,7 @@ return (
     <div className="flex flex-col pt-32">
       <div className="flex flex-col items-center">
         <div className="flex flex-wrap">
-          {history.map((item:any, index:number) => (
+          {reversed.map((item:any, index:number) => (
              (<Historycard items={item} key={index}/>)
           ))
           }
