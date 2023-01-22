@@ -1,7 +1,7 @@
+import axios from "axios";
 import React, { useRef, useState } from "react";
 import "tailwindcss/tailwind.css";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const LogInPage = () => {
@@ -30,15 +30,17 @@ const LogInPage = () => {
 
         // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
         axios.defaults.headers.common[
-          "Authorization"
+          "authorization"
         ] = `Bearer ${accessToken}`;
+        return res.data;
 
-        navigate("/")
+        // navigate("/");
 
         // accessToken을 localStorage, cookie 등에 저장하지 않는다!
       })
       .catch((err) => {
         console.log(err);
+        return "이메일 혹은 비밀번호를 확인하세요.";
       });
   };
 
