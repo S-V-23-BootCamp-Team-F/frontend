@@ -1,15 +1,14 @@
 import React from "react";
-import tomato from "src/images/tomato.jpg";
+import { useLocation } from "react-router-dom";
 import tomato2 from "src/images/tomato2.jpg";
 import tomato3 from "src/images/tomato3.jpg";
 import die from "src/images/dietomato.png";
-import "src/media.css";
 import Navbar from "src/components/Navbar";
-import { useLocation } from "react-router-dom";
+import "src/media.css";
 
 const ResultPage = () => {
   const { state } = useLocation();
-  console.log(state)
+  console.log(state);
   return (
     // 전체
     <div className="relative flex max-h-screen w-screen flex-col overflow-y-auto bg-background bg-grass bg-no-repeat">
