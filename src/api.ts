@@ -8,7 +8,7 @@ axios.interceptors.response.use(
     return response;
   },
   function (error) {
-    console.log("401- 권한에러 쿠키업쪄염");
+    console.log("403- 권한에러 쿠키업쪄염");
     //⚡️오류 응답을 처리⚡️
     // 여기다 리프레쉬 유무의 요청 api를 보내면됨
     // true 면 엑세스 발급
