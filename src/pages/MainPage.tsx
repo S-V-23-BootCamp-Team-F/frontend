@@ -13,7 +13,7 @@ import example3 from "src/images/example3.png";
 import axios from "axios";
 const MainPage = () => {
   const [imageName, setImageName] = useState<any>(null);
-  const [plantIndex, setPlantIndex] = useState<Number>(-1);
+  const [plantIndex, setPlantIndex] = useState<number>(-1);
   const [image, setImage]: any = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
   const [buttonOn, setButtonOn] = useState(false);
@@ -73,7 +73,7 @@ const MainPage = () => {
         params: { picture: imageName, type: plantIndex },
       })
       .then((res) => {
-        console.log(res.data)
+        console.log(res.data);
         if (res.data.disease_name === "정상") {
           navigate("/nomalresult", { state: res.data });
         } else {
