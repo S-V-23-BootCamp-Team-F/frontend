@@ -102,20 +102,20 @@ const MainPage = () => {
         {/* 세로정렬, 너비 꽉차게, 중앙정렬, 상단 패딩, lg너비 이상일 때 가로정렬 */}
         <div
           id="main-wrap"
-          className="flex w-full flex-col justify-center pt-28 lg:flex-row"
+          className="flex w-full flex-col justify-center pt-16 lg:flex-row"
         >
           {/** 이미지 업로드 부분 시작 */}
           {/* 너비, 높이 지정 */}
           <div
             id="upload-image-wrap"
-            className=" mt-8 max-lg:mt-24 max-sm:mt-12 lg:h-[700px] lg:w-5/12"
+            className=" mt-8 max-lg:mt-24 max-sm:mt-12 lg:h-[700px] lg:w-6/12"
           >
             <div>
               {/* select css 속성 지정 margin top, 테두리 둥글게, border, 글자 속성 */}
               <select
                 name="plant"
                 id="plant"
-                className=" my-6 ml-12 w-5/12 items-center rounded-md bg-button text-center text-3xl font-bold text-white md:ml-20 lg:ml-12 "
+                className=" my-3 mt-3 ml-12 w-3/12 items-center rounded-md bg-button py-1 text-center text-xl text-white md:ml-20 lg:ml-12 lg:mt-8"
                 onChange={plantIndexHandler}
                 required
               >
@@ -176,13 +176,13 @@ const MainPage = () => {
                 {/* 버튼이 활성화 될 만한 상황인 지 파악하여 활성/비활성화시키는 부분 */}
                 {buttonOn ? (
                   <button
-                    className="h-10 w-full rounded-lg bg-button text-white"
+                    className="mt-6 h-10 w-full rounded-lg bg-button text-white"
                     onClick={getResult}
                   >
                     <b>진단하기</b>
                   </button>
                 ) : (
-                  <button className="h-10 w-full cursor-default rounded-lg bg-gray-500 text-white">
+                  <button className="mt-6 h-10 w-full cursor-default rounded-lg bg-gray-500 text-white">
                     <b>진단하기</b>
                   </button>
                 )}
@@ -198,14 +198,20 @@ const MainPage = () => {
             <>
               <div className="mr-24 md:mr-40 lg:mr-12 xl:mr-20">
                 <b>Explanation</b> <br />
+                <div className="mt-2" />
                 식물의 이상 부위를 분석해 질병 및 방제방법을 알려줍니다
                 <br />
-                <br />
+                <div className="mt-4" />
                 <b>Flow</b> <br />
+                <div className="mt-2" />
                 1. 식물의 이상 부위로 의심되는 곳을 촬영합니다 <br />
+                <div className="mt-1" />
                 2. 사진 붙히는 곳 위에 식물 카테고리를 선택합니다 <br />
+                <div className="mt-1" />
                 3. 촬영한 사진을 업로드 합니다 <br />
+                <div className="mt-1" />
                 4. <b>&quot;진단하기&quot;</b> 버튼을 누르고 기다립니다 <br />
+                <div className="mt-1" />
                 5. 분석된 정보를 바탕으로 작물에게 조치를 해 주시면 됩니다{" "}
                 <br />
                 <br />
@@ -215,7 +221,7 @@ const MainPage = () => {
               <b>Expectation</b>
               <div
                 id="expectation-wrap"
-                className="mr-24 box-border flex flex-row rounded-xl border-2 border-button md:mr-40 lg:mr-12 xl:mr-20"
+                className="mr-20 box-border flex flex-row rounded-xl border-2 border-button md:mr-40 lg:mr-8 xl:mr-16"
               >
                 <div className="w-1/2 px-4 sm:w-fit">
                   <div className="flex justify-center p-4">
@@ -228,7 +234,7 @@ const MainPage = () => {
                 </div>
                 <div
                   id="expectation-text"
-                  className="ml-8 flex flex-col justify-center"
+                  className="ml-8 flex flex-col justify-center text-lg"
                 >
                   <br />
                   <div className=" font-bold ">원인</div>
