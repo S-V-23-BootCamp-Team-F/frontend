@@ -7,7 +7,7 @@ axios.interceptors.response.use(
   async (err: AxiosError) => {
     if (err.response?.status === 401 && !refresh) {
       refresh = true;
-      const response = await axios.get("auth/refresh", {
+      const response = await axios.get("members/login/refresh/", {
         withCredentials: true,
       });
       if (response.status === 200) {
