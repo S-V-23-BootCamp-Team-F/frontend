@@ -115,7 +115,7 @@ const MainPage = () => {
               <select
                 name="plant"
                 id="plant"
-                className=" mt-12 ml-12 rounded-md border-4 border-slate-400 bg-slate-200 text-center text-2xl font-bold md:ml-20 lg:ml-12 "
+                className=" mt-12 ml-12 rounded-md border-4 border-green-400 bg-green-200 text-center text-2xl font-bold md:ml-20 lg:ml-12 "
                 onChange={plantIndexHandler}
                 required
               >
@@ -171,7 +171,7 @@ const MainPage = () => {
               {/* AI에게 분석 요청을 보내고 결과를 받아오는 버튼 */}
               <div
                 id="diagnose-button"
-                className="xl:px-30 mt-6 w-full px-12 text-center md:px-20 lg:px-12"
+                className="xl:px-30 mt-6 w-full px-12 text-center text-2xl md:px-20 lg:px-12"
               >
                 {/* 버튼이 활성화 될 만한 상황인 지 파악하여 활성/비활성화시키는 부분 */}
                 {buttonOn ? (

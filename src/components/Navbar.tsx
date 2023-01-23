@@ -95,7 +95,7 @@ function Navbar() {
                   className="mt-8 mr-4 h-16 w-16"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  stroke="green"
                 >
                   <path
                     strokeLinecap="round"
@@ -110,7 +110,7 @@ function Navbar() {
                   className="mt-8 mr-4 h-16 w-16"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  stroke="green"
                 >
                   <path
                     strokeLinecap="round"
