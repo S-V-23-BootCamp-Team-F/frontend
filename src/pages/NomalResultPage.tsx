@@ -21,7 +21,7 @@ const NomalResultPage = () => {
         <div className="flex items-center ">
           <img
             src={location.state.url}
-            className="h-356  w-600  rounded-xl object-cover"
+            className="h-356 w-600 rounded-xl object-cover"
           />
         </div>
         {/* 오른쪽 */}
