@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 
 const ResultPage = () => {
   const location = useLocation();
-  console.log(location)
+  console.log(location);
 
   return (
     // 전체
@@ -18,15 +18,15 @@ const ResultPage = () => {
       <Navbar />
 
       {/* 본문 */}
-      <div className="flex flex-col place-content-evenly items-center px-12 pt-4 md:flex-row ">
+      <div className="flex flex-col  place-content-evenly items-center px-12 pt-4 md:flex-row ">
         {/* 본문 왼쪽 */}
-        <div className="content-center pt-24">
+        <div className="mt-28">
           <div className="flex flex-col ">
             <img
               src={location.state.result_url}
               className="sub_tomato1 h-356 w-600 rounded-xl object-cover"
             />
-            <div className="mt-2  flex flex-col items-center font-kor-bold text-xl  ">
+            <div className="mt-2 flex flex-col items-center font-kor-bold text-xl  ">
               {location.state.disease_name}
             </div>
           </div>
@@ -47,18 +47,18 @@ const ResultPage = () => {
           </div>
         </div>
         {/* 본문 오른쪽 */}
-        <div className="pl-4 pt-24">
+        <div className=" mt-32 content-center">
           <div className="">
             <div className="font-kor-bold text-2xl">
               진단결과&nbsp;&nbsp;
               <span className="font-kor-bold text-disease">
-              {location.state.disease_name}
+                {location.state.disease_name}
               </span>
               으로 의심됩니다.
             </div>
             <div className="flex">
               <img src={die} className="die_tomato"></img>
-              <div className="flex place-items-end font-kor-medium">
+              <div className="ml-3 flex place-items-end font-kor-medium">
                 우리의 {location.state.plant_name}는 가셨습니다..
               </div>
             </div>
@@ -66,20 +66,20 @@ const ResultPage = () => {
           <div className="mt-10">
             <div className="place-content-between">
               <div className="mb-2 font-eng-bold text-2xl">Causation</div>
-              <div className="font-kor-regula mb-7 h-130 max-w-2xl overflow-y-auto border-black text-xl">
+              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
                 {location.state.feature}
               </div>
             </div>
             <div>
               <div className="mb-2 font-eng-bold text-2xl">Symptom</div>
               <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
-              {location.state.plant_explaination}
+                {location.state.plant_explaination}
               </div>
             </div>
             <div>
               <div className="mb-2  font-eng-bold text-2xl">Cure</div>
               <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
-              {location.state.solution}
+                {location.state.solution}
               </div>
             </div>
           </div>
