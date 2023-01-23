@@ -51,7 +51,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div className="flex max-sm:flex-col-reverse">
+      <div className="fixed flex max-sm:flex-col-reverse">
         <>
           {/** hamburger */}
           <div
@@ -91,7 +91,7 @@ function Navbar() {
               {menuToggle ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10"
+                  className="mt-5 mr-2 h-20 w-20"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -106,7 +106,7 @@ function Navbar() {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10"
+                  className="mt-5 mr-2 h-20 w-20"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
