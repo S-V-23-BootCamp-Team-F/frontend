@@ -32,7 +32,7 @@ const MainPage = () => {
     formData.append("picture", file);
     await axios({
       method: "post",
-      url: "http://localhost:80/api/v1/plants/pictures/",
+      url: "http://18.179.229.39/api/v1/plants/pictures/",
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
@@ -69,10 +69,11 @@ const MainPage = () => {
   };
   const getResult = async () => {
     await axios
-      .get("http://localhost:80/api/v1/plants/ais/", {
+      .get("http://18.179.229.39/api/v1/plants/ais/", {
         params: { picture: imageName, type: plantIndex },
       })
       .then((res) => {
+        console.log(res.data)
         if (res.data.disease_name === "정상") {
           navigate("/nomalresult", { state: res.data });
         } else {

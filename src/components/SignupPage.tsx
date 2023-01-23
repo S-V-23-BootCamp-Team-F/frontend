@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
-const SignupPage = () => {
+
+const SignupPage = (props: any) => {
   const {
     register,
     handleSubmit,
@@ -10,11 +11,13 @@ const SignupPage = () => {
     watch,
   } = useForm();
 
+  const setTap = props.setTap;
+
   const onSubmit = async (data: any) => {
     console.log(data);
     if (data !== undefined) {
       await axios
-        .post("http://localhost:8000/api/v1/members/signup/", {
+        .post("http://18.179.229.39/api/v1/members/signup/", {
           params: {
             email: data.email,
             password: data.password,
@@ -24,6 +27,7 @@ const SignupPage = () => {
           if (res.status === 201) {
             console.log(res.data);
             alert("회원가입 성공");
+            setTap(1);
           } else {
             alert("이미 존재한 회원입니다");
           }

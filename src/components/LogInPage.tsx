@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import "tailwindcss/tailwind.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LogInPage = () => {
   const {
@@ -11,6 +12,8 @@ const LogInPage = () => {
     watch,
   } = useForm();
 
+  const navigate = useNavigate();
+
   // 토큰을 쿠키에 저장하면됨 이거는
   const onSubmit = (data: any) => {
     const datas = {
@@ -18,7 +21,7 @@ const LogInPage = () => {
       password: data.password,
     };
     axios
-      .post("http://localhost:80/api/v1/members/login/", datas, {
+      .post("http://18.179.229.39/api/v1/members/login/", datas, {
         withCredentials: true, //끅끠를 주고받는 명령어
       })
       .then((res) => {
@@ -30,37 +33,14 @@ const LogInPage = () => {
           "Authorization"
         ] = `Bearer ${accessToken}`;
 
+        navigate("/")
+
         // accessToken을 localStorage, cookie 등에 저장하지 않는다!
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
-  // // 데이터 전송시 작동할 함수 정의
-  // const onSubmit = (data: any) => {
-  //   console.log(data);
-  //   if (data !== undefined) {
-  //     console.log("서버 로그인");
-  //     axios
-  //       .post("/api/v1/members/login", {
-  //         params: {
-  //           email: data.email,
-  //           password: data.password,
-  //         },
-  //       })
-  //       .then((res) => {
-  //         if (res.status === 200) {
-  //           alert("로그인 성공");
-  //         } else {
-  //           alert("로그인 실패");
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }
-  // };
 
   return (
     <div>
@@ -108,12 +88,6 @@ const LogInPage = () => {
             placeholder="Enter your Password"
             {...register("password", {
               required: "required",
-              // pattern: {
-              //   value:
-              //     /(?=.*\d{1,50})(?=.*[~`!@#$%^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,16}$/,
-              //   message:
-              //     "비밀번호를 8~16자로 영문 대소문자, 숫자, 특수기호를 조합해서 사용하세요. ",
-              // },
             })}
           />
           <div className="mt-px text-red-600">
