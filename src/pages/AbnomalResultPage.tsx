@@ -8,7 +8,7 @@ import Navbar from "src/components/Navbar";
 import { useLocation } from "react-router-dom";
 
 
-const ResultPage = () => {
+const AbnomalResultPage = () => {
   const location = useLocation();
   console.log(location);
 
@@ -94,4 +94,4 @@ const ResultPage = () => {
   );
 };
 
-export default AbnomalResult;
+export default AbnomalResultPage;

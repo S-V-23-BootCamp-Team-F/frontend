@@ -6,6 +6,8 @@ import axios from "axios"
 function Historycard(props : any) {
     const [check,setCheck] = useState(false);
     console.log(props.items)
+    let historyDate:string = props.items.created_at;
+    let resultDate:string = historyDate.substr(0,10)
     {
         return (
             <main className="m-auto w-80 h-80">
@@ -35,7 +37,7 @@ function Historycard(props : any) {
                         {props.items.disease.name === '정상' ? <span className="text-xl font-press-medium text-button">정상</span>:props.items.disease.name}
                     </span>
                     {/*날짜*/}
-                    <span className="text-xl font-press-medium">{props.items.created_at}</span>
+                    <span className="text-xl font-press-medium">{resultDate}</span>
                 </div>
             </main>
         )
