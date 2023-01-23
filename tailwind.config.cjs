@@ -34,8 +34,11 @@ module.exports = {
         grass: "url('src/images/grass.svg')",
         startImg: "url('images/backImg.svg')",
         diagnosis: "url('images/diagnosis.svg')",
+        diagnosis_hover: "url('images/diagnosis_hover.svg')",
         login: "url('images/login.svg')",
+        login_hover: "url('images/login_hover.svg')",
         history: "url('images/history.svg')",
+        history_hover: "url('images/history_hover.svg')",
       },
       fontSize: {
         10: "10px",

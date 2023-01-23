@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 import logo from "src/images/logo.svg";
 import hamburger from "src/images/hamburger.svg";
-import login from "src/images/login.svg";
-import diagnosis from "src/images/diagnosis.svg";
-import history from "src/images/history.svg";
+import login_hover from "src/images/login_hover.svg";
+import diagnosis_hover from "src/images/diagnosis_hover.svg";
+import history_hover from "src/images/history_hover.svg";
 
 function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -63,15 +63,15 @@ function Navbar() {
             )}
           >
             <div className="mt-20 px-10 text-center">
-              <div className="mt-8 flex h-20 w-20 bg-diagnosis" />
+              <div className="mt-8 h-20 w-20 bg-diagnosis hover:cursor-pointer"></div>
               <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
                 Diagnosis
               </div>
-              <div className="mt-8 flex h-20 w-20 bg-history" />
+              <div className="mt-8 h-20 w-20 bg-history" />
               <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
                 Histories
               </div>
-              <div className="mt-8 flex h-20 w-20 justify-center bg-login" />
+              <div className="mt-8 h-20 w-20 bg-login" />
               <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
                 Logout
               </div>
