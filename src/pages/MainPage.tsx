@@ -106,7 +106,10 @@ const MainPage = () => {
         >
           {/** 이미지 업로드 부분 시작 */}
           {/* 너비, 높이 지정 */}
-          <div id="upload-image-wrap" className=" lg:h-[700px] lg:w-5/12">
+          <div
+            id="upload-image-wrap"
+            className=" max-lg:mt-24 max-sm:mt-12 lg:h-[700px] lg:w-5/12"
+          >
             <div>
               {/* select css 속성 지정 margin top, 테두리 둥글게, border, 글자 속성 */}
               <select
@@ -225,18 +228,18 @@ const MainPage = () => {
                   className="flex flex-col justify-center"
                 >
                   <br />
-                  <div className=" font ">원인</div>
-                  <div className=" font ">
+                  <div className=" font-bold ">원인</div>
+                  <div className=" font mt-2">
                     이 질병은 &quot;어떠한 이유&quot;로 인해 발생해요
                   </div>
                   <br />
-                  <div className=" font">질병</div>
-                  <div className=" font mt-1">
+                  <div className=" font-bold">질병</div>
+                  <div className=" font mt-2">
                     이 질병은 &quot;이런 증상&quot;을 나타내요
                   </div>
                   <br />
-                  <div className=" font">치료</div>
-                  <div className=" font mt-1 ">
+                  <div className=" font-bold">치료</div>
+                  <div className=" font mt-2w ">
                     이 질병은 &quot;이런 방법&quot;으로 치료해야 해요
                   </div>
                   <br />
