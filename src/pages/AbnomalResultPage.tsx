@@ -49,7 +49,7 @@ const ResultPage = () => {
           </div>
         </div>
         {/* 본문 오른쪽 */}
-        <div className="max-md:pt mr-40 ml-[-40px] content-center pt-12 max-sm:pt-28">
+        <div className="mr-40 ml-[-40px] content-center pt-12 max-md:pt-28 max-sm:pt-28">
           <div className="">
             <div className="font-kor-bold text-2xl">
               진단결과&nbsp;&nbsp;
