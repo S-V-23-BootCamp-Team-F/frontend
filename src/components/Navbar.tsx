@@ -64,19 +64,19 @@ function Navbar() {
           >
             <div className="mt-20 flex flex-col px-10 text-center">
               {/* group을 이용하여 하나로 묶은 뒤 group: 을 이용하여 동시에 작동시키려하는 작업 작성 */}
-              <div className="group pb-2 hover:pb-1.5">
+              <div className="group pb-2 hover:pb-1">
                 <div className="mt-8 h-20 w-20 bg-diagnosis hover:cursor-pointer group-hover:bg-diagnosis_hover" />
                 <div className=" cursor-pointer hover:mb-0 group-hover:border-b-2 group-hover:border-button group-hover:text-button">
                   Diagnosis
                 </div>
               </div>
-              <div className="group pb-2 hover:pb-1.5">
+              <div className="group pb-2 hover:pb-1">
                 <div className="mt-8 h-20 w-20 bg-history hover:cursor-pointer group-hover:bg-history_hover" />
                 <div className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
                   Histories
                 </div>
               </div>
-              <div className="group pb-2 hover:pb-1.5">
+              <div className="group pb-2 hover:pb-1">
                 <div className="mt-8 h-20 w-20 bg-login hover:cursor-pointer group-hover:bg-login_hover" />
                 <div className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
                   Logout
@@ -92,7 +92,7 @@ function Navbar() {
               {menuToggle ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="mt-5 mr-2 h-20 w-20"
+                  className="mt-8 mr-4 h-16 w-16"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -107,7 +107,7 @@ function Navbar() {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="mt-5 mr-2 h-20 w-20"
+                  className="mt-8 mr-4 h-16 w-16"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
