@@ -21,7 +21,7 @@ const ResultPage = () => {
       <div className="flex flex-col  place-content-evenly items-center px-12 pt-4 md:flex-row ">
         {/* 본문 왼쪽 */}
         <div className="mt-28">
-          <div className="flex flex-col ">
+          <div className="mr-14 flex flex-col">
             <img
               src={location.state.result_url}
               className="sub_tomato1 h-356 w-600 rounded-xl object-cover"
@@ -47,7 +47,7 @@ const ResultPage = () => {
           </div>
         </div>
         {/* 본문 오른쪽 */}
-        <div className=" mt-32 content-center">
+        <div className=" mt-32 mr-40 ml-[-40px] content-center">
           <div className="">
             <div className="font-kor-bold text-2xl">
               진단결과&nbsp;&nbsp;
@@ -59,7 +59,7 @@ const ResultPage = () => {
             <div className="flex">
               <img src={die} className="die_tomato"></img>
               <div className="ml-3 flex place-items-end font-kor-medium">
-                우리의 {location.state.plant_name}는 가셨습니다..
+                우리의 {location.state.plant_name}는 가셨습니다...
               </div>
             </div>
           </div>
