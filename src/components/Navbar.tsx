@@ -63,21 +63,15 @@ function Navbar() {
             )}
           >
             <div className="mt-20 px-10 text-center">
-              <div className="mt-8 flex justify-center">
-                <img src={diagnosis} />
-              </div>
+              <div className="mt-8 flex h-20 w-20 bg-diagnosis" />
               <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
                 Diagnosis
               </div>
-              <div className="mt-8 flex justify-center">
-                <img src={history} />
-              </div>
+              <div className="mt-8 flex h-20 w-20 bg-history" />
               <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
                 Histories
               </div>
-              <div className="mt-8 flex justify-center">
-                <img src={login} />
-              </div>
+              <div className="mt-8 flex h-20 w-20 justify-center bg-login" />
               <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
                 Logout
               </div>
