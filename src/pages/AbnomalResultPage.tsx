@@ -13,7 +13,7 @@ const ResultPage = () => {
 
   return (
     // 전체
-    <div className="relative flex max-h-screen w-screen flex-col overflow-y-auto bg-background bg-grass bg-no-repeat">
+    <div className="flex min-h-screen w-screen flex-col overflow-y-auto bg-background bg-grass bg-no-repeat">
       {/* nav바 */}
       <Navbar />
 
