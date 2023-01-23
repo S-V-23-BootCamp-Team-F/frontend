@@ -108,14 +108,14 @@ const MainPage = () => {
           {/* 너비, 높이 지정 */}
           <div
             id="upload-image-wrap"
-            className=" max-lg:mt-24 max-sm:mt-12 lg:h-[700px] lg:w-5/12"
+            className=" mt-8 max-lg:mt-24 max-sm:mt-12 lg:h-[700px] lg:w-5/12"
           >
             <div>
               {/* select css 속성 지정 margin top, 테두리 둥글게, border, 글자 속성 */}
               <select
                 name="plant"
                 id="plant"
-                className=" mt-12 ml-12 rounded-md border-4 border-green-400 bg-green-200 text-center text-2xl font-bold md:ml-20 lg:ml-12 "
+                className=" my-6 ml-12 w-5/12 items-center rounded-md bg-button text-center text-3xl font-bold text-white md:ml-20 lg:ml-12 "
                 onChange={plantIndexHandler}
                 required
               >
@@ -228,7 +228,7 @@ const MainPage = () => {
                 </div>
                 <div
                   id="expectation-text"
-                  className="flex flex-col justify-center"
+                  className="ml-8 flex flex-col justify-center"
                 >
                   <br />
                   <div className=" font-bold ">원인</div>
