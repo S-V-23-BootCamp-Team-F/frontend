@@ -63,17 +63,24 @@ function Navbar() {
             )}
           >
             <div className="mt-20 px-10 text-center">
-              <div className="mt-8 h-20 w-20 bg-diagnosis hover:cursor-pointer"></div>
-              <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
-                Diagnosis
+              {/* group을 이용하여 하나로 묶은 뒤 group: 을 이용하여 동시에 작동시키려하는 작업 작성 */}
+              <div className="group">
+                <div className="mt-8 h-20 w-20 bg-diagnosis hover:cursor-pointer group-hover:bg-diagnosis_hover" />
+                <div className="cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
+                  Diagnosis
+                </div>
               </div>
-              <div className="mt-8 h-20 w-20 bg-history" />
-              <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
-                Histories
+              <div className="group">
+                <div className="mt-8 h-20 w-20 bg-history hover:cursor-pointer group-hover:bg-history_hover" />
+                <div className="cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
+                  Histories
+                </div>
               </div>
-              <div className="mt-8 h-20 w-20 bg-login" />
-              <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
-                Logout
+              <div className="group">
+                <div className="mt-8 h-20 w-20 bg-login hover:cursor-pointer group-hover:bg-login_hover" />
+                <div className="cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
+                  Logout
+                </div>
               </div>
             </div>
           </div>
