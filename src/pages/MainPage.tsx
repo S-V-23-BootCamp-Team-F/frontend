@@ -196,17 +196,20 @@ const MainPage = () => {
             className=" mt-[62px] ml-12 pb-40 text-3xl md:ml-20 lg:ml-12 lg:h-[700px] lg:w-1/2 xl:text-xl"
           >
             <>
-              <b>Explanation</b> <br />
-              식물의 이상 부위를 분석해 질병 및 방제방법을 알려줍니다
-              <br />
-              <br />
-              <b>Flow</b> <br />
-              1. 식물의 이상 부위로 의심되는 곳을 촬영합니다 <br />
-              2. 사진 붙히는 곳 위에 식물 카테고리를 선택합니다 <br />
-              3. 촬영한 사진을 업로드 합니다 <br />
-              4. <b>&quot;진단하기&quot;</b> 버튼을 누르고 기다립니다 <br />
-              5. 분석된 정보를 바탕으로 작물에게 조치를 해 주시면 됩니다 <br />
-              <br />
+              <div className="mr-24 md:mr-40 lg:mr-12 xl:mr-20">
+                <b>Explanation</b> <br />
+                식물의 이상 부위를 분석해 질병 및 방제방법을 알려줍니다
+                <br />
+                <br />
+                <b>Flow</b> <br />
+                1. 식물의 이상 부위로 의심되는 곳을 촬영합니다 <br />
+                2. 사진 붙히는 곳 위에 식물 카테고리를 선택합니다 <br />
+                3. 촬영한 사진을 업로드 합니다 <br />
+                4. <b>&quot;진단하기&quot;</b> 버튼을 누르고 기다립니다 <br />
+                5. 분석된 정보를 바탕으로 작물에게 조치를 해 주시면 됩니다{" "}
+                <br />
+                <br />
+              </div>
             </>
             <>
               <b>Expectation</b>
@@ -214,12 +217,12 @@ const MainPage = () => {
                 id="expectation-wrap"
                 className="mr-24 box-border flex flex-row rounded-xl border-2 border-button md:mr-40 lg:mr-12 xl:mr-20"
               >
-                <div className="w-1/2 p-6 sm:w-fit">
-                  <div className="flex justify-center">
+                <div className="w-1/2 px-4 sm:w-fit">
+                  <div className="flex justify-center p-4">
                     <img src={example1} />
                   </div>
-                  <div className="flex w-1/2 flex-row sm:w-fit">
-                    <img src={example2} />
+                  <div className="flex w-1/2 flex-row px-4 pb-4 sm:w-fit">
+                    <img src={example2} className=" mr-8" />
                     <img src={example3} />
                   </div>
                 </div>
