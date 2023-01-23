@@ -105,83 +105,92 @@ const MainPage = () => {
           className="flex w-full flex-col justify-center pt-28 lg:flex-row"
         >
           {/** 이미지 업로드 부분 시작 */}
-          <div id="upload-image-wrap" className=" w-full lg:h-[700px]">
-            <select
-              name="plant"
-              id="plant"
-              className=" xl:ml-30 mt-12 ml-12 rounded-md border-4 border-slate-400 bg-slate-200 text-center text-3xl font-bold md:ml-20 lg:ml-12"
-              onChange={plantIndexHandler}
-              required
-            >
-              <option value="">카테고리</option>
-              <option value="0">고추</option>
-              <option value="1">포도</option>
-              <option value="2">딸기</option>
-              <option value="3">오이</option>
-              <option value="4">파프리카</option>
-              <option value="5">토마토</option>
-            </select>
-            <div
-              id="upload-image"
-              className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black bg-background md:mx-20 lg:mx-12 lg:h-[500px]"
-            >
-              <label htmlFor="drop_zone">
-                <div
-                  className="drop_zone relative flex h-full justify-center hover:cursor-pointer"
-                  onDragOver={handleOndragOver}
-                  onDrop={handleOndrop}
-                >
-                  {previewUrl ? (
-                    <div className="image flex justify-center">
-                      <img
-                        src={previewUrl}
-                        alt="image"
-                        className="max-h-[500px] w-full object-contain max-md:max-h-[392px]"
-                      />
-                    </div>
-                  ) : (
-                    <img
-                      src={uploadImage}
-                      className="h-full w-full object-scale-down"
-                    />
-                  )}
-                </div>
-                <input
-                  id="drop_zone"
-                  type="file"
-                  className="hidden"
-                  onChange={changeHandler}
-                  name="files"
-                />
-              </label>
+          {/* 너비, 높이 지정 */}
+          <div id="upload-image-wrap" className=" lg:h-[700px] lg:w-5/12">
+            <div>
+              {/* select css 속성 지정 margin top, 테두리 둥글게, border, 글자 속성 */}
+              <select
+                name="plant"
+                id="plant"
+                className=" mt-12 ml-12 rounded-md border-4 border-slate-400 bg-slate-200 text-center text-2xl font-bold md:ml-20 lg:ml-12 "
+                onChange={plantIndexHandler}
+                required
+              >
+                <option value="">카테고리</option>
+                <option value="0">고추</option>
+                <option value="1">포도</option>
+                <option value="2">딸기</option>
+                <option value="3">오이</option>
+                <option value="4">파프리카</option>
+                <option value="5">토마토</option>
+              </select>
+              {/* upload image here, 드롭다운, 이미지 프리뷰, 클릭 시 반응까지 모두 구현하였다 */}
+              <div
+                id="upload-image"
+                className="xl:mx-30 bg-uploadImage mx-12 box-border h-[400px] border-4 border-dashed border-black bg-background md:mx-20 lg:mx-12 lg:h-[500px]"
+              >
+                <label htmlFor="drop_zone">
+                  {/* drop zone, 이미지 업로드 부분과 너비를 맞췄다, 클릭 시 이미지를 업로드하도록 마우스 포인터 변경 효과를 넣었다 */}
+                  <div
+                    className="drop_zone relative flex h-full justify-center hover:cursor-pointer"
+                    onDragOver={handleOndragOver}
+                    onDrop={handleOndrop}
+                  >
+                    {/* previewUrl이라는 이미지 경로값이 있으면 그 사진을, 없으면 기본 사진을 출력하는 부분 */}
+                    {previewUrl ? (
+                      <div className="image flex justify-center">
+                        <img
+                          src={previewUrl}
+                          alt="image"
+                          className="max-h-[500px] w-full object-contain max-md:max-h-[392px]"
+                        />
+                      </div>
+                    ) : (
+                      <div>
+                        <img
+                          src={uploadImage}
+                          className="h-full w-full object-scale-down"
+                        />
+                      </div>
+                    )}
+                  </div>
+                  {/* input field를 넣어 실제 파일을 올릴 수 있게 해 두었다(클릭 시 작동) */}
+                  <input
+                    id="drop_zone"
+                    type="file"
+                    className="hidden"
+                    onChange={changeHandler}
+                    name="files"
+                  />
+                </label>
+              </div>
+
+              {/* AI에게 분석 요청을 보내고 결과를 받아오는 버튼 */}
+              <div
+                id="diagnose-button"
+                className="xl:px-30 mt-6 w-full px-12 text-center md:px-20 lg:px-12"
+              >
+                {/* 버튼이 활성화 될 만한 상황인 지 파악하여 활성/비활성화시키는 부분 */}
+                {buttonOn ? (
+                  <button
+                    className="h-10 w-full rounded-lg bg-button text-white"
+                    onClick={getResult}
+                  >
+                    <b>진단하기</b>
+                  </button>
+                ) : (
+                  <button className="h-10 w-full cursor-default rounded-lg bg-gray-500 text-white">
+                    <b>진단하기</b>
+                  </button>
+                )}
+              </div>
             </div>
-            <div
-              id="diagnose-button"
-              className="xl:px-30 mt-6 w-full px-12 text-center md:px-20 lg:px-12"
-            >
-              {buttonOn ? (
-                <button
-                  className="h-10 w-full rounded-lg bg-button text-white"
-                  onClick={getResult}
-                >
-                  <b>진단하기</b>
-                </button>
-              ) : (
-                <button className="h-10 w-full cursor-default rounded-lg bg-gray-500 text-white">
-                  <b>진단하기</b>
-                </button>
-              )}
-            </div>
-            <div
-              id="buttonwrap"
-              className="mt-5 flex flex-row justify-center"
-            ></div>
           </div>
           {/** 이미지 업로드 부분 끝 */}
           {/** 튜토리얼 부분 시작 */}
           <div
             id="tutorial-wrap"
-            className="font-press-medium mt-[62px] ml-12 text-black md:ml-20 lg:ml-12 lg:h-[700px] lg:w-1/2"
+            className=" mt-[62px] ml-12 pb-40 text-3xl md:ml-20 lg:ml-12 lg:h-[700px] lg:w-1/2 xl:text-xl"
           >
             <>
               <b>Explanation</b> <br />
@@ -216,18 +225,18 @@ const MainPage = () => {
                   className="flex flex-col justify-center"
                 >
                   <br />
-                  <div className=" font-press-bold text-xl">원인</div>
-                  <div className=" font-press-medium mt-1 text-sm">
+                  <div className=" font ">원인</div>
+                  <div className=" font ">
                     이 질병은 &quot;어떠한 이유&quot;로 인해 발생해요
                   </div>
                   <br />
-                  <div className=" font-press-bold text-xl">질병</div>
-                  <div className=" font-press-medium mt-1 text-sm">
+                  <div className=" font">질병</div>
+                  <div className=" font mt-1">
                     이 질병은 &quot;이런 증상&quot;을 나타내요
                   </div>
                   <br />
-                  <div className=" font-press-bold text-xl">치료</div>
-                  <div className=" font-press-medium mt-1 text-sm">
+                  <div className=" font">치료</div>
+                  <div className=" font mt-1 ">
                     이 질병은 &quot;이런 방법&quot;으로 치료해야 해요
                   </div>
                   <br />
