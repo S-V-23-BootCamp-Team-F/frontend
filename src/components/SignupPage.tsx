@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
+
 const SignupPage = (props: any) => {
   const {
     register,
@@ -9,6 +10,7 @@ const SignupPage = (props: any) => {
     formState: { errors },
     watch,
   } = useForm();
+
   const setTap = props.setTap;
 
   const onSubmit = async (data: any) => {

@@ -7,6 +7,7 @@ import "src/media.css";
 import Navbar from "src/components/Navbar";
 import { useLocation } from "react-router-dom";
 
+
 const ResultPage = () => {
   const location = useLocation();
   console.log(location);
@@ -54,7 +55,9 @@ const ResultPage = () => {
             <div className="font-kor-bold text-2xl">
               진단결과&nbsp;&nbsp;
               <span className="font-kor-bold text-disease">
-                {location.state.disease_name}
+
+                {location.state.plant_name}
+
               </span>
               으로 의심됩니다.
             </div>
@@ -91,4 +94,4 @@ const ResultPage = () => {
   );
 };
 
-export default ResultPage;
+export default AbnomalResult;
