@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-
+// 리프레시 임시라 삭제해야함
 let refresh = false;
 
 axios.interceptors.response.use(

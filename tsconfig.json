@@ -21,6 +21,6 @@
     "jsx": "react-jsx"
   },
   "ts-node": { "files": true },
-  "include": ["src", "api.ts"],
+  "include": ["src", "src/utils/api.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

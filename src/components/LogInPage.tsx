@@ -26,7 +26,7 @@ const LogInPage = () => {
       })
       .then((res) => {
         const accessToken = res.data.token.access;
-        console.log(res.data.token.access);
+        // console.log(res.data.token.access);
 
         // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
         axios.defaults.headers.common[
@@ -36,8 +36,11 @@ const LogInPage = () => {
         return res.data.token.access;
       })
       .catch((err) => {
-        console.log(err);
-        return alert("이메일 혹은 비밀번호를 확인하세요");
+        // console.log(err);
+        if (err.response?.status === 201) {
+          console.log(err);
+          return alert("존재하지 않는 회원입니다.");
+        }
       });
   };
 
