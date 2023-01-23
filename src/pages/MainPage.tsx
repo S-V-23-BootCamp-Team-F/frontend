@@ -13,7 +13,7 @@ import example3 from "src/images/example3.png";
 import axios from "axios";
 const MainPage = () => {
   const [imageName, setImageName] = useState<any>(null);
-  const [plantIndex, setPlantIndex] = useState<Number>(-1);
+  const [plantIndex, setPlantIndex] = useState<number>(-1);
   const [image, setImage]: any = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
   const [buttonOn, setButtonOn] = useState(false);
