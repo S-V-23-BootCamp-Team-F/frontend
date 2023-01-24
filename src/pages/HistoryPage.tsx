@@ -111,6 +111,8 @@ const HistoryPage = () => {
         }) // 응답
         .catch((error) => {
           console.log(error);
+          alert('히스토리 불러오기 실패. 로그인이 되어있는지 확인하세요.');
+          window.location.href = "http://localhost:3000/";
         });
     })();
   }, []);
