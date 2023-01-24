@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
@@ -10,7 +11,11 @@ import bgImage from "src/images/bgImage.svg";
 import example1 from "src/images/example1.png";
 import example2 from "src/images/example2.png";
 import example3 from "src/images/example3.png";
-import axios from "axios";
+
+
+
+
+
 const MainPage = () => {
   const [imageName, setImageName] = useState<any>(null);
   const [plantIndex, setPlantIndex] = useState<number>(-1);
