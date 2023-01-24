@@ -54,7 +54,8 @@ const AbnomalResultPage = () => {
             <div className="font-kor-bold text-2xl">
               진단결과&nbsp;&nbsp;
               <span className="font-kor-bold text-disease">
-                {location.state.plant_name}
+                {location.state.disease_name}
+
               </span>
               으로 의심됩니다.
             </div>
