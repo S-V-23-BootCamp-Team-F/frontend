@@ -1,11 +1,10 @@
 import axios, { AxiosError } from "axios";
 // 리프레시 임시라 삭제해야함
-let refresh = false;
 
 axios.interceptors.response.use(
   (res) => res,
   async (err: AxiosError) => {
-    if (err.response?.status === 401 && !refresh) {
+    if (err.response?.status === 401) {
       refresh = true;
       const response = await axios.get("members/login/refresh/", {
         withCredentials: true,
@@ -19,7 +18,6 @@ axios.interceptors.response.use(
     } else {
       return Promise.reject(err);
     }
-    refresh = false;
     return err;
   }
 );
