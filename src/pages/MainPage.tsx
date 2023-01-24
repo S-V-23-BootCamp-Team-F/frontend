@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
-import { FileUploader } from "react-drag-drop-files";
 // images
 import uploadImage from "src/images/uploadImage.svg";
-import bgImage from "src/images/bgImage.svg";
 // exampleimages
 import example1 from "src/images/example1.png";
 import example2 from "src/images/example2.png";

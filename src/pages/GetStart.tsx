@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 import "tailwindcss/tailwind.css";
 import SigninPage from "../components/LogInPage";
 import SignupPage from "../components/SignupPage";
@@ -46,7 +45,7 @@ const GetStart = () => {
               className={openTab === 2 ? "block px-20" : "hidden px-20"}
               id="signup"
             >
-              <SignupPage setTap = {setOpenTap}/>
+              <SignupPage setTap={setOpenTap} />
             </div>
           </div>
         </div>

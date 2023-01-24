@@ -1,5 +1,4 @@
 import React from "react";
-import tomato from "src/images/tomato.jpg";
 import tomato2 from "src/images/tomato2.jpg";
 import tomato3 from "src/images/tomato3.jpg";
 import die from "src/images/dietomato.png";

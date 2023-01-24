@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import Historycard from "src/components/Historycard";
 import Navbar from "src/components/Navbar";
 import axios from "axios";
+import LoadingPage from "@/components/LoadingPage";
 
 const HistoryPage = () => {
   const [history, setHistory] = useState<any[]>([]);
   const email = "test3@gmail.com";
   const reversed = [...history].reverse();
   const [index, setIndex] = useState<number>(-1);
+  const [loading, setLoading] = useState(Boolean);
   const indexHandler = (e: any) => {
     setIndex((index) => e.target.value);
   };
@@ -93,6 +95,7 @@ const HistoryPage = () => {
   //데이터 가져올 함수 정의
   useEffect(() => {
     (async () => {
+      setLoading(true);
       //
       await axios
         .get("http://18.179.229.39/api/v1/plants/histories/", {
@@ -104,13 +107,16 @@ const HistoryPage = () => {
         .then((res) => {
           setHistory([...res.data.result]);
           console.log(history);
+          setLoading(false);
         }) // 응답
         .catch((error) => {
           console.log(error);
         });
     })();
   }, []);
-  return (
+  return loading ? (
+    <LoadingPage />
+  ) : (
     <div className="box-border h-screen w-screen overflow-x-hidden bg-background bg-grass bg-no-repeat">
       {/*nav바*/}
       <Navbar />
