@@ -1,19 +1,38 @@
-import React, { useState } from "react";
-import Delete from "src/images/delete.svg";
+import React, { useState, StrictMode } from "react";
+import ReactDOM from "react-dom";
+import ReactModal from "react-modal";
 import axios from "axios"
+
+import Delete from "src/images/delete.svg";
+import DetailModal from "src/components/DetailModalscreen";
 
 
 function Historycard(props : any) {
+    const [isOpen, setOpen] = useState(false);
+    const handleClick = () => {
+        setOpen(true);
+    };
     const [check,setCheck] = useState(false);
     console.log(props.items)
     let historyDate:string = props.items.created_at;
     let resultDate:string = historyDate.substr(0,10)
+    ReactModal.setAppElement('#root');
+  const rootElement = document.getElementById('root');
+  ReactDOM.render(
+    <StrictMode>
+      <DetailModal />
+    </StrictMode>,
+    rootElement,
+  );
     {
         return (
             <main className="m-auto w-80 h-80">
                 <div className="w-80 h-52 relative">
                     {/*이미지*/}
-                    <img className="w-full h-full rounded-lg absolute" src={props.items.result_picture}/>
+                    <button onClick={handleClick}>
+                        <img className="w-full h-full rounded-lg absolute" src={props.items.result_picture}/>
+                    </button>
+                    <DetailModal  isOpen={isOpen} />
                     {/*삭제버튼*/}
                         <button
                             className="m-auto mt-2 right-2 absolute"
