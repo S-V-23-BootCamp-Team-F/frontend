@@ -11,7 +11,7 @@ axios.interceptors.response.use(
       if (response.status === 200) {
         axios.defaults.headers.common[
           "Authorization"
-        ] = `Bearer ${response.data.accessToken}`;
+        ] = `Bearer ${response.data.result.accessToken}`;
         return err.config;
       }
     } else {
