@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import Delete from "src/images/delete.svg";
 import axios from "axios"
+import DetailModal from "src/components/DetailModalscreen";
 
 
 function Historycard(props : any) {
     const [check,setCheck] = useState(false);
+    let resultDate = props.items.created_at.substr(0, 10);
     console.log(props.items)
     {
         return (
-            <main className="m-auto w-80 h-80">
+            <main className="m-auto ml-2 w-80 h-80">
                 <div className="w-80 h-52 relative">
                     {/*이미지*/}
-                    <img className="w-full h-full rounded-lg absolute" src={props.items.result_picture}/>
+                    <div className="w-full h-full rounded-lg absolute">
+                        <DetailModal items={props.items}/>
+                    </div>
                     {/*삭제버튼*/}
                         <button
                             className="m-auto mt-2 right-2 absolute"
@@ -35,7 +39,7 @@ function Historycard(props : any) {
                         {props.items.disease.name === '정상' ? <span className="text-xl font-press-medium text-button">정상</span>:props.items.disease.name}
                     </span>
                     {/*날짜*/}
-                    <span className="text-xl font-press-medium">{props.items.created_at}</span>
+                    <span className="text-xl font-press-medium">{resultDate}</span>
                 </div>
             </main>
         )
