@@ -1,38 +1,17 @@
-import React, { useState, StrictMode } from "react";
-import ReactDOM from "react-dom";
-import ReactModal from "react-modal";
-import axios from "axios"
-
+import React, { useState } from "react";
 import Delete from "src/images/delete.svg";
-import DetailModal from "src/components/DetailModalscreen";
+import axios from "axios"
 
 
 function Historycard(props : any) {
-    const [isOpen, setOpen] = useState(false);
-    const handleClick = () => {
-        setOpen(true);
-    };
     const [check,setCheck] = useState(false);
     console.log(props.items)
-    let historyDate:string = props.items.created_at;
-    let resultDate:string = historyDate.substr(0,10)
-    ReactModal.setAppElement('#root');
-  const rootElement = document.getElementById('root');
-  ReactDOM.render(
-    <StrictMode>
-      <DetailModal />
-    </StrictMode>,
-    rootElement,
-  );
     {
         return (
             <main className="m-auto w-80 h-80">
                 <div className="w-80 h-52 relative">
                     {/*이미지*/}
-                    <button onClick={handleClick}>
-                        <img className="w-full h-full rounded-lg absolute" src={props.items.result_picture}/>
-                    </button>
-                    <DetailModal  isOpen={isOpen} />
+                    <img className="w-full h-full rounded-lg absolute" src={props.items.result_picture}/>
                     {/*삭제버튼*/}
                         <button
                             className="m-auto mt-2 right-2 absolute"
@@ -56,7 +35,7 @@ function Historycard(props : any) {
                         {props.items.disease.name === '정상' ? <span className="text-xl font-press-medium text-button">정상</span>:props.items.disease.name}
                     </span>
                     {/*날짜*/}
-                    <span className="text-xl font-press-medium">{resultDate}</span>
+                    <span className="text-xl font-press-medium">{props.items.created_at}</span>
                 </div>
             </main>
         )
