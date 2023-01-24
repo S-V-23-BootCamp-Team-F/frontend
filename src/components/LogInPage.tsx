@@ -1,7 +1,7 @@
+import axios from "axios";
 import React, { useRef, useState } from "react";
 import "tailwindcss/tailwind.css";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const LogInPage = () => {
@@ -25,20 +25,22 @@ const LogInPage = () => {
         withCredentials: true, //끅끠를 주고받는 명령어
       })
       .then((res) => {
-        const { accessToken } = res.data;
-        console.log(res.data);
+        const accessToken = res.data.token.access;
+        // console.log(res.data.token.access);
 
         // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
         axios.defaults.headers.common[
           "Authorization"
         ] = `Bearer ${accessToken}`;
-
-        navigate("/")
-
-        // accessToken을 localStorage, cookie 등에 저장하지 않는다!
+        navigate("/");
+        return res.data.token.access;
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
+        if (err.response?.status === 201) {
+          console.log(err);
+          return alert("존재하지 않는 회원입니다.");
+        }
       });
   };
 

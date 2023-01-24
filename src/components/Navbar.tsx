@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 import logo from "src/images/logo.svg";
 import hamburger from "src/images/hamburger.svg";
-import login from "src/images/login.svg";
-import diagnosis from "src/images/diagnosis.svg";
-import history from "src/images/history.svg";
+import login_hover from "src/images/login_hover.svg";
+import diagnosis_hover from "src/images/diagnosis_hover.svg";
+import history_hover from "src/images/history_hover.svg";
 
 function Navbar() {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -23,13 +23,13 @@ function Navbar() {
   return (
     <div
       id="navbar-wrap"
-      className="font-press-medium fixed z-20 flex w-full flex-wrap justify-between text-black max-sm:justify-end"
+      className="fixed z-20 flex w-full flex-wrap justify-between font-eng-bold font-bold text-black max-sm:justify-end"
     >
-      <div className="bg-logo flex w-full justify-center border cursor-pointer bg-background px-12 pt-4 pb-4 max-sm:pl-0 md:w-screen lg:px-16 xl:px-20">
+      <div className="bg-logo flex w-full cursor-pointer justify-center border bg-background px-12 pt-4 pb-4 max-sm:pl-0 md:w-screen lg:px-16 xl:px-20">
         <img className="m-auto" src={logo} onClick={moveToMain} />
         <div
           id="menue1"
-          className="m-auto flex w-full justify-end gap-8 font-eng-regular text-xl max-sm:hidden md:gap-16 lg:gap-32"
+          className="m-auto flex w-full justify-end gap-8 font-eng-regular max-xl:text-3xl max-sm:hidden md:gap-16 lg:gap-32"
         >
           <div
             className="cursor-pointer hover:text-button"
@@ -51,7 +51,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div className="flex max-sm:flex-col-reverse">
+      <div className="fixed flex max-sm:flex-col-reverse">
         <>
           {/** hamburger */}
           <div
@@ -62,24 +62,25 @@ function Navbar() {
               }
             )}
           >
-            <div className="mt-20 px-10 text-center">
-              <div className="mt-8 flex justify-center">
-                <img src={diagnosis} />
+            <div className="mt-20 flex flex-col px-10 text-center text-2xl">
+              {/* group을 이용하여 하나로 묶은 뒤 group: 을 이용하여 동시에 작동시키려하는 작업 작성 */}
+              <div className="group flex flex-col items-center justify-center pb-2 hover:pb-1">
+                <div className="mt-8 h-20 w-20 bg-diagnosis hover:cursor-pointer group-hover:bg-diagnosis_hover" />
+                <div className="cursor-pointer hover:mb-0 group-hover:border-b-2 group-hover:border-button group-hover:text-button">
+                  Diagnosis
+                </div>
               </div>
-              <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
-                Diagnosis
+              <div className="group flex flex-col items-center justify-center pb-2 hover:pb-1">
+                <div className="mt-8 h-20 w-20 bg-history hover:cursor-pointer group-hover:bg-history_hover" />
+                <div className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
+                  Histories
+                </div>
               </div>
-              <div className="mt-8 flex justify-center">
-                <img src={history} />
-              </div>
-              <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
-                Histories
-              </div>
-              <div className="mt-8 flex justify-center">
-                <img src={login} />
-              </div>
-              <div className="cursor-pointer hover:border-b-2 hover:border-button hover:text-button">
-                Logout
+              <div className="group flex flex-col items-center justify-center pb-2 hover:pb-1">
+                <div className="mt-8 h-20 w-20 bg-login hover:cursor-pointer group-hover:bg-login_hover" />
+                <div className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
+                  Logout
+                </div>
               </div>
             </div>
           </div>
@@ -91,10 +92,10 @@ function Navbar() {
               {menuToggle ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10"
+                  className="mt-8 mr-4 h-16 w-16"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  stroke="green"
                 >
                   <path
                     strokeLinecap="round"
@@ -106,10 +107,10 @@ function Navbar() {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10"
+                  className="mt-8 mr-4 h-16 w-16"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  stroke="green"
                 >
                   <path
                     strokeLinecap="round"

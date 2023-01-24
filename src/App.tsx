@@ -1,6 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import GetStart from './pages/GetStart';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import GetStart from "./pages/GetStart";
 import MainPage from "./pages/MainPage";
 import AbnomalResultPage from "./pages/AbnomalResultPage";
 import HistoryPage from "./pages/HistoryPage";

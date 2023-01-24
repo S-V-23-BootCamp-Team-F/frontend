@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Historycard from "src/components/Historycard";
 import Navbar from "src/components/Navbar";
+import LoadingPage from "@/components/LoadingPage";
 import axios from "axios";
 
 const HistoryPage = () => {
@@ -113,7 +114,9 @@ const HistoryPage = () => {
         });
     })();
   }, []);
-  return (
+  return loading ? (
+    <LoadingPage />
+  ) : (
     <div className="box-border h-screen w-screen overflow-x-hidden bg-background bg-grass bg-no-repeat">
       {/*nav바*/}
       <Navbar />
