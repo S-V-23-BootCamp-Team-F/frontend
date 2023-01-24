@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Historycard from "src/components/Historycard";
 import Navbar from "src/components/Navbar";
-import axios from "axios"
+import axios from "axios";
 
 const HistoryPage = () => {
   const [history,setHistory] = useState<any[]>([])

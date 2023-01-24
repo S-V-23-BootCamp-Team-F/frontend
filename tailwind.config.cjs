@@ -16,9 +16,9 @@ module.exports = {
         button: "#2B663C",
         disease: "#F6795B",
       },
-      width:{
-        600:"37.5rem",
-        404:"25.25rem",
+      width: {
+        600: "37.5rem",
+        404: "25.25rem",
         700: "43.75rem",
       },
       height: {
@@ -28,11 +28,17 @@ module.exports = {
         356: "22.25rem",
       },
       screens: {
-        'xs': '650px',
+        xs: "650px",
       },
       backgroundImage: {
         grass: "url('src/images/grass.svg')",
         startImg: "url('images/backImg.svg')",
+        diagnosis: "url('images/diagnosis.svg')",
+        diagnosis_hover: "url('images/diagnosis_hover.svg')",
+        login: "url('images/login.svg')",
+        login_hover: "url('images/login_hover.svg')",
+        history: "url('images/history.svg')",
+        history_hover: "url('images/history_hover.svg')",
       },
       fontSize: {
         10: "10px",
