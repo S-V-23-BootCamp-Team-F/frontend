@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Delete from "src/images/delete.svg";
-import example from "src/images/tomato2.jpg";
 
 const DetailModal = (props:any) => {
     const [showModal, setShowModal] = useState(false);
@@ -8,14 +7,14 @@ const DetailModal = (props:any) => {
     return (
     <>
       <button onClick={() => setShowModal(true)}>
-        <img className="w-80 h-52 rounded-lg object-fit" src={props.items.picture}/>
+        <img className="w-80 h-52 rounded-lg object-fit shadow-lg" src={props.items.picture}/>
       </button>
       {showModal ? (
         <>
           <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative w-auto my-6 mx-auto max-w-6xl">
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t ">
+              <div className="rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                <div className="flex items-start p-5 border-gray-300">
                   {/*전체*/}
                   <button className="" onClick={() => setShowModal(false)}>
                     <img className="m-auto right-4 absolute w-5 md:w-6 h-auto" src={Delete}/>
@@ -27,7 +26,7 @@ const DetailModal = (props:any) => {
                       {/*결과 이미지*/}
                         <img className="h-auto rounded-lg max-w-sm" src={props.items.result_picture}/>
                       {/*이름*/}
-                      <div className="text-2xl font-press-medium">{props.items.plant.type}</div>
+                      <div className="text-2xl font-press-medium mt-2">{props.items.plant.type}</div>
                       {/*상태*/}
                       <div className="text-xl text-disease font-press-medium">{props.items.disease.name === '정상' ? <span className="text-xl font-press-medium text-button">정상</span>:props.items.disease.name}</div>
                       {/*날짜*/}

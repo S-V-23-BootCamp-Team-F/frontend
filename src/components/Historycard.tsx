@@ -18,7 +18,7 @@ function Historycard(props : any) {
                     </div>
                     {/*삭제버튼*/}
                         <button
-                            className="m-auto mt-2 right-2 absolute"
+                            className="m-auto mt-2 right-2 w-5 md:w-6 h-auto absolute"
                             onClick={() => axios.delete(`http://18.179.229.39/api/v1/plants/histories/${props.items.id}/`)
                             .then((res) => {
                                 console.log(res)
@@ -33,7 +33,7 @@ function Historycard(props : any) {
                 {/*텍스트*/}
                 <div className="flex flex-col items-center relative">
                     {/*작물 종류*/}
-                    <div className="text-2xl font-press-medium">{props.items.plant.type}</div>
+                    <div className="text-2xl font-press-medium mt-2">{props.items.plant.type}</div>
                     {/*질병*/}
                     <span className="text-xl font-press-medium text-disease">
                         {props.items.disease.name === '정상' ? <span className="text-xl font-press-medium text-button">정상</span>:props.items.disease.name}
