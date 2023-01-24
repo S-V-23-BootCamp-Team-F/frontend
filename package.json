@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/react-modal": "^3.13.1",
     "autoprefixer": "^10.4.13",
     "axios": "^1.2.2",
     "classnames": "^2.3.2",
