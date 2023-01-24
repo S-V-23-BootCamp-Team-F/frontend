@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
-import tomato2 from "src/images/tomato2.jpg";
+import React from "react";
 import nomal from "src/images/nomal.png";
 import Navbar from "src/components/Navbar";
 import "src/media.css";
-import axios from "axios";
 import { useLocation } from "react-router-dom";
 
 const NomalResultPage = () => {

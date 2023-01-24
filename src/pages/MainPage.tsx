@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
-import { FileUploader } from "react-drag-drop-files";
 // images
 import uploadImage from "src/images/uploadImage.svg";
-import bgImage from "src/images/bgImage.svg";
 // exampleimages
 import example1 from "src/images/example1.png";
 import example2 from "src/images/example2.png";
 import example3 from "src/images/example3.png";
-import axios from "axios";
+import LoadingPage from "@/components/LoadingPage";
+
 const MainPage = () => {
   const [imageName, setImageName] = useState<any>(null);
   const [plantIndex, setPlantIndex] = useState<number>(-1);
   const [image, setImage]: any = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
   const [buttonOn, setButtonOn] = useState(false);
+  const [loading, setLoading] = useState(Boolean);
   const navigate = useNavigate();
+
   const handleFile = async (file: any) => {
     if (plantIndex === -1) {
       alert("카테고리를 선택해 주세요");
@@ -68,12 +70,14 @@ const MainPage = () => {
     handleFile(file);
   };
   const getResult = async () => {
+    setLoading(true);
     await axios
       .get("http://18.179.229.39/api/v1/plants/ais/", {
         params: { picture: imageName, type: plantIndex },
       })
       .then((res) => {
         console.log(res.data);
+        setLoading(false);
         if (res.data.disease_name === "정상") {
           navigate("/nomalresult", { state: res.data });
         } else {
@@ -87,7 +91,9 @@ const MainPage = () => {
   const plantIndexHandler = (e: any) => {
     setPlantIndex(e.target.value); // 작물 인덱스
   };
-  return (
+  return loading ? (
+    <LoadingPage />
+  ) : (
     // 높이 화면맞춤, y축 오버플로우 시 자동으로 스크롤생기게, x축 오버플루우 숨기기, 배경색 지정, 배경 이미지 삽입, 배경 반복 없음, 사용자 지정 폰트 중간굵기
     <div
       id="full_wrap"
