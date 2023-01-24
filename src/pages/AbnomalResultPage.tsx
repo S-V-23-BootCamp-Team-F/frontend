@@ -13,20 +13,22 @@ const AbnomalResultPage = () => {
 
   return (
     // 전체
-    <div className="relative flex max-h-screen w-screen flex-col overflow-y-auto bg-background bg-grass bg-no-repeat">
+    <div className="flex min-h-screen w-screen flex-col overflow-y-auto bg-background bg-grass bg-no-repeat ">
       {/* nav바 */}
-      <Navbar />
+      <div className="mb-10">
+        <Navbar />
+      </div>
 
       {/* 본문 */}
-      <div className="flex flex-col place-content-evenly items-center px-12 pt-4 md:flex-row ">
+      <div className="mt-10 flex flex-col place-content-evenly items-center px-12 pt-4 md:flex-row">
         {/* 본문 왼쪽 */}
-        <div className="content-center pt-24">
-          <div className="flex flex-col ">
+        <div className="">
+          <div className="mr-14 flex flex-col max-md:pt-28 max-sm:pt-28">
             <img
               src={location.state.result_url}
               className="sub_tomato1 h-356 w-600 rounded-xl object-cover"
             />
-            <div className="mt-2  flex flex-col items-center font-kor-bold text-xl  ">
+            <div className="mt-2 flex flex-col items-center font-kor-bold text-xl  ">
               {location.state.disease_name}
             </div>
           </div>
@@ -47,26 +49,27 @@ const AbnomalResultPage = () => {
           </div>
         </div>
         {/* 본문 오른쪽 */}
-        <div className="pl-4 pt-24">
+        <div className="mr-40 ml-[-40px] content-center pt-12 max-md:pt-28 max-sm:pt-28">
           <div className="">
             <div className="font-kor-bold text-2xl">
               진단결과&nbsp;&nbsp;
               <span className="font-kor-bold text-disease">
                 {location.state.disease_name}
+
               </span>
               으로 의심됩니다.
             </div>
             <div className="flex">
               <img src={die} className="die_tomato"></img>
-              <div className="flex place-items-end font-kor-medium">
-                우리의 {location.state.plant_name}는 가셨습니다..
+              <div className="ml-3 flex place-items-end font-kor-medium">
+                우리의 {location.state.plant_name}는 가셨습니다...
               </div>
             </div>
           </div>
           <div className="mt-10">
             <div className="place-content-between">
               <div className="mb-2 font-eng-bold text-2xl">Causation</div>
-              <div className="font-kor-regula mb-7 h-130 max-w-2xl overflow-y-auto border-black text-xl">
+              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
                 {location.state.feature}
               </div>
             </div>
