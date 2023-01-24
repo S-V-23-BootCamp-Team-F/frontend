@@ -19,7 +19,7 @@ const MainPage = () => {
   const [image, setImage]: any = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
   const [buttonOn, setButtonOn] = useState(false);
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(Boolean);
   const navigate = useNavigate();
 
   const handleFile = async (file: any) => {
