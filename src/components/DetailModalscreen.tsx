@@ -14,18 +14,18 @@ const DetailModal = (props:any) => {
       {/*모달창 활성화/비활성화용 삼항연산자*/}
       {showModal ? (
         <>
-          <div className="flex items-center overflow-x-hidden overflow-y-auto inset-0 z-50 bg-black bg-opacity-70 fixed">
+          <div className="flex items-center overflow-x-hidden overflow-y-auto inset-0 z-30 bg-black bg-opacity-70 fixed">
             <div className="w-auto max-w-6xl my-6 mx-auto relative">
-              <div className="w-full flex flex-col rounded-lg shadow-lg relative bg-white">
+              <div className="w-full mr-4 flex flex-col rounded-lg shadow-lg relative bg-white">
                 <div className="p-5 flex border-gray-300">
                   {/*전체*/}
-                  <button className="m-auto right-4 absolute" onClick={() => setShowModal(false)}>
-                    <img className="w-5 md:w-6 h-auto" src={Delete}/>
+                  <button className="mb-10 right-4 absolute" onClick={() => setShowModal(false)}>
+                    <img className="w-5 md:w-6 h-6" src={Delete}/>
                   </button>
                   {/*내용*/}
                   <div className="flex flex-col items-center md:flex-row relative">
                     {/*왼쪽*/}
-                    <div className="mt-0 mb-10 mx-10 max-md:pt-28 max-sm:pt-28 flex flex-col items-center">
+                    <div className="mt-0 mb-10 mx-auto my-10 max-md:pt-28 max-sm:pt-28 flex flex-col items-center">
                       {/*결과 이미지*/}
                         <img className="h-auto max-w-sm max-h-96 rounded-lg" src={props.items.result_picture}/>
                       {/*이름*/}
@@ -36,7 +36,7 @@ const DetailModal = (props:any) => {
                       <div className="text-xl font-kor-medium">{resultDate}</div>
                     </div>
                     {/*오른쪽*/}
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center ml-10">
                       {/*병 이름이 정상일때와 비정상일때 다르게 보이게 하기*/}
                       {props.items.disease.name === '정상' ? 
                       <>
