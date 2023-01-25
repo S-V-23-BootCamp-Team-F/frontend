@@ -30,6 +30,7 @@ function Navbar() {
   const moveToLogout = () => {
     // axios
     localStorage.removeItem("token");
+    navigate("/");
   };
 
   return (
