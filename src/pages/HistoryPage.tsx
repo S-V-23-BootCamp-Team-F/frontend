@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import Historycard from "src/components/Historycard";
 import Navbar from "src/components/Navbar";
-import axios from "axios";
-import LoadingPage from "@/components/LoadingPage";
+import LoadingPage from "src/components/LoadingPage";
 
 const HistoryPage = () => {
   const [history, setHistory] = useState<any[]>([]);
@@ -13,12 +14,13 @@ const HistoryPage = () => {
   const indexHandler = (e: any) => {
     setIndex((index) => e.target.value);
   };
+  const restate = () => {location.reload();}
   function Mapping() {
     if (index === -1) {
       return (
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) => (
-            <Historycard items={item} key={index} />
+            <Historycard items={item} key={index} restate={restate} />
           ))}
         </div>
       );
@@ -27,7 +29,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 1 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -37,7 +39,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 2 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -47,7 +49,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 3 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -57,7 +59,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 4 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -67,7 +69,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 5 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -77,7 +79,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 6 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -86,7 +88,7 @@ const HistoryPage = () => {
       return (
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) => (
-            <Historycard items={item} key={index} />
+            <Historycard items={item} key={index} restate={restate} />
           ))}
         </div>
       );
@@ -111,6 +113,8 @@ const HistoryPage = () => {
         }) // 응답
         .catch((error) => {
           console.log(error);
+          alert('히스토리 불러오기 실패. 로그인이 되어있는지 확인하세요.');
+          window.location.href = "http://localhost:3000/";
         });
     })();
   }, []);
@@ -123,7 +127,7 @@ const HistoryPage = () => {
       <div className="flex flex-col pt-32">
         {/*카테고리*/}
         <select
-          className="m-auto mr-5 mb-3 w-auto bg-background text-center text-2xl font-bold"
+          className="m-auto mt-4 mr-5 mb-3 w-auto bg-background text-center text-2xl font-bold"
           onChange={indexHandler}
         >
           <option value="-1">전체</option>
@@ -135,7 +139,7 @@ const HistoryPage = () => {
           <option value="5">토마토</option>
         </select>
         {/*내용*/}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center place-content-center">
           <Mapping />
         </div>
       </div>
