@@ -149,12 +149,7 @@ const MainPage = () => {
                         />
                       </div>
                     ) : (
-                      <div>
-                        <img
-                          src={uploadImage}
-                          className="h-full w-full object-scale-down"
-                        />
-                      </div>
+                      <div className=" h-full w-full bg-upload_image bg-center bg-no-repeat object-scale-down" />
                     )}
                   </div>
                   {/* input field를 넣어 실제 파일을 올릴 수 있게 해 두었다(클릭 시 작동) */}
