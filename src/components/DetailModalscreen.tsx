@@ -3,7 +3,7 @@ import Delete from "src/images/delete.svg";
 
 const DetailModal = (props:any) => {
     const [showModal, setShowModal] = useState(false);
-    let resultDate = props.items.created_at.substr(0, 10);
+    const resultDate = props.items.created_at.substr(0, 10);
     return (
     <>
       <button onClick={() => setShowModal(true)}>
