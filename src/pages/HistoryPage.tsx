@@ -7,90 +7,32 @@ import LoadingPage from "src/components/LoadingPage";
 
 const HistoryPage = () => {
   const [history, setHistory] = useState<any[]>([]);
-  const email = "test3@gmail.com";
-  const reversed = [...history].reverse();
-  const [index, setIndex] = useState<number>(-1);
-  const [loading, setLoading] = useState(Boolean);
+  const email:string = "";
+  const reversed:any[] = [...history].reverse();
+  const [index, setIndex] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(false);
   const indexHandler = (e: any) => {
     setIndex((index) => e.target.value);
   };
   const restate = () => {location.reload();}
   function Mapping() {
-    if (index === -1) {
-      return (
-        <div className="flex flex-wrap">
-          {reversed.map((item: any, index: number) => (
-            <Historycard items={item} key={index} restate={restate} />
-          ))}
-        </div>
-      );
-    } else if (index == 0) {
-      return (
-        <div className="flex flex-wrap">
-          {reversed.map((item: any, index: number) =>
-            reversed[index].plant.id === 1 ? (
-              <Historycard items={item} key={index} restate={restate} />
-            ) : null
-          )}
-        </div>
-      );
-    } else if (index == 1) {
-      return (
-        <div className="flex flex-wrap">
-          {reversed.map((item: any, index: number) =>
-            reversed[index].plant.id === 2 ? (
-              <Historycard items={item} key={index} restate={restate} />
-            ) : null
-          )}
-        </div>
-      );
-    } else if (index == 2) {
-      return (
-        <div className="flex flex-wrap">
-          {reversed.map((item: any, index: number) =>
-            reversed[index].plant.id === 3 ? (
-              <Historycard items={item} key={index} restate={restate} />
-            ) : null
-          )}
-        </div>
-      );
-    } else if (index == 3) {
-      return (
-        <div className="flex flex-wrap">
-          {reversed.map((item: any, index: number) =>
-            reversed[index].plant.id === 4 ? (
-              <Historycard items={item} key={index} restate={restate} />
-            ) : null
-          )}
-        </div>
-      );
-    } else if (index == 4) {
-      return (
-        <div className="flex flex-wrap">
-          {reversed.map((item: any, index: number) =>
-            reversed[index].plant.id === 5 ? (
-              <Historycard items={item} key={index} restate={restate} />
-            ) : null
-          )}
-        </div>
-      );
-    } else if (index == 5) {
-      return (
-        <div className="flex flex-wrap">
-          {reversed.map((item: any, index: number) =>
-            reversed[index].plant.id === 6 ? (
-              <Historycard items={item} key={index} restate={restate} />
-            ) : null
-          )}
-        </div>
-      );
-    } else {
-      return (
-        <div className="flex flex-wrap">
-          {reversed.map((item: any, index: number) => (
-            <Historycard items={item} key={index} restate={restate} />
-          ))}
-        </div>
+    if (index < 7 && index >= 1) {
+      return(
+      <div className="flex flex-wrap">
+                {reversed.map((item: any[], num: number) =>
+                  reversed[num].plant.id == index ? (
+                    <Historycard items={item} key={num} restate={restate} />
+                  ) : null
+                )}
+              </div>
+            );
+    } else  {
+      return  (
+      <div className="flex flex-wrap">
+        {reversed.map((item: any, num: number) => (
+          <Historycard items={item} key={num} restate={restate} />
+        ))}
+      </div>
       );
     }
   }
@@ -127,19 +69,19 @@ const HistoryPage = () => {
       <div className="flex flex-col pt-32">
         {/*카테고리*/}
         <select
-          className="m-auto mt-4 mr-5 mb-3 w-auto bg-background text-center text-2xl font-bold"
+          className="m-auto mt-4 md:mt-0 mr-5 mb-3 w-auto bg-background text-center text-2xl font-kor-medium"
           onChange={indexHandler}
         >
-          <option value="-1">전체</option>
-          <option value="0">고추</option>
-          <option value="1">포도</option>
-          <option value="2">딸기</option>
-          <option value="3">오이</option>
-          <option value="4">파프리카</option>
-          <option value="5">토마토</option>
+          <option value="0">전체</option>
+          <option value="1">고추</option>
+          <option value="2">포도</option>
+          <option value="3">딸기</option>
+          <option value="4">오이</option>
+          <option value="5">파프리카</option>
+          <option value="6">토마토</option>
         </select>
         {/*내용*/}
-        <div className="flex flex-col items-center place-content-center">
+        <div className="flex flex-col items-center">
           <Mapping />
         </div>
       </div>
