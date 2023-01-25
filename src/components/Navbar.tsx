@@ -3,12 +3,7 @@ import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 
 import logo from "src/images/logo.svg";
-import hamburger from "src/images/hamburger.svg";
-import login_hover from "src/images/login_hover.svg";
-import diagnosis_hover from "src/images/diagnosis_hover.svg";
-import history_hover from "src/images/history_hover.svg";
 import axios from "axios";
-import { AsyncLocalStorage } from "async_hooks";
 
 function Navbar() {
   // 현재 로그인 여부를 판단 변수
@@ -30,6 +25,7 @@ function Navbar() {
   // 로그아웃
   const moveToLogout = () => {
     // axios
+    // 쿠키 삭제하기
     localStorage.removeItem("token");
     navigate("/");
   };
