@@ -7,10 +7,10 @@ import LoadingPage from "src/components/LoadingPage";
 
 const HistoryPage = () => {
   const [history, setHistory] = useState<any[]>([]);
-  const email = "test3@gmail.com";
-  const reversed = [...history].reverse();
-  const [index, setIndex] = useState<number>(-1);
-  const [loading, setLoading] = useState(Boolean);
+  const email:string = "";
+  const reversed:any[] = [...history].reverse();
+  const [index, setIndex] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(false);
   const indexHandler = (e: any) => {
     setIndex((index) => e.target.value);
   };

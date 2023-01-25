@@ -5,7 +5,7 @@ import DetailModal from "src/components/DetailModalscreen";
 
 
 function Historycard(props : any, { restate }:any) {
-    const resultDate = props.items.created_at.substr(0, 10);
+    const resultDate:string = props.items.created_at.substr(0, 10);
     console.log(props.items)
     {
         return (
