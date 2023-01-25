@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import "tailwindcss/tailwind.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const LogInPage = () => {
   const [loginChk, setLoginChk] = useState<boolean>(false);
@@ -33,6 +34,8 @@ const LogInPage = () => {
         axios.defaults.headers.common[
           "Authorization"
         ] = `Bearer ${accessToken}`;
+        Cookies.set("cookie", res.data.token.access);
+        console.log("cookie");
         setLoginChk(true);
         navigate("/");
         return res.data.token.access;

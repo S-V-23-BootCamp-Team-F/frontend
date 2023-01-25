@@ -27,6 +27,7 @@ function Navbar() {
     // axios
     // 쿠키 삭제하기
     localStorage.removeItem("token");
+    const setIsLogin = null;
     navigate("/");
   };
 
