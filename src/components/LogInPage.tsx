@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const LogInPage = () => {
+  const [loginChk, setLoginChk] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
@@ -32,6 +33,7 @@ const LogInPage = () => {
         axios.defaults.headers.common[
           "Authorization"
         ] = `Bearer ${accessToken}`;
+        setLoginChk(true);
         navigate("/");
         return res.data.token.access;
       })

@@ -7,12 +7,15 @@ import hamburger from "src/images/hamburger.svg";
 import login_hover from "src/images/login_hover.svg";
 import diagnosis_hover from "src/images/diagnosis_hover.svg";
 import history_hover from "src/images/history_hover.svg";
+import axios from "axios";
 
 function Navbar() {
   // 현재 로그인 여부를 판단 변수
   const [isLogin, setIsLogin] = useState(false);
   const [menuToggle, setMenuToggle] = useState(false);
   const navigate = useNavigate();
+
+  console.log(axios.defaults.headers.common["Authorization"]);
   const moveToMain = () => {
     navigate("/");
   };
