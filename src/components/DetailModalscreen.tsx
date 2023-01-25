@@ -16,13 +16,13 @@ const DetailModal = (props:any) => {
               <div className="rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <div className="flex items-start p-5 border-gray-300">
                   {/*전체*/}
-                  <button className="" onClick={() => setShowModal(false)}>
-                    <img className="m-auto right-4 absolute w-5 md:w-6 h-auto" src={Delete}/>
+                  <button className="m-auto right-4 absolute" onClick={() => setShowModal(false)}>
+                    <img className="w-5 md:w-6 h-auto" src={Delete}/>
                   </button>
                   {/*내용*/}
-                  <div className="flex flex-col items-center md:flex-row">
+                  <div className="flex flex-col items-center md:flex-row relative">
                     {/*왼쪽*/}
-                    <div className="mr-14 flex flex-col items-center max-md:pt-28 max-sm:pt-28">
+                    <div className="my-0 mx-10 flex flex-col items-center max-md:pt-28 max-sm:pt-28">
                       {/*결과 이미지*/}
                         <img className="h-auto rounded-lg max-w-sm" src={props.items.result_picture}/>
                       {/*이름*/}
@@ -33,25 +33,38 @@ const DetailModal = (props:any) => {
                       <div className="text-xl font-press-medium">{resultDate}</div>
                     </div>
                     {/*오른쪽*/}
-                    <div className="place-content-between">
+                    <div className="flex flex-col place-content-between items-center">
+                    {props.items.disease.name === '정상' ? 
+                    <>
                       <div>
+                        <img className="w-64 h-auto rounded-lg" src="src/images/nomal.png" />
+                      </div>
+                      <div className="mt-24 font-kor-bold text-2xl md:text-left lg:text-left">
+                        우리의 {props.items.plant.type}는 건강합니다.
+                      </div>
+                    </>
+                    :
+                    <>
+                      <div className="my-4">
                         <div className="font-eng-bold text-2xl">Causation</div>
-                        <div className="mb-7 h-20 max-w-2xl overflow-y-auto border-black font-kor-regular text-lg">
-                          다습할 때 발생하는 병해로서 반촉성 재배에 특히 많다. 토마토, 가지, 고추, 딸기 등의 시설재배시 줄기와 잎에도 발생하지만 주로 열매에 발생하여 피해를 나타낸다. 이 병은 저온이나 무가온재배에서 발병이 많고 다량의 분생포자를 형성하기 때문에 발생의 확산이 빠르다.
+                          <div className="mb-7 h-20 max-w-2xl overflow-y-auto border-black font-kor-regular text-lg">
+                            다습할 때 발생하는 병해로서 반촉성 재배에 특히 많다. 토마토, 가지, 고추, 딸기 등의 시설재배시 줄기와 잎에도 발생하지만 주로 열매에 발생하여 피해를 나타낸다. 이 병은 저온이나 무가온재배에서 발병이 많고 다량의 분생포자를 형성하기 때문에 발생의 확산이 빠르다.
+                          </div>
                         </div>
-                      </div>
-                      <div>
-                        <div className="mb-2 font-eng-bold text-2xl">Symptom</div>
-                        <div className="mb-7 h-20 max-w-2xl overflow-y-auto border-black font-kor-regular text-lg">
-                          다습할 때 발생하는 병해로서 반촉성 재배에 특히 많다. 토마토, 가지, 고추, 딸기 등의 시설재배시 줄기와 잎에도 발생하지만 주로 열매에 발생하여 피해를 나타낸다. 이 병은 저온이나 무가온재배에서 발병이 많고 다량의 분생포자를 형성하기 때문에 발생의 확산이 빠르다.
-                        </div>
-                      </div>
-                      <div>
-                        <div className="mb-2  font-eng-bold text-2xl">Cure</div>
-                        <div className="mb-7 h-20 max-w-2xl overflow-y-auto border-black font-kor-regular text-lg">
-                          다습할 때 발생하는 병해로서 반촉성 재배에 특히 많다. 토마토, 가지, 고추, 딸기 등의 시설재배시 줄기와 잎에도 발생하지만 주로 열매에 발생하여 피해를 나타낸다. 이 병은 저온이나 무가온재배에서 발병이 많고 다량의 분생포자를 형성하기 때문에 발생의 확산이 빠르다.
-                        </div>
-                      </div>
+                        <div>
+                          <div className="mb-2 font-eng-bold text-2xl">Symptom</div>
+                            <div className="mb-7 h-20 max-w-2xl overflow-y-auto border-black font-kor-regular text-lg">
+                            다습할 때 발생하는 병해로서 반촉성 재배에 특히 많다. 토마토, 가지, 고추, 딸기 등의 시설재배시 줄기와 잎에도 발생하지만 주로 열매에 발생하여 피해를 나타낸다. 이 병은 저온이나 무가온재배에서 발병이 많고 다량의 분생포자를 형성하기 때문에 발생의 확산이 빠르다.
+                            </div>
+                          </div>
+                          <div>
+                            <div className="mb-2  font-eng-bold text-2xl">Cure</div>
+                            <div className="mb-7 h-20 max-w-2xl overflow-y-auto border-black font-kor-regular text-lg">
+                              다습할 때 발생하는 병해로서 반촉성 재배에 특히 많다. 토마토, 가지, 고추, 딸기 등의 시설재배시 줄기와 잎에도 발생하지만 주로 열매에 발생하여 피해를 나타낸다. 이 병은 저온이나 무가온재배에서 발병이 많고 다량의 분생포자를 형성하기 때문에 발생의 확산이 빠르다.
+                            </div>
+                          </div>
+                        </>
+                      }
                     </div>
                   </div>
                 </div>
