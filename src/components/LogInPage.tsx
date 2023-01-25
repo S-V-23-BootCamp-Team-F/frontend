@@ -23,7 +23,7 @@ const LogInPage = () => {
       password: data.password,
     };
     axios
-      .post("http://cropdoctor.shop/api/v1/members/login/", datas, {
+      .post("http://cropdoctor.shop:3000/api/v1/members/login/", datas, {
         withCredentials: true, //끅끠를 주고받는 명령어
       })
       .then((res) => {

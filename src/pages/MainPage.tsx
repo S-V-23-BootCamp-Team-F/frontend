@@ -32,7 +32,7 @@ const MainPage = () => {
     formData.append("picture", file);
     await axios({
       method: "post",
-      url: "http://18.179.229.39/api/v1/plants/pictures/",
+      url: "http://cropdoctor.shop:3000/api/v1/plants/pictures/",
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
