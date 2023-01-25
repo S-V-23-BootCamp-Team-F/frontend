@@ -11,7 +11,7 @@ const DetailModal = (props:any) => {
       </button>
       {showModal ? (
         <>
-          <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 bg-black bg-opacity-70">
             <div className="relative w-auto my-6 mx-auto max-w-6xl">
               <div className="rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <div className="flex items-start p-5 border-gray-300">
@@ -24,7 +24,7 @@ const DetailModal = (props:any) => {
                     {/*왼쪽*/}
                     <div className="my-0 mx-10 flex flex-col items-center max-md:pt-28 max-sm:pt-28">
                       {/*결과 이미지*/}
-                        <img className="h-auto rounded-lg max-w-sm" src={props.items.result_picture}/>
+                        <img className="h-auto rounded-lg max-w-sm max-h-96" src={props.items.result_picture}/>
                       {/*이름*/}
                       <div className="text-2xl font-press-medium mt-2">{props.items.plant.type}</div>
                       {/*상태*/}
