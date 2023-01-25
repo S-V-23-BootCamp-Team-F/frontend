@@ -14,12 +14,13 @@ const HistoryPage = () => {
   const indexHandler = (e: any) => {
     setIndex((index) => e.target.value);
   };
+  const restate = () => {location.reload();}
   function Mapping() {
     if (index === -1) {
       return (
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) => (
-            <Historycard items={item} key={index} />
+            <Historycard items={item} key={index} restate={restate} />
           ))}
         </div>
       );
@@ -28,7 +29,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 1 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -38,7 +39,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 2 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -48,7 +49,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 3 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -58,7 +59,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 4 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -68,7 +69,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 5 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -78,7 +79,7 @@ const HistoryPage = () => {
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) =>
             reversed[index].plant.id === 6 ? (
-              <Historycard items={item} key={index} />
+              <Historycard items={item} key={index} restate={restate} />
             ) : null
           )}
         </div>
@@ -87,7 +88,7 @@ const HistoryPage = () => {
       return (
         <div className="flex flex-wrap">
           {reversed.map((item: any, index: number) => (
-            <Historycard items={item} key={index} />
+            <Historycard items={item} key={index} restate={restate} />
           ))}
         </div>
       );

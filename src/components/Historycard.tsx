@@ -4,11 +4,8 @@ import axios from "axios"
 import DetailModal from "src/components/DetailModalscreen";
 
 
-function Historycard(props : any) {
-    const [state,setState] = useState<any[]>([]);
+function Historycard(props : any, { restate }:any) {
     let resultDate = props.items.created_at.substr(0, 10);
-
-    console.log("rendering...")
     console.log(props.items)
     {
         return (
@@ -24,7 +21,7 @@ function Historycard(props : any) {
                             onClick={() => axios.delete(`http://18.179.229.39/api/v1/plants/histories/${props.items.id}/`)
                             .then((res) => {
                                 console.log(res)
-                                setState([...state])
+                                props.restate();
                             })
                             .catch((error) => {
                                 console.log(error);
