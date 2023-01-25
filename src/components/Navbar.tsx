@@ -8,10 +8,13 @@ import login_hover from "src/images/login_hover.svg";
 import diagnosis_hover from "src/images/diagnosis_hover.svg";
 import history_hover from "src/images/history_hover.svg";
 import axios from "axios";
+import { AsyncLocalStorage } from "async_hooks";
 
 function Navbar() {
   // 현재 로그인 여부를 판단 변수
-  const [isLogin, setIsLogin] = useState<any>(axios.defaults.headers.common["Authorization"]);
+  const [isLogin, setIsLogin] = useState<any>(
+    axios.defaults.headers.common["Authorization"]
+  );
   const [menuToggle, setMenuToggle] = useState(false);
   const navigate = useNavigate();
 
@@ -25,7 +28,8 @@ function Navbar() {
     navigate("/getStart");
   };
   const moveToLogout = () => {
-     // axios
+    // axios
+    localStorage.removeItem("token");
   };
 
   return (
@@ -57,16 +61,19 @@ function Navbar() {
           </div>
           {/* previewUrl이라는 이미지 경로값이 있으면 그 사진을, 없으면 기본 사진을 출력하는 부분 */}
           {isLogin ? (
-                <div className="cursor-pointer hover:text-button" onClick={moveToLogout}>
-                  Logout
-                </div>
-               ) : (
-                <div
-                className="cursor-pointer hover:text-button"
-                onClick={moveToLogin}
-              >
-                Login
-              </div>
+            <div
+              className="cursor-pointer hover:text-button"
+              onClick={moveToLogout}
+            >
+              Logout
+            </div>
+          ) : (
+            <div
+              className="cursor-pointer hover:text-button"
+              onClick={moveToLogin}
+            >
+              Login
+            </div>
           )}
         </div>
       </div>
