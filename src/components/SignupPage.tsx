@@ -17,7 +17,7 @@ const SignupPage = (props: any) => {
     console.log(data);
     if (data !== undefined) {
       await axios
-        .post("http://18.179.229.39/api/v1/members/signup/", {
+        .post("http://cropdoctor.shop/api/v1/members/signup/", {
           params: {
             email: data.email,
             password: data.password,
