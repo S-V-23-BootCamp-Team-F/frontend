@@ -27,6 +27,7 @@ function Navbar() {
   const moveToLogin = () => {
     navigate("/getStart");
   };
+  // 로그아웃
   const moveToLogout = () => {
     // axios
     localStorage.removeItem("token");
