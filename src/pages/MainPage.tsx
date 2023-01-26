@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
 import { useEffect } from "react";
+import "../Cookie";
 // images
 import uploadImage from "src/images/uploadImage.svg";
 // exampleimages
@@ -11,11 +12,13 @@ import example1 from "src/images/example1.png";
 import example2 from "src/images/example2.png";
 import example3 from "src/images/example3.png";
 import LoadingPage from "@/components/LoadingPage";
+import { getCookie } from "../Cookie";
 
 const MainPage = () => {
   const [imageName, setImageName] = useState<string | null>(null);
   const [plantIndex, setPlantIndex] = useState<number>(-1);
   const [image, setImage]: any = useState(null);
+  const userCookie = getCookie("access");
   const [previewUrl, setPreviewUrl] = useState("");
   const [buttonOn, setButtonOn] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(Boolean);
@@ -75,6 +78,9 @@ const MainPage = () => {
     await axios
       .get("https://api.cropdoctor.shop/api/v1/plants/ais/", {
         params: { picture: imageName, type: plantIndex },
+        headers : {
+          Authorization : `Bearer ${userCookie}`
+        },
       })
       .then((res) => {
         console.log(res.data);
@@ -91,9 +97,9 @@ const MainPage = () => {
       });
   };
 
-  useEffect(() => {
-    getResult();
-  }, []);
+  // useEffect(() => {
+  //   getResult();
+  // }, []);
 
   const plantIndexHandler = (e: any) => {
     setPlantIndex(e.target.value); // 작물 인덱스

@@ -4,6 +4,7 @@ import "tailwindcss/tailwind.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import "../Cookie.js" 
 
 const LogInPage = () => {
   const [loginChk, setLoginChk] = useState<boolean>(false);
@@ -15,7 +16,6 @@ const LogInPage = () => {
   } = useForm();
 
   const navigate = useNavigate();
-  const [token, setToken, removeToken] = useCookies(["loginToken"]);
   // 토큰을 쿠키에 저장하면됨 이거는
   const onSubmit = (data: any) => {
     const datas = {
@@ -23,19 +23,29 @@ const LogInPage = () => {
       password: data.password,
     };
     axios
-
       .post("https://api.cropdoctor.shop/api/v1/members/login/", datas, {
         //api 주소
         withCredentials: true, //끅끠를 주고받는 명령어
       })
       .then((res) => {
         const accessToken = res.data.result.token.access;
+        const refreshToken = res.data.result.token.refresh;
 
         // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
-        axios.defaults.headers.common[
-          "Authorization"
-        ] = `Bearer ${accessToken}`;
+        // axios.defaults.headers.common[
+        //   "Authorization"
+        // ] = `Bearer ${accessToken}`;
+
+        setCookie("access", `${accessToken}`, {
+          path: "/",
+          sameSite: "strict",
+        });
+        setCookie("refresh", `${refreshToken}`, {
+          path: "/",
+          sameSite: "strict",
+        });
         setLoginChk(true);
+
         navigate("/");
         return res.data.result.token.access;
       })

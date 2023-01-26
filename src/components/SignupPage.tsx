@@ -26,6 +26,7 @@ const SignupPage = (props: any) => {
           },
         })
         .then((res) => {
+          console.log(res.data)
           if (res.status === 201) {
             console.log(res.data);
             alert("회원가입 성공");

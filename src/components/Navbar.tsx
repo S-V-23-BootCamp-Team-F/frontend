@@ -1,21 +1,22 @@
 import { useState } from "react"; // import state
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
-
 import logo from "src/images/logo.svg";
 import axios from "axios";
 import Hamburger from "hamburger-react";
+import { getCookie, removeCookie } from "../Cookie";
 
 function Navbar() {
   // 현재 로그인 여부를 판단 변수
   const [isLogin, setIsLogin] = useState<any>(
-    axios.defaults.headers.common["Authorization"]
+    getCookie("access")
   );
   const [menuToggle, setMenuToggle] = useState(false);
   const navigate = useNavigate();
 
   const moveToMain = () => {
     navigate("/");
+    
   };
   const moveToHistories = () => {
     navigate("/history");
@@ -27,9 +28,18 @@ function Navbar() {
   const moveToLogout = () => {
     // axios
     // 쿠키 삭제하기
-    localStorage.removeItem("token");
-    const setIsLogin = null;
-    navigate("/");
+    // localStorage.removeItem("token");
+    
+    removeCookie("access", {
+      path: "/",
+      sameSite: "strict",
+    });
+    removeCookie("refresh", {
+      path: "/",
+      sameSite: "strict",
+    });
+
+    window.location.replace("/");
   };
 
   return (
@@ -109,7 +119,7 @@ function Navbar() {
                         className=" mt-3 cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
                         onClick={moveToLogout}
                       >
-                        Login
+                        Logout
                       </div>
                     </div>
                   ) : (

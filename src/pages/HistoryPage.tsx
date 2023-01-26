@@ -4,13 +4,17 @@ import axios from "axios";
 import Historycard from "src/components/Historycard";
 import Navbar from "src/components/Navbar";
 import LoadingPage from "src/components/LoadingPage";
+import { useNavigate } from "react-router";
+import "../Cookie";
+import { getCookie } from "../Cookie";
 
 const HistoryPage = () => {
   const [history, setHistory] = useState<any[]>([]); //히스토리 불러올 함수
-  const email: string = ""; //get 파라미터 선언
   const reversed: any[] = [...history].reverse(); //히스토리 내림차순으로 정렬
   const [index, setIndex] = useState<number>(0); //카테고리 인덱스
   const [loading, setLoading] = useState<boolean>(false); //로딩 상태
+  const navigate = useNavigate();
+  const userCookie = getCookie("access");
   const indexHandler = (e: any) => {
     setIndex((index) => e.target.value);
   }; //카테고리 밸류값 인덱스에 저장
@@ -48,12 +52,10 @@ const HistoryPage = () => {
       setLoading(true);
       await axios
         .get("https://api.cropdoctor.shop/api/v1/plants/histories/", {
-          // api 주소
-          // api에 get으로 요청
-          params: {
-            email: decodeURI(email),
-          },
-        })
+        headers : {
+          Authorization : `Bearer ${userCookie}`
+        },
+      })
         .then((res) => {
           setHistory([...res.data.result]); //history에 요청한 데이터 저장
           console.log(history);
@@ -62,7 +64,7 @@ const HistoryPage = () => {
         .catch((error) => {
           console.log(error);
           alert("히스토리 불러오기 실패. 로그인이 되어있는지 확인하세요.");
-          window.location.href = "https://api.cropdoctor.shop"; //에러시 메인페이지로 이동, api 주소
+          navigate('/');
         });
     })();
   }, []);
