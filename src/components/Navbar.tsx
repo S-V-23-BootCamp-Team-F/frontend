@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import logo from "src/images/logo.svg";
 import axios from "axios";
+import Hamburger from "hamburger-react";
 
 function Navbar() {
   // 현재 로그인 여부를 판단 변수
@@ -132,37 +133,7 @@ function Navbar() {
               className=" w-fit"
               onClick={() => setMenuToggle(!menuToggle)}
             >
-              {menuToggle ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mt-8 mr-4 h-16 w-16"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="green"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mt-8 mr-4 h-16 w-16"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="green"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
+              <Hamburger toggled={menuToggle} toggle={setMenuToggle} />
             </button>
           </div>
         </>
