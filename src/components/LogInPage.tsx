@@ -3,8 +3,10 @@ import React, { useRef, useState } from "react";
 import "tailwindcss/tailwind.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const LogInPage = () => {
+  const [loginChk, setLoginChk] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
@@ -21,6 +23,7 @@ const LogInPage = () => {
       password: data.password,
     };
     axios
+
       .post("http://cropdoctor.shop/api/v1/members/login/", datas, { //api 주소
         withCredentials: true, //끅끠를 주고받는 명령어
       })
@@ -32,6 +35,9 @@ const LogInPage = () => {
         axios.defaults.headers.common[
           "Authorization"
         ] = `Bearer ${accessToken}`;
+        Cookies.set("cookie", res.data.token.access);
+        console.log("cookie");
+        setLoginChk(true);
         navigate("/");
         return res.data.result.token.access;
       })

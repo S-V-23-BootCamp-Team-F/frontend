@@ -39,6 +39,7 @@ module.exports = {
         login_hover: "url('images/login_hover.svg')",
         history: "url('images/history.svg')",
         history_hover: "url('images/history_hover.svg')",
+        upload_image: "url('images/uploadImage.svg')",
       },
       fontSize: {
         10: "10px",

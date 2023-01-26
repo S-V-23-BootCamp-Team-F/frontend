@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
+import { useEffect } from "react";
 // images
 import uploadImage from "src/images/uploadImage.svg";
 // exampleimages
@@ -12,12 +13,12 @@ import example3 from "src/images/example3.png";
 import LoadingPage from "@/components/LoadingPage";
 
 const MainPage = () => {
-  const [imageName, setImageName] = useState<any>(null);
+  const [imageName, setImageName] = useState<string | null>(null);
   const [plantIndex, setPlantIndex] = useState<Number>(-1);
   const [image, setImage]: any = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
-  const [buttonOn, setButtonOn] = useState(false);
-  const [loading, setLoading] = useState(Boolean);
+  const [buttonOn, setButtonOn] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(Boolean);
   const navigate = useNavigate();
 
   const handleFile = async (file: any) => {
@@ -71,8 +72,9 @@ const MainPage = () => {
   };
   const getResult = async () => {
     setLoading(true);
-    await axios 
-      .get("http://cropdoctor.shop/api/v1/plants/ais/", { //api 주소
+    await axios
+      .get("http://cropdoctor.shop/api/v1/plants/ais/", {
+        //api 주소
         params: { picture: imageName, type: plantIndex },
       })
       .then((res) => {
@@ -88,6 +90,11 @@ const MainPage = () => {
         console.log(error);
       });
   };
+
+  useEffect(() => {
+    getResult();
+  }, []);
+
   const plantIndexHandler = (e: any) => {
     setPlantIndex(e.target.value); // 작물 인덱스
   };
@@ -155,12 +162,7 @@ const MainPage = () => {
                         />
                       </div>
                     ) : (
-                      <div>
-                        <img
-                          src={uploadImage}
-                          className="h-full w-full object-scale-down"
-                        />
-                      </div>
+                      <div className=" h-full w-full bg-upload_image bg-center bg-no-repeat object-scale-down" />
                     )}
                   </div>
                   {/* input field를 넣어 실제 파일을 올릴 수 있게 해 두었다(클릭 시 작동) */}
