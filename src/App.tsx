@@ -5,7 +5,6 @@ import MainPage from "./pages/MainPage";
 import AbnomalResultPage from "./pages/AbnomalResultPage";
 import HistoryPage from "./pages/HistoryPage";
 import NomalResultPage from "./pages/NomalResultPage";
-import TailwindAnimate from "./pages/TailwindAnimate";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <Route path="/abnomalresult" element={<AbnomalResultPage />} />
         <Route path="/nomalresult" element={<NomalResultPage />} />
         <Route path="/history" element={<HistoryPage />} />
-        <Route path="/test" element={<TailwindAnimate />} />
       </Routes>
     </Router>
   );

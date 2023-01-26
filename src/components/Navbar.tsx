@@ -79,54 +79,58 @@ function Navbar() {
       <div className="fixed flex max-sm:flex-col-reverse">
         <>
           {/** hamburger */}
-          <div
-            className={classNames(
-              "animate slide-out-from-right h-screen rounded-l-md border-l-2 bg-background shadow-2xl animate-out sm:hidden",
-              {
-                hidden: !menuToggle,
-              }
-            )}
-          >
-            <div className="mt-20 flex flex-col px-10 text-center text-2xl">
-              {/* group을 이용하여 하나로 묶은 뒤 group: 을 이용하여 동시에 작동시키려하는 작업 작성 */}
-              <div className="group flex flex-col items-center justify-center pb-2 hover:pb-1">
-                <div className="mt-8 h-20 w-20 bg-diagnosis hover:cursor-pointer group-hover:bg-diagnosis_hover" />
+          {menuToggle ? (
+            <div className=" h-screen -translate-y-1 rounded-l-md border-l-2 bg-background shadow-2xl transition animate-in slide-in-from-right-40 duration-1000 ease-in-out sm:hidden">
+              <div className="mt-20 flex flex-col px-10 text-center text-2xl">
+                {/* group을 이용하여 하나로 묶은 뒤 group: 을 이용하여 동시에 작동시키려하는 작업 작성 */}
                 <div
-                  className="cursor-pointer hover:mb-0 group-hover:border-b-2 group-hover:border-button group-hover:text-button"
+                  className="group flex flex-col items-center justify-center pb-2 hover:pb-1 "
                   onClick={moveToMain}
                 >
-                  Diagnosis
+                  <div className="mt-8 h-20 w-20 bg-diagnosis hover:cursor-pointer group-hover:bg-diagnosis_hover" />
+                  <div className="cursor-pointer hover:mb-0 group-hover:border-b-2 group-hover:border-button group-hover:text-button">
+                    Diagnosis
+                  </div>
                 </div>
-              </div>
-              <div className="group flex flex-col items-center justify-center pb-2 hover:pb-1">
-                <div className="mt-8 h-20 w-20 bg-history hover:cursor-pointer group-hover:bg-history_hover" />
                 <div
-                  className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
+                  className="group flex flex-col items-center justify-center pb-2 hover:pb-1"
                   onClick={moveToHistories}
                 >
-                  Histories
+                  <div className="mt-8 h-20 w-20 bg-history hover:cursor-pointer group-hover:bg-history_hover" />
+                  <div className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
+                    Histories
+                  </div>
+                </div>
+                <div className="group flex flex-col items-center justify-center pb-2 hover:pb-1">
+                  {isLogin ? (
+                    <div>
+                      <div className="mt-8 h-20 w-20 bg-login hover:cursor-pointer group-hover:bg-login_hover" />
+
+                      <div
+                        className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
+                        onClick={moveToLogout}
+                      >
+                        Login
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="mt-8 h-20 w-20 bg-login hover:cursor-pointer group-hover:bg-login_hover" />
+
+                      <div
+                        className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
+                        onClick={moveToLogin}
+                      >
+                        Login
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="group flex flex-col items-center justify-center pb-2 hover:pb-1">
-                <div className="mt-8 h-20 w-20 bg-login hover:cursor-pointer group-hover:bg-login_hover" />
-                {isLogin ? (
-                  <div
-                    className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
-                    onClick={moveToLogout}
-                  >
-                    Login
-                  </div>
-                ) : (
-                  <div
-                    className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
-                    onClick={moveToLogin}
-                  >
-                    Login
-                  </div>
-                )}
-              </div>
             </div>
-          </div>
+          ) : (
+            <div></div>
+          )}
           <div className="flex h-fit items-end justify-end bg-background sm:hidden">
             <button
               className=" w-fit"
