@@ -115,7 +115,7 @@ const MainPage = () => {
         {/* 세로정렬, 너비 꽉차게, 중앙정렬, 상단 패딩, lg너비 이상일 때 가로정렬 */}
         <div
           id="main-wrap"
-          className="flex w-full flex-col justify-center pt-16 lg:flex-row"
+          className="flex w-full flex-col justify-center pt-16 max-lg:pt-32 lg:flex-row"
         >
           {/** 이미지 업로드 부분 시작 */}
           {/* 너비, 높이 지정 */}
