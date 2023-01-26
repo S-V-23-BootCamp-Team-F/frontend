@@ -19,20 +19,18 @@ const SignupPage = (props: any) => {
         password: data.password,
       };
       await axios
-        .post("https://api.cropdoctor.shop/api/v1/members/signup/", {
-          params: {
-            email: data.email,
-            password: data.password,
-          },
-        })
+        .post("https://api.cropdoctor.shop/api/v1/members/signup/", datas)
         .then((res) => {
           console.log(res.data)
           if (res.status === 201) {
             console.log(res.data);
             alert("회원가입 성공");
             setTap(1);
-          } else {
+          } else if(res.status === 202) {
             alert("이미 존재한 회원입니다");
+          }
+          else{
+            alert("error 관리자에게 문의바람");
           }
         })
         .catch((error) => {
