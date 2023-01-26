@@ -13,12 +13,12 @@ import example3 from "src/images/example3.png";
 import LoadingPage from "@/components/LoadingPage";
 
 const MainPage = () => {
-  const [imageName, setImageName] = useState<any>(null);
+  const [imageName, setImageName] = useState<string | null>(null);
   const [plantIndex, setPlantIndex] = useState<Number>(-1);
   const [image, setImage]: any = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
-  const [buttonOn, setButtonOn] = useState(false);
-  const [loading, setLoading] = useState(Boolean);
+  const [buttonOn, setButtonOn] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(Boolean);
   const navigate = useNavigate();
 
   const handleFile = async (file: any) => {
