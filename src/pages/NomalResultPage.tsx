@@ -18,7 +18,7 @@ const NomalResultPage = () => {
         {/* 왼쪽 */}
         <div className="flex items-center ">
           <img
-            src={location.state.url}
+            src={location.state.result.result_picture} //수정 ⭕️
             className="h-356 w-600 rounded-xl object-cover"
           />
         </div>
@@ -31,7 +31,7 @@ const NomalResultPage = () => {
           </div>
           <img src={nomal} className="h-356 w-600 object-contain" />
           <div className="mt-24 font-kor-bold text-2xl md:text-left lg:text-left">
-            우리의 {location.state.plant_name}는 건강합니다.
+            우리의 {location.state.result.plant.type}는 건강합니다.
           </div>
         </div>
       </div>
