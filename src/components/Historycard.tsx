@@ -10,7 +10,7 @@ function Historycard(props: any) {
   console.log(props.items);
   {
     return (
-      <div className="m-auto ml-2 h-80 w-80">
+      <div className="m-auto h-80 w-80">
         <div className="relative h-52 w-80">
           {/*모달창 버튼 표시, props로 데이터 전달*/}
           <div className="absolute h-full w-full rounded-lg">
