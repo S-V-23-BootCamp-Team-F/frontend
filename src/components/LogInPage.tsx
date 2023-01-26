@@ -24,7 +24,7 @@ const LogInPage = () => {
     };
     axios
 
-      .post("http://cropdoctor.shop/api/v1/members/login/", datas, { //api 주소
+      .post("https://api.cropdoctor.shop/api/v1/members/login/", datas, { //api 주소
         withCredentials: true, //끅끠를 주고받는 명령어
       })
       .then((res) => {

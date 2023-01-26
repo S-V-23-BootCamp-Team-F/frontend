@@ -19,7 +19,7 @@ const SignupPage = (props: any) => {
         password: data.password,
       };
       await axios
-        .post("http://cropdoctor.shop/api/v1/members/signup/", {
+        .post("https://api.cropdoctor.shop/api/v1/members/signup/", {
           params: {
             email: data.email,
             password: data.password,

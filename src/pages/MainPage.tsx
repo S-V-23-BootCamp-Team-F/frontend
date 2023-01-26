@@ -14,7 +14,7 @@ import LoadingPage from "@/components/LoadingPage";
 
 const MainPage = () => {
   const [imageName, setImageName] = useState<string | null>(null);
-  const [plantIndex, setPlantIndex] = useState<Number>(-1);
+  const [plantIndex, setPlantIndex] = useState<number>(-1);
   const [image, setImage]: any = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
   const [buttonOn, setButtonOn] = useState<boolean>(false);
@@ -35,7 +35,7 @@ const MainPage = () => {
     formData.append("picture", file);
     await axios({
       method: "post",
-      url: "http://cropdoctor.shop/api/v1/plants/pictures/", //api 주소
+      url: "https://api.cropdoctor.shop/api/v1/plants/pictures/", //api 주소
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
@@ -74,8 +74,6 @@ const MainPage = () => {
     setLoading(true);
     await axios
       .get("https://api.cropdoctor.shop/api/v1/plants/ais/", {
-        //⭕️
-        //api 주소
         params: { picture: imageName, type: plantIndex },
       })
       .then((res) => {
