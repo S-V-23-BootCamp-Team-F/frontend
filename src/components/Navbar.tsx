@@ -87,8 +87,8 @@ function Navbar() {
                   className="group flex flex-col items-center justify-center pb-2 hover:pb-1 "
                   onClick={moveToMain}
                 >
-                  <div className="mt-8 h-20 w-20 bg-diagnosis hover:cursor-pointer group-hover:bg-diagnosis_hover" />
-                  <div className="cursor-pointer hover:mb-0 group-hover:border-b-2 group-hover:border-button group-hover:text-button">
+                  <div className="mt-8 h-20 w-20 bg-diagnosis bg-contain hover:cursor-pointer group-hover:bg-diagnosis_hover" />
+                  <div className="mt-3 cursor-pointer hover:mb-0 group-hover:border-b-2 group-hover:border-button group-hover:text-button">
                     Diagnosis
                   </div>
                 </div>
@@ -96,18 +96,17 @@ function Navbar() {
                   className="group flex flex-col items-center justify-center pb-2 hover:pb-1"
                   onClick={moveToHistories}
                 >
-                  <div className="mt-8 h-20 w-20 bg-history hover:cursor-pointer group-hover:bg-history_hover" />
-                  <div className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
+                  <div className="mt-16 h-20 w-20 bg-history bg-contain hover:cursor-pointer group-hover:bg-history_hover" />
+                  <div className=" mt-3 cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
                     Histories
                   </div>
                 </div>
                 <div className="group flex flex-col items-center justify-center pb-2 hover:pb-1">
                   {isLogin ? (
                     <div>
-                      <div className="mt-8 h-20 w-20 bg-login hover:cursor-pointer group-hover:bg-login_hover" />
-
+                      <div className="mt-16 h-20 w-20 bg-login bg-contain hover:cursor-pointer group-hover:bg-login_hover" />
                       <div
-                        className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
+                        className=" mt-3 cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
                         onClick={moveToLogout}
                       >
                         Login
@@ -115,10 +114,10 @@ function Navbar() {
                     </div>
                   ) : (
                     <div>
-                      <div className="mt-8 h-20 w-20 bg-login hover:cursor-pointer group-hover:bg-login_hover" />
+                      <div className="mt-16 h-20 w-20 bg-login bg-contain hover:cursor-pointer group-hover:bg-login_hover" />
 
                       <div
-                        className=" cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
+                        className=" mt-3 cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
                         onClick={moveToLogin}
                       >
                         Login
