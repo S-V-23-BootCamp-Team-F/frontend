@@ -34,11 +34,11 @@ const AbnomalResultPage = () => {
           <div className="mt-5 h-356 w-600 object-cover">
             <div className="flex ">
               <img
-                src={tomato3}
+                src={location.state.result.disease.example}
                 className="sub_tomato2 mr-2.5 h-356 w-72 rounded-xl object-cover"
               />
               <img
-                src={tomato2}
+                src={location.state.result.disease.example2}
                 className="sub_tomato3 ml-2.5 h-356 w-72 rounded-xl object-cover"
               />
             </div>
