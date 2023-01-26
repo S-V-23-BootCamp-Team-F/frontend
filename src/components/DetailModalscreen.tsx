@@ -58,21 +58,21 @@ const DetailModal = (props:any) => {
                           {/*병 원인*/}
                           <div className="mb-2 font-eng-bold text-2xl">Causation</div>
                             <div className="mb-5 h-20 max-w-2xl overflow-y-auto border-black font-kor-regular text-lg">
-                              다습할 때 발생하는 병해로서 반촉성 재배에 특히 많다. 토마토, 가지, 고추, 딸기 등의 시설재배시 줄기와 잎에도 발생하지만 주로 열매에 발생하여 피해를 나타낸다. 이 병은 저온이나 무가온재배에서 발병이 많고 다량의 분생포자를 형성하기 때문에 발생의 확산이 빠르다.
+                              {props.items.disease.cause}
                             </div>
                           </div>
                           <div>
                             {/*증상*/}
                             <div className="mb-2 font-eng-bold text-2xl">Symptom</div>
                               <div className="mb-5 h-20 max-w-2xl overflow-y-auto border-black font-kor-regular text-lg">
-                                다습할 때 발생하는 병해로서 반촉성 재배에 특히 많다. 토마토, 가지, 고추, 딸기 등의 시설재배시 줄기와 잎에도 발생하지만 주로 열매에 발생하여 피해를 나타낸다. 이 병은 저온이나 무가온재배에서 발병이 많고 다량의 분생포자를 형성하기 때문에 발생의 확산이 빠르다.
+                                {props.items.disease.feature}
                               </div>
                             </div>
                             <div>
                               {/*치료법*/}
                               <div className="mb-2  font-eng-bold text-2xl">Cure</div>
                               <div className="mb-5 h-20 max-w-2xl overflow-y-auto border-black font-kor-regular text-lg">
-                                다습할 때 발생하는 병해로서 반촉성 재배에 특히 많다. 토마토, 가지, 고추, 딸기 등의 시설재배시 줄기와 잎에도 발생하지만 주로 열매에 발생하여 피해를 나타낸다. 이 병은 저온이나 무가온재배에서 발병이 많고 다량의 분생포자를 형성하기 때문에 발생의 확산이 빠르다.
+                                {props.items.disease.solution}
                               </div>
                             </div>
                           </>
