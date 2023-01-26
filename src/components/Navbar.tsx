@@ -59,7 +59,6 @@ function Navbar() {
           >
             Histories
           </div>
-          {/* previewUrl이라는 이미지 경로값이 있으면 그 사진을, 없으면 기본 사진을 출력하는 부분 */}
           {isLogin ? (
             <div
               className="cursor-pointer hover:text-button"
@@ -82,7 +81,7 @@ function Navbar() {
           {/** hamburger */}
           <div
             className={classNames(
-              "h-screen rounded-l-md border-l-2 bg-background shadow-2xl sm:hidden",
+              "animate h-screen rounded-l-md border-l-2 bg-background shadow-2xl animate-out slide-in-from-left-10 sm:hidden",
               {
                 hidden: !menuToggle,
               }
