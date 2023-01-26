@@ -81,7 +81,7 @@ function Navbar() {
           {/** hamburger */}
           <div
             className={classNames(
-              "animate h-screen rounded-l-md border-l-2 bg-background shadow-2xl animate-out slide-in-from-left-10 sm:hidden",
+              "animate slide-out-from-right h-screen rounded-l-md border-l-2 bg-background shadow-2xl animate-out sm:hidden",
               {
                 hidden: !menuToggle,
               }
