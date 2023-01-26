@@ -12,7 +12,7 @@ const LoadingPage = () => {
           스피너
         </DotLoader>
         <div className="mt-20 pt-10 text-center font-kor-bold text-2xl">
-          AI 분석 결과를 불러오는 중입니다. . .
+          로딩중 입니다. . .
         </div>
       </div>
     </div>
