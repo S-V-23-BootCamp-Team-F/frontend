@@ -79,7 +79,7 @@ const MainPage = () => {
       .then((res) => {
         console.log(res.data);
         setLoading(false);
-        if (res.data.disease.name === "정상") {
+        if (res.data.result.disease.name === "정상") {
           //수정 ⭕️
           navigate("/nomalresult", { state: res.data });
         } else {
