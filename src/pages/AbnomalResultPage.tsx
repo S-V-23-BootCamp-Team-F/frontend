@@ -1,5 +1,4 @@
 import React from "react";
-import tomato from "src/images/tomato.jpg";
 import tomato2 from "src/images/tomato2.jpg";
 import tomato3 from "src/images/tomato3.jpg";
 import die from "src/images/dietomato.png";
@@ -55,7 +54,6 @@ const AbnomalResultPage = () => {
               진단결과&nbsp;&nbsp;
               <span className="font-kor-bold text-disease">
                 {location.state.disease_name}
-
               </span>
               으로 의심됩니다.
             </div>

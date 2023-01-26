@@ -9,12 +9,15 @@ const SignupPage = (props: any) => {
     formState: { errors },
     watch,
   } = useForm();
-
   const setTap = props.setTap;
 
   const onSubmit = async (data: any) => {
     console.log(data);
     if (data !== undefined) {
+      const datas = {
+        email: data.email,
+        password: data.password,
+      };
       await axios
         .post("http://cropdoctor.shop:3000/api/v1/members/signup/", {
           params: {

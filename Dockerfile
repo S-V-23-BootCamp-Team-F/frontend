@@ -1,13 +1,9 @@
-FROM node
+FROM node:16-alpine
 
-RUN mkdir /app
-WORKDIR /app
-
-# ENV ENV PATH /app/node_modules/.bin:$PATH
-COPY package.json ./
-
-RUN npm install
+WORKDIR /frontend
 
 COPY . ./
 
-CMD ["npm", "run", "dev"]
+RUN yarn
+
+RUN yarn build
