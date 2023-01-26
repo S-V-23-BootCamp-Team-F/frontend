@@ -29,7 +29,7 @@ axios.interceptors.response.use(
     console.log(error);
     if (error.response?.status === 401) {
       const response = await axios.get(
-s        "https://api.cropdoctor.shop/api/v1/members/login/refresh",
+        "https://api.cropdoctor.shop/api/v1/members/login/refresh",
         {
           withCredentials: true,
         }
