@@ -19,7 +19,7 @@ function Historycard(props : any) {
                     {/*삭제 API 연동*/}
                         <button
                             className="w-5 md:w-6 h-auto m-auto mt-2 right-2 absolute"
-                            onClick={() => axios.delete(`http://18.179.229.39/api/v1/plants/histories/${props.items.id}/`)
+                            onClick={() => axios.delete(`http://cropdoctor.shop/api/v1/plants/histories/${props.items.id}/`) //api 주소
                             .then((res) => {
                                 console.log(res)
                                 props.restate(); //히스토리 페이지 새로고침

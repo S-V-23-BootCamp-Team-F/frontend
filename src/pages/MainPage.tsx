@@ -34,7 +34,7 @@ const MainPage = () => {
     formData.append("picture", file);
     await axios({
       method: "post",
-      url: "http://18.179.229.39/api/v1/plants/pictures/",
+      url: "http://cropdoctor.shop/api/v1/plants/pictures/", //api 주소
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
@@ -71,8 +71,8 @@ const MainPage = () => {
   };
   const getResult = async () => {
     setLoading(true);
-    await axios
-      .get("http://18.179.229.39/api/v1/plants/ais/", {
+    await axios 
+      .get("http://cropdoctor.shop/api/v1/plants/ais/", { //api 주소
         params: { picture: imageName, type: plantIndex },
       })
       .then((res) => {

@@ -19,7 +19,7 @@ const SignupPage = (props: any) => {
         password: data.password,
       };
       await axios
-        .post("http://18.179.229.39/api/v1/members/signup/",datas)
+        .post("http://cropdoctor.shop/api/v1/members/signup/",datas) //api 주소
         .then((res) => {
           if (res.status === 201) {
             console.log(res.data);

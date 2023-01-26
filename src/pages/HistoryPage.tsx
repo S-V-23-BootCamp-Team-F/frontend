@@ -41,7 +41,8 @@ const HistoryPage = () => {
     (async () => {
       setLoading(true); 
       await axios
-        .get("http://18.179.229.39/api/v1/plants/histories/", {
+        .get("http://cropdoctor.shop/api/v1/plants/histories/", {
+          // api 주소
           // api에 get으로 요청
           params: {
             email: decodeURI(email),
@@ -55,7 +56,7 @@ const HistoryPage = () => {
         .catch((error) => {
           console.log(error);
           alert('히스토리 불러오기 실패. 로그인이 되어있는지 확인하세요.');
-          window.location.href = "http://localhost:3000/"; //에러시 메인페이지로 이동
+          window.location.href = "http://cropdoctor.shop"; //에러시 메인페이지로 이동, api 주소
         });
     })();
   }, []);
