@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
+import { useEffect } from "react";
 // images
 import uploadImage from "src/images/uploadImage.svg";
 // exampleimages
@@ -71,8 +72,9 @@ const MainPage = () => {
   };
   const getResult = async () => {
     setLoading(true);
-    await axios 
-      .get("http://cropdoctor.shop/api/v1/plants/ais/", { //api 주소
+    await axios
+      .get("http://cropdoctor.shop/api/v1/plants/ais/", {
+        //api 주소
         params: { picture: imageName, type: plantIndex },
       })
       .then((res) => {
