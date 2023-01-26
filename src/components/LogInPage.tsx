@@ -3,8 +3,7 @@ import React, { useRef, useState } from "react";
 import "tailwindcss/tailwind.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
-import "../Cookie.js" 
+import "../Cookie" 
 
 const LogInPage = () => {
   const [loginChk, setLoginChk] = useState<boolean>(false);
