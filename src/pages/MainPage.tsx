@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Navbar from "src/components/Navbar";
 import { useEffect } from "react";
+import "../Cookie";
 // images
 import uploadImage from "src/images/uploadImage.svg";
 // exampleimages
@@ -11,11 +12,13 @@ import example1 from "src/images/example1.png";
 import example2 from "src/images/example2.png";
 import example3 from "src/images/example3.png";
 import LoadingPage from "@/components/LoadingPage";
+import { getCookie } from "../Cookie";
 
 const MainPage = () => {
   const [imageName, setImageName] = useState<string | null>(null);
-  const [plantIndex, setPlantIndex] = useState<Number>(-1);
+  const [plantIndex, setPlantIndex] = useState<number>(-1);
   const [image, setImage]: any = useState(null);
+  const userCookie = getCookie("access");
   const [previewUrl, setPreviewUrl] = useState("");
   const [buttonOn, setButtonOn] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(Boolean);
@@ -35,7 +38,7 @@ const MainPage = () => {
     formData.append("picture", file);
     await axios({
       method: "post",
-      url: "http://cropdoctor.shop/api/v1/plants/pictures/", //api 주소
+      url: "https://api.cropdoctor.shop/api/v1/plants/pictures/", //api 주소
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
@@ -73,14 +76,17 @@ const MainPage = () => {
   const getResult = async () => {
     setLoading(true);
     await axios
-      .get("http://cropdoctor.shop/api/v1/plants/ais/", {
-        //api 주소
+      .get("https://api.cropdoctor.shop/api/v1/plants/ais/", {
         params: { picture: imageName, type: plantIndex },
+        headers : {
+          Authorization : `Bearer ${userCookie}`
+        },
       })
       .then((res) => {
         console.log(res.data);
         setLoading(false);
-        if (res.data.disease_name === "정상") {
+        if (res.data.result.disease.name === "정상") {
+          //수정 ⭕️
           navigate("/nomalresult", { state: res.data });
         } else {
           navigate("/abnomalresult", { state: res.data });
@@ -91,9 +97,9 @@ const MainPage = () => {
       });
   };
 
-  useEffect(() => {
-    getResult();
-  }, []);
+  // useEffect(() => {
+  //   getResult();
+  // }, []);
 
   const plantIndexHandler = (e: any) => {
     setPlantIndex(e.target.value); // 작물 인덱스
@@ -115,7 +121,7 @@ const MainPage = () => {
         {/* 세로정렬, 너비 꽉차게, 중앙정렬, 상단 패딩, lg너비 이상일 때 가로정렬 */}
         <div
           id="main-wrap"
-          className="flex w-full flex-col justify-center pt-16 lg:flex-row"
+          className="flex w-full flex-col justify-center pt-16 max-lg:pt-32 lg:flex-row"
         >
           {/** 이미지 업로드 부분 시작 */}
           {/* 너비, 높이 지정 */}
