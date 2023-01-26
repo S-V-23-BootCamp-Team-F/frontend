@@ -73,14 +73,16 @@ const MainPage = () => {
   const getResult = async () => {
     setLoading(true);
     await axios
-      .get("http://cropdoctor.shop/api/v1/plants/ais/", {
+      .get("https://api.cropdoctor.shop/api/v1/plants/ais/", {
+        //⭕️
         //api 주소
         params: { picture: imageName, type: plantIndex },
       })
       .then((res) => {
         console.log(res.data);
         setLoading(false);
-        if (res.data.disease_name === "정상") {
+        if (res.data.disease.name === "정상") {
+          //수정 ⭕️
           navigate("/nomalresult", { state: res.data });
         } else {
           navigate("/abnomalresult", { state: res.data });
