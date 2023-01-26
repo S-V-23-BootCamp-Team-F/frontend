@@ -55,15 +55,7 @@ const HistoryPage = () => {
         headers : {
           Authorization : `Bearer ${userCookie}`
         },
-      }
-        
-        //  api 주소
-         // api에 get으로 요청
-          // params: {
-          //   email: decodeURI(email),
-          // },
-   
-        )
+      })
         .then((res) => {
           setHistory([...res.data.result]); //history에 요청한 데이터 저장
           console.log(history);
@@ -73,8 +65,6 @@ const HistoryPage = () => {
           console.log(error);
           alert("히스토리 불러오기 실패. 로그인이 되어있는지 확인하세요.");
           navigate('/');
-          // window.location.href = "https://api.cropdoctor.shop"; //에러시 메인페이지로 이동, api 주소
-          
         });
     })();
   }, []);

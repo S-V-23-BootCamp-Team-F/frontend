@@ -1,11 +1,9 @@
 import { useState } from "react"; // import state
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
-
 import logo from "src/images/logo.svg";
 import axios from "axios";
 import Hamburger from "hamburger-react";
-import "../Cookie.ts"
 import { getCookie, removeCookie } from "../Cookie";
 
 function Navbar() {

@@ -29,7 +29,7 @@ axios.interceptors.response.use(
     console.log(error);
     if (error.response?.status === 401) {
       const response = await axios.get(
-        "http://18.179.229.39/api/v1/members/login/refresh/",
+        "https://api.cropdoctor.shop/api/v1/members/login/refresh",
         {
           withCredentials: true,
         }
@@ -50,4 +50,3 @@ axios.interceptors.response.use(
     return error;
   }
 );
-

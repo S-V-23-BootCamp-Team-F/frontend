@@ -8,8 +8,11 @@ const DetailModal = (props:any) => {
     return (
     <>
       {/*모달창 버튼을 업로드 이미지로*/}
-      <button onClick={() => setShowModal(true)}>
-        <img className="w-80 h-52 rounded-lg object-fit shadow-lg" src={props.items.picture}/>
+      <button onClick={() => setShowModal(true)} className="w-80 h-52 rounded-lg object-fit shadow-lg overflow-hidden bg-black group relative">
+        <img className="w-full h-full object-cover transform duration-700 backdrop-opacity-100" src={props.items.picture}/>
+        <div className="w-full h-full flex place-content-center mt-8 pt-12 bg-gradient-to-t from-black transform duration-500 inset-y-3/4 group-hover:-inset-y-0 absolute">
+          <div className="text-white text-2xl rounded-lg font-kor-medium absolute">클릭 시 상세정보 확인</div>
+        </div>
       </button>
       {/*모달창 활성화/비활성화용 삼항연산자*/}
       {showModal ? (

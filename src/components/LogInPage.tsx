@@ -3,9 +3,9 @@ import React, { useRef, useState } from "react";
 import "tailwindcss/tailwind.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-
+import { useCookies } from "react-cookie";
 import "../Cookie.js" 
-import { setCookie } from "../Cookie";
+
 const LogInPage = () => {
   const [loginChk, setLoginChk] = useState<boolean>(false);
   const {
@@ -44,6 +44,8 @@ const LogInPage = () => {
           path: "/",
           sameSite: "strict",
         });
+        setLoginChk(true);
+
         navigate("/");
         return res.data.result.token.access;
       })
