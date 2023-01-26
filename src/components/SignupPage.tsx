@@ -19,13 +19,14 @@ const SignupPage = (props: any) => {
         password: data.password,
       };
       await axios
-        .post("http://cropdoctor.shop:3000/api/v1/members/signup/", {
+        .post("https://api.cropdoctor.shop/api/v1/members/signup/", {
           params: {
             email: data.email,
             password: data.password,
           },
         })
         .then((res) => {
+          console.log(res.data)
           if (res.status === 201) {
             console.log(res.data);
             alert("회원가입 성공");
