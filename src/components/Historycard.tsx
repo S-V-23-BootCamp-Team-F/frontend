@@ -20,7 +20,7 @@ function Historycard(props: any) {
           </div>
           {/*삭제 API 연동*/}
           <button
-            className="absolute right-8 m-auto mt-2 h-auto w-5 md:w-6"
+            className="absolute right-9 m-auto mt-2 h-auto w-5 md:w-6"
             onClick={() =>
               axios
                 .delete(
