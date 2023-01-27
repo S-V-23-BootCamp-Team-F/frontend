@@ -3,11 +3,13 @@ import axios from "axios";
 
 import DetailModal from "src/components/DetailModalscreen";
 import Delete from "src/images/delete.svg";
+import { getCookie } from "../Cookie";
 
 //히스토리 정보 담을 컴포넌트 선언
 function Historycard(props: any) {
   const resultDate: string = props.items.created_at.substr(0, 10); //날짜 데이터 문자열 잘라서 YYYY-MM-DD형식으로 보이게
   console.log(props.items);
+  const userCookie = getCookie("access");
   {
     return (
       <div className="m-auto h-80 w-80">
@@ -22,7 +24,11 @@ function Historycard(props: any) {
             onClick={() =>
               axios
                 .delete(
-                  `https://api.cropdoctor.shop/api/v1/plants/histories/${props.items.id}/`
+                  `https://api.cropdoctor.shop/api/v1/plants/histories/${props.items.id}/`,{
+                    headers : {
+                      Authorization : `Bearer ${userCookie}`
+                    },
+                  }
                 ) //api 주소
                 .then((res) => {
                   console.log(res);
