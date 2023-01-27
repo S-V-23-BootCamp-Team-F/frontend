@@ -14,7 +14,7 @@ const StasticsPage = () =>{
             {/*내용*/}
             <div className="mt-10 px-12 pt-4">
                 {/*위쪽*/}
-                <div className="flex flex-col xl:flex-row align-middle">
+                <div className="flex flex-col min-[1130px]:flex-row align-middle">
                     {/*위 차트*/}
                     <div className="ml-0">
                         <Cropchart />
