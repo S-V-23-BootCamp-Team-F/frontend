@@ -32,7 +32,7 @@ module.exports = {
       },
       backgroundImage: {
         grass: "url('src/images/grass.svg')",
-        startImg: "url('images/backImg.svg')",
+        startImg: "url('images/backImg.png')",
         diagnosis: "url('images/diagnosis.svg')",
         diagnosis_hover: "url('images/diagnosis_hover.svg')",
         login: "url('images/login.svg')",
