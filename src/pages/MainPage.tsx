@@ -75,26 +75,46 @@ const MainPage = () => {
   };
   const getResult = async () => {
     setLoading(true);
-    await axios
-      .get("https://api.cropdoctor.shop/api/v1/plants/ais/", {
-        params: { picture: imageName, type: plantIndex },
-        headers : {
-          Authorization : `Bearer ${userCookie}`
-        },
-      })
-      .then((res) => {
-        console.log(res.data);
-        setLoading(false);
-        if (res.data.result.disease.name === "정상") {
-          //수정 ⭕️
-          navigate("/nomalresult", { state: res.data });
-        } else {
-          navigate("/abnomalresult", { state: res.data });
+    if (userCookie == null) {
+      await axios
+        .get("https://api.cropdoctor.shop/api/v1/plants/ais/", {
+          params: { picture: imageName, type: plantIndex }
+        })
+        .then((res) => {
+          console.log(res.data);
+          setLoading(false);
+          if (res.data.result.disease.name === "정상") {
+            //수정 ⭕️
+            navigate("/nomalresult", { state: res.data });
+          } else {
+            navigate("/abnomalresult", { state: res.data });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      await axios
+          .get("https://api.cropdoctor.shop/api/v1/plants/ais/", {
+            params: { picture: imageName, type: plantIndex },
+            headers : {
+              Authorization : `Bearer ${userCookie}`
+            },
+          })
+          .then((res) => {
+            console.log(res.data);
+            setLoading(false);
+            if (res.data.result.disease.name === "정상") {
+              //수정 ⭕️
+              navigate("/nomalresult", { state: res.data });
+            } else {
+              navigate("/abnomalresult", { state: res.data });
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
         }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   };
 
   // useEffect(() => {
