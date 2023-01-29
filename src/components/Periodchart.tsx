@@ -1,64 +1,111 @@
 import React from "react";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
 const Periodchart = () => {
-    const data = [
+    const grapedata = [
         {
-          "name": "Page A",
-          "uv": 4000,
-          "pv": 2400,
-          "amt": 2400
+          "name": "1월",
+          "포도탄저병": 4000,
+          "포도노균병": 2400,
+          "포도축과병": 1245,
+          "포도일소병": 2246,
         },
         {
-          "name": "Page B",
-          "uv": 3000,
-          "pv": 1398,
-          "amt": 2210
+          "name": "2월",
+          "포도탄저병": 3000,
+          "포도노균병": 1398,
+          "포도축과병": 2634,
+          "포도일소병": 2430,
         },
         {
-          "name": "Page C",
-          "uv": 2000,
-          "pv": 9800,
-          "amt": 2290
+          "name": "3월",
+          "포도탄저병": 2000,
+          "포도노균병": 9800,
+          "포도축과병": 5817,
+          "포도일소병": 6348,
         },
         {
-          "name": "Page D",
-          "uv": 2780,
-          "pv": 3908,
-          "amt": 2000
+          "name": "4월",
+          "포도탄저병": 2780,
+          "포도노균병": 3908,
+          "포도축과병": 4127,
+          "포도일소병": 5931,
         },
         {
-          "name": "Page E",
-          "uv": 1890,
-          "pv": 4800,
-          "amt": 2181
+          "name": "5월",
+          "포도탄저병": 1890,
+          "포도노균병": 4800,
+          "포도축과병": 942,
+          "포도일소병": 5483,
         },
         {
-          "name": "Page F",
-          "uv": 2390,
-          "pv": 3800,
-          "amt": 2500
+          "name": "6월",
+          "포도탄저병": 2390,
+          "포도노균병": 3800,
+          "포도축과병": 5835,
+          "포도일소병": 9832,
         },
         {
-          "name": "Page G",
-          "uv": 3490,
-          "pv": 4300,
-          "amt": 2100
-        }
+            "name": "7월",
+            "포도탄저병": 2390,
+            "포도노균병": 3800,
+            "포도축과병": 8722,
+            "포도일소병": 8873,
+        },
+          {
+            "name": "8월",
+            "포도탄저병": 2390,
+            "포도노균병": 3800,
+            "포도축과병": 9283,
+            "포도일소병": 4875,
+          },
+          {
+            "name": "9월",
+            "포도탄저병": 2390,
+            "포도노균병": 3800,
+            "포도축과병": 2713,
+            "포도일소병": 8448,
+          },
+          {
+            "name": "10월",
+            "포도탄저병": 2390,
+            "포도노균병": 3800,
+            "포도축과병": 2316,
+            "포도일소병": 8433,
+          },
+          {
+            "name": "11월",
+            "포도탄저병": 2390,
+            "포도노균병": 3800,
+            "포도축과병": 8721,
+            "포도일소병": 2381,
+          },
+          {
+            "name": "12월",
+            "포도탄저병": 2390,
+            "포도노균병": 3800,
+            "포도축과병": 4587,
+            "포도일소병": 7326,
+          },
       ]
       
   return (
-        <LineChart width={768} height={360} data={data}
-          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+    <div className="ml-4 w-800 h-80">
+        <ResponsiveContainer>
+        <LineChart data={grapedata}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
               <Legend />
-              <Line type="monotone" dataKey="pv" stroke="#8884d8" />
-              <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+              <Line type="monotone" dataKey="포도탄저병" stroke="#82ca9d" />
+              <Line type="monotone" dataKey="포도노균병" stroke="#8884d8" />
+              <Line type="monotone" dataKey="포도축과병" stroke="#000000" />
+              <Line type="monotone" dataKey="포도일소병" stroke="#124fa1" />
           </LineChart>
+          </ResponsiveContainer>
+          </div>
   );
 };
 

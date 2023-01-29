@@ -20,6 +20,7 @@ module.exports = {
         600: "37.5rem",
         404: "25.25rem",
         700: "43.75rem",
+        800: "50rem"
       },
       height: {
         750: "46.875rem",

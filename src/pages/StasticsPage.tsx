@@ -14,7 +14,7 @@ const StasticsPage = () =>{
             {/*내용*/}
             <div className="mt-10 px-12 pt-4">
                 {/*위쪽*/}
-                <div className="flex flex-col xl:flex-row align-middle">
+                <div className="flex flex-wrap align-middle">
                     {/*위 차트*/}
                     <div className="ml-0">
                         <Cropchart />
@@ -34,14 +34,13 @@ const StasticsPage = () =>{
                 <div>
                     <div className="flex flex-wrap mt-10 align-middle">
                         <div className="flex flex-col">
-                            <select className="m-auto mr-3 w-auto bg-background text-center font-kor-bold text-2xl md:mt-0">
-                                <option value="0">카테고리</option>
-                                <option value="1">고추</option>
-                                <option value="2">포도</option>
-                                <option value="3">딸기</option>
-                                <option value="4">오이</option>
-                                <option value="5">파프리카</option>
-                                <option value="6">토마토</option>
+                            <select className="m-auto mr-4 w-auto bg-background text-center font-kor-bold text-2xl md:mt-0">
+                                <option value="0">고추</option>
+                                <option value="1">포도</option>
+                                <option value="2">딸기</option>
+                                <option value="3">오이</option>
+                                <option value="4">파프리카</option>
+                                <option value="5">토마토</option>
                             </select>
                         {/*아래 차트*/}
                             <div className="ml-0">
