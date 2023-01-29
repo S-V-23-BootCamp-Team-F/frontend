@@ -99,7 +99,7 @@ const Periodchart = () => {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Line type="monotone" dataKey="포도단저병" stroke="#82ca9d" />
+              <Line type="monotone" dataKey="포도탄저병" stroke="#82ca9d" />
               <Line type="monotone" dataKey="포도노균병" stroke="#8884d8" />
               <Line type="monotone" dataKey="포도축과병" stroke="#000000" />
               <Line type="monotone" dataKey="포도일소병" stroke="#124fa1" />
