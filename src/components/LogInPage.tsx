@@ -1,22 +1,28 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
 import "tailwindcss/tailwind.css";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { setCookie } from "../Cookie";
 
 const LogInPage = () => {
   const [loginChk, setLoginChk] = useState<boolean>(false);
+
+  interface FormValues {
+    email: FormDataEntryValue | null;
+    password: FormDataEntryValue | null;
+  }
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm();
+  } = useForm<FormValues>();
 
   const navigate = useNavigate();
   // 토큰을 쿠키에 저장하면됨 이거는
-  const onSubmit = (data: any) => {
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
     const datas = {
       email: data.email,
       password: data.password,
