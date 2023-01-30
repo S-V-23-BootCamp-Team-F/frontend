@@ -24,6 +24,9 @@ function Navbar() {
   const moveToLogin = () => {
     navigate("/getStart");
   };
+  const moveToStatistics = () => {
+    navigate("/stastics");
+  };
   // 로그아웃
   const moveToLogout = () => {
     // axios
@@ -68,6 +71,14 @@ function Navbar() {
             onClick={moveToHistories}
           >
             Histories
+            
+          </div>
+          <div
+            className="cursor-pointer hover:text-button"
+            onClick={moveToStatistics}
+          >
+            Statistics
+            
           </div>
           {isLogin ? (
             <div
@@ -109,6 +120,15 @@ function Navbar() {
                   <div className="mt-16 h-20 w-20 bg-history bg-contain hover:cursor-pointer group-hover:bg-history_hover" />
                   <div className=" mt-3 cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
                     Histories
+                  </div>
+                </div>
+                <div
+                  className="group flex flex-col items-center justify-center pb-2 hover:pb-1"
+                  onClick={moveToStatistics}
+                >
+                  <div className="mt-16 h-20 w-20 bg-statistics bg-contain hover:cursor-pointer group-hover:bg-statistics_hover" />
+                  <div className=" mt-3 cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
+                    Statistics
                   </div>
                 </div>
                 <div className="group flex flex-col items-center justify-center pb-2 hover:pb-1">
