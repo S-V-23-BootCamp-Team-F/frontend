@@ -18,10 +18,7 @@ const HistoryPage = () => {
   const indexHandler = (e: any) => {
     setIndex((index) => e.target.value);
   }; //카테고리 밸류값 인덱스에 저장
-  const restate = () => {
-    location.reload();
-  }; //히스토리 삭제시 새로고침
-  // 카테고리 선택한거에 따라 map하고 자식컴포넌트에 값 전달
+
   function Mapping() {
     if (index < 7 && index >= 1) {
       //1번 고추부터 6번 토마토까지
@@ -30,7 +27,12 @@ const HistoryPage = () => {
           {/*작물 id가 카테고리 인덱스와 같은지 검사 후 같은것만 map*/}
           {reversed.map((item: any[], num: number) =>
             reversed[num].plant.id == index ? (
-              <Historycard items={item} key={num} restate={restate} />
+              <Historycard
+                items={item}
+                key={num}
+                setHistory={setHistory}
+                history={history}
+              />
             ) : null
           )}
         </div>
@@ -40,22 +42,26 @@ const HistoryPage = () => {
       return (
         <div className="flex flex-wrap">
           {reversed.map((item: any, num: number) => (
-            <Historycard items={item} key={num} restate={restate} />
+            <Historycard
+              items={item}
+              key={num}
+              setHistory={setHistory}
+              history={history}
+            />
           ))}
         </div>
       );
     }
   }
-  //데이터 가져올 함수 정의
   useEffect(() => {
     (async () => {
       setLoading(true);
       await axios
         .get("https://api.cropdoctor.shop/api/v1/plants/histories/", {
-        headers : {
-          Authorization : `Bearer ${userCookie}`
-        },
-      })
+          headers: {
+            Authorization: `Bearer ${userCookie}`,
+          },
+        })
         .then((res) => {
           setHistory([...res.data.result]); //history에 요청한 데이터 저장
           console.log(history);
@@ -64,7 +70,7 @@ const HistoryPage = () => {
         .catch((error) => {
           console.log(error);
           alert("히스토리 불러오기 실패. 로그인이 되어있는지 확인하세요.");
-          navigate('/');
+          navigate("/");
         });
     })();
   }, []);

@@ -24,15 +24,19 @@ function Historycard(props: any) {
             onClick={() =>
               axios
                 .delete(
-                  `https://api.cropdoctor.shop/api/v1/plants/histories/${props.items.id}/`,{
-                    headers : {
-                      Authorization : `Bearer ${userCookie}`
+                  `https://api.cropdoctor.shop/api/v1/plants/histories/${props.items.id}/`,
+                  {
+                    headers: {
+                      Authorization: `Bearer ${userCookie}`,
                     },
                   }
                 ) //api 주소
                 .then((res) => {
-                  console.log(res);
-                  props.restate(); //히스토리 페이지 새로고침
+                  props.setHistory(
+                    props.history.filter(
+                      (item: { id: number }) => item.id !== props.items.id
+                    )
+                  );
                 })
                 .catch((error) => {
                   console.log(error);
