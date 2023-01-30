@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Periodline from "src/components/Periodline";
+import { useNavigate } from "react-router";
 
 const Periodchart = () => {
   const [perioddata,setPerioddata] = useState<any[]>([]);
