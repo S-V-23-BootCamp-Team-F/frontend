@@ -5,10 +5,10 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Responsi
 
 const Periodchart = () => {
   const [perioddata,setPerioddata] = useState<any[]>([]);
-        {
-          "name": "1월",
-          "포도탄저병": 4000,
-          "포도노균병": 2400,
+  const [index, setIndex] = useState<number>(1);
+  const indexHandler = (e: any) => {
+    setIndex((index) => e.target.value);
+  };
     useEffect(() => {
       (async () => {
         await axios
@@ -28,6 +28,18 @@ const Periodchart = () => {
     }, [index]);
 
   return (
+    <div className="flex flex-col">
+      <select
+        className="m-auto mr-4 w-auto bg-background text-center font-kor-bold text-2xl md:mt-0"
+        onChange={indexHandler}
+      >
+        <option value="1">고추</option>
+        <option value="2">포도</option>
+        <option value="3">딸기</option>
+        <option value="4">오이</option>
+        <option value="5">파프리카</option>
+        <option value="6">토마토</option>
+      </select>
       <div className="ml-4 w-800 h-80">
         <ResponsiveContainer>
           <LineChart data={perioddata}>
@@ -44,6 +56,7 @@ const Periodchart = () => {
           </LineChart>
         </ResponsiveContainer>
       </div>
+    </div>
   );
 };
 
