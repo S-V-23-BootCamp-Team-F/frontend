@@ -58,7 +58,7 @@ const AbnomalResultPage = () => {
               으로 의심됩니다.
             </div>
             <div className="flex">
-              <img src={die} className="die_tomato"></img>
+              <img src={location.state.icorn} className="die_tomato"></img>
               <div className="ml-3 flex place-items-end font-kor-medium">
                 우리의 {location.state.result.plant.type}는 가셨습니다...
               </div>

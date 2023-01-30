@@ -20,6 +20,7 @@ module.exports = {
         600: "37.5rem",
         404: "25.25rem",
         700: "43.75rem",
+        800: "50rem"
       },
       height: {
         750: "46.875rem",
@@ -40,6 +41,8 @@ module.exports = {
         history: "url('images/history.svg')",
         history_hover: "url('images/history_hover.svg')",
         upload_image: "url('images/uploadImage.svg')",
+        statistics: "url('images/statistics.svg')",
+        statistics_hover: "url('images/statistics_hover.svg')",
       },
       fontSize: {
         10: "10px",

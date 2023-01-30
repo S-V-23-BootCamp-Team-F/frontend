@@ -1,17 +1,33 @@
-import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import React, {
+  Dispatch,
+  FormEvent,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
 
-const SignupPage = (props: any) => {
+interface Props {
+  setTap: Dispatch<SetStateAction<number>>;
+}
+
+interface FormValues {
+  email: FormDataEntryValue | null;
+  password: FormDataEntryValue | null;
+  pwConfirm: FormDataEntryValue | null;
+}
+
+const SignupPage = (props: Props) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm();
+  } = useForm<FormValues>();
   const setTap = props.setTap;
 
-  const onSubmit = async (data: any) => {
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
     console.log(data);
     if (data !== undefined) {
       const datas = {
@@ -21,15 +37,14 @@ const SignupPage = (props: any) => {
       await axios
         .post("https://api.cropdoctor.shop/api/v1/members/signup/", datas)
         .then((res) => {
-          console.log(res.data)
+          console.log(res.data);
           if (res.status === 201) {
             console.log(res.data);
             alert("회원가입 성공");
             setTap(1);
-          } else if(res.status === 202) {
+          } else if (res.status === 202) {
             alert("이미 존재한 회원입니다");
-          }
-          else{
+          } else {
             alert("error 관리자에게 문의바람");
           }
         })
@@ -104,7 +119,7 @@ const SignupPage = (props: any) => {
             placeholder="Check your Password"
             {...register("pwConfirm", {
               required: true,
-              validate: (val: string) => {
+              validate: (val: FormDataEntryValue | null) => {
                 if (watch("password") != val) {
                   return "비밀번호가 일치하지 않습니다.";
                 }

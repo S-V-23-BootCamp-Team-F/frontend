@@ -83,7 +83,7 @@ const HistoryPage = () => {
       <div className="flex flex-col pt-32">
         {/*카테고리*/}
         <select
-          className="m-auto mt-4 mr-5 mb-3 w-auto bg-background text-center font-kor-bold text-2xl md:mt-0"
+          className="my-3 mt-3 ml-12 w-3/12 items-center rounded-md bg-button py-1 text-center text-xl text-white md:ml-20 lg:ml-12 lg:mt-8"
           onChange={indexHandler}
         >
           <option value="0">전체</option>

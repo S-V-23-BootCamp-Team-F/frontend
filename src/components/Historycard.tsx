@@ -13,14 +13,14 @@ function Historycard(props: any) {
   {
     return (
       <div className="m-auto h-80 w-80">
-        <div className="relative h-52 w-80">
+        <div className="relative h-52 w-80 flex justify-center">
           {/*모달창 버튼 표시, props로 데이터 전달*/}
           <div className="absolute h-full w-full rounded-lg">
             <DetailModal items={props.items} />
           </div>
           {/*삭제 API 연동*/}
           <button
-            className="absolute right-2 m-auto mt-2 h-auto w-5 md:w-6"
+            className="absolute right-9 m-auto mt-2 h-auto w-5 md:w-6"
             onClick={() =>
               axios
                 .delete(
@@ -49,7 +49,7 @@ function Historycard(props: any) {
           </button>
         </div>
         {/*텍스트*/}
-        <div className="relative flex flex-col items-center">
+        <div className="relative flex flex-col items-center pr-8">
           {/*작물 종류*/}
           <div className="mt-2 font-kor-medium text-2xl">
             {props.items.plant.type}
