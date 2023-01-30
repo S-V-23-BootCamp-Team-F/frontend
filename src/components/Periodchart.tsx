@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useNavigate } from "react-router-dom";
 
 
 const Periodchart = () => {
   const [perioddata,setPerioddata] = useState<any[]>([]);
+  const navigate = useNavigate();
   const [index, setIndex] = useState<number>(1);
   const indexHandler = (e: any) => {
     setIndex((index) => e.target.value);
@@ -22,6 +24,8 @@ const Periodchart = () => {
           }) // 응답
           .catch((error) => {
             console.log(error);
+            alert("차트데이터 불러오기 실패.");
+            navigate('/');
           });
       })();
     }, [index]);
