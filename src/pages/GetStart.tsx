@@ -4,7 +4,7 @@ import SigninPage from "../components/LogInPage";
 import SignupPage from "../components/SignupPage";
 
 const GetStart = () => {
-  const [openTab, setOpenTap] = useState(1);
+  const [openTab, setOpenTap] = useState<number>(1);
 
   return (
     <>
