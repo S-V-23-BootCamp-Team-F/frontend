@@ -12,14 +12,13 @@ const Periodchart = () => {
     useEffect(() => {
       (async () => {
         await axios
-          .get("http://127.0.0.1:8000/api/v1/plants/linechart/",{
+          .get("https://api.cropdoctor.shop/api/v1/plants/linechart/",{
             params : {
               type : index
             }
           })
           .then((res) => {
             setPerioddata(perioddata => res.data.result);
-            console.log(perioddata);
           }) // 응답
           .catch((error) => {
             console.log(error);
