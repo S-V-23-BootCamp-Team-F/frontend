@@ -6,7 +6,7 @@ import Periodchart from "src/components/Periodchart";
 
 const StasticsPage = () =>{
     return (
-        <div className="flex min-h-screen w-screen flex-col overflow-y-auto bg-background bg-grass bg-no-repeat">
+        <div className="flex min-h-screen w-screen flex-col overflow-y-auto bg-background bg-no-repeat">
             {/*nav바*/}
             <div className="mb-10">
                 <Navbar />
