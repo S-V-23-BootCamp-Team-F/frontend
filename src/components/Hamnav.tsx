@@ -14,7 +14,7 @@ function Hamnav(props:any) {
         navigate("/stastics");
       };
     if (props.location.pathname == "/") {
-      //메인페이지
+      //메인 페이지
       return (
         <>
           <div
@@ -47,7 +47,7 @@ function Hamnav(props:any) {
         </>
       );
     } else if (props.location.pathname == "/history"){
-      //전체 map
+      //히스토리 페이지
       return (
         <>
           <div
@@ -80,7 +80,7 @@ function Hamnav(props:any) {
         </>
       );
     } else if (props.location.pathname == "/stastics"){
-      //전체 map
+      //통계 페이지
       return (
         <>
           <div
@@ -114,35 +114,7 @@ function Hamnav(props:any) {
       );
     } else {
         return(
-        <>
-            <div
-                className="group flex flex-col items-center justify-center pb-2 hover:pb-1 "
-                onClick={moveToMain}
-            >
-                <div className="mt-8 h-20 w-20 bg-diagnosis bg-contain hover:cursor-pointer group-hover:bg-diagnosis_hover" />
-                <div className="mt-3 cursor-pointer hover:mb-0 group-hover:border-b-2 group-hover:border-button group-hover:text-button">
-                    Diagnosis
-                </div>
-            </div>
-            <div
-            className="group flex flex-col items-center justify-center pb-2 hover:pb-1"
-            onClick={moveToHistories}
-            >
-                <div className="mt-16 h-20 w-20 bg-history bg-contain hover:cursor-pointer group-hover:bg-history_hover" />
-                <div className=" mt-3 cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
-                    Histories
-                </div>
-            </div>
-            <div
-                className="group flex flex-col items-center justify-center pb-2 hover:pb-1"
-                onClick={moveToStatistics}
-            >
-                <div className="mt-16 h-20 w-20 bg-statistics bg-contain hover:cursor-pointer group-hover:bg-statistics_hover" />
-                <div className=" mt-3 cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button">
-                    Statistics
-                </div>
-            </div>
-        </>
+            null
         )
     }
   }

@@ -14,7 +14,7 @@ function Longnav(props:any) {
         navigate("/stastics");
       };
     if (props.location.pathname == "/") {
-      //메인페이지
+      //메인 페이지
       return (
         <>
           <div
@@ -40,7 +40,7 @@ function Longnav(props:any) {
         </>
       );
     } else if (props.location.pathname == "/history"){
-      //전체 map
+      //히스토리 페이지
       return (
         <>
           <div
@@ -66,7 +66,7 @@ function Longnav(props:any) {
         </>
       );
     } else if (props.location.pathname == "/stastics"){
-      //전체 map
+      //통계 페이지
       return (
         <>
           <div
@@ -94,28 +94,7 @@ function Longnav(props:any) {
     } else {
       //전체 map
       return (
-        <>
-          <div
-            className="cursor-pointer hover:text-button text-gray-600"
-            onClick={moveToMain}
-          >
-            Diagnosis
-          </div>
-          <div
-            className="cursor-pointer hover:text-button text-gray-600"
-            onClick={moveToHistories}
-          >
-            Histories
-            
-          </div>
-          <div
-            className="cursor-pointer hover:text-button text-gray-600"
-            onClick={moveToStatistics}
-          >
-            Statistics
-            
-          </div>
-        </>
+        null
       );
     }
   }

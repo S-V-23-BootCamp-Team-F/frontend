@@ -93,7 +93,7 @@ function Navbar() {
                 <div className="group flex flex-col items-center justify-center pb-2 hover:pb-1">
                   {isLogin ? (
                     <div>
-                      <div className="mt-16 h-20 w-20 bg-contain hover:cursor-pointer bg-login_hover" />
+                      <div className="mt-16 h-20 w-20 bg-contain hover:cursor-pointer bg-login_hover" onClick={moveToLogout} />
                       <div
                         className=" mt-3 cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
                         onClick={moveToLogout}
@@ -103,7 +103,7 @@ function Navbar() {
                     </div>
                   ) : (
                     <div>
-                      <div className="mt-16 h-20 w-20 bg-login bg-contain hover:cursor-pointer group-hover:bg-login_hover" />
+                      <div className="mt-16 h-20 w-20 bg-login bg-contain hover:cursor-pointer group-hover:bg-login_hover" onClick={moveToLogin} />
 
                       <div
                         className=" mt-3 cursor-pointer group-hover:border-b-2 group-hover:border-button group-hover:text-button"
