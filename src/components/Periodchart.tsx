@@ -1,111 +1,49 @@
-import React from "react";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Periodline from "src/components/Periodline";
+import { useNavigate } from "react-router";
 
 const Periodchart = () => {
-    const grapedata = [
-        {
-          "name": "1월",
-          "포도탄저병": 4000,
-          "포도노균병": 2400,
-          "포도축과병": 1245,
-          "포도일소병": 2246,
-        },
-        {
-          "name": "2월",
-          "포도탄저병": 3000,
-          "포도노균병": 1398,
-          "포도축과병": 2634,
-          "포도일소병": 2430,
-        },
-        {
-          "name": "3월",
-          "포도탄저병": 2000,
-          "포도노균병": 9800,
-          "포도축과병": 5817,
-          "포도일소병": 6348,
-        },
-        {
-          "name": "4월",
-          "포도탄저병": 2780,
-          "포도노균병": 3908,
-          "포도축과병": 4127,
-          "포도일소병": 5931,
-        },
-        {
-          "name": "5월",
-          "포도탄저병": 1890,
-          "포도노균병": 4800,
-          "포도축과병": 942,
-          "포도일소병": 5483,
-        },
-        {
-          "name": "6월",
-          "포도탄저병": 2390,
-          "포도노균병": 3800,
-          "포도축과병": 5835,
-          "포도일소병": 9832,
-        },
-        {
-            "name": "7월",
-            "포도탄저병": 2390,
-            "포도노균병": 3800,
-            "포도축과병": 8722,
-            "포도일소병": 8873,
-        },
-          {
-            "name": "8월",
-            "포도탄저병": 2390,
-            "포도노균병": 3800,
-            "포도축과병": 9283,
-            "포도일소병": 4875,
-          },
-          {
-            "name": "9월",
-            "포도탄저병": 2390,
-            "포도노균병": 3800,
-            "포도축과병": 2713,
-            "포도일소병": 8448,
-          },
-          {
-            "name": "10월",
-            "포도탄저병": 2390,
-            "포도노균병": 3800,
-            "포도축과병": 2316,
-            "포도일소병": 8433,
-          },
-          {
-            "name": "11월",
-            "포도탄저병": 2390,
-            "포도노균병": 3800,
-            "포도축과병": 8721,
-            "포도일소병": 2381,
-          },
-          {
-            "name": "12월",
-            "포도탄저병": 2390,
-            "포도노균병": 3800,
-            "포도축과병": 4587,
-            "포도일소병": 7326,
-          },
-      ]
-      
+  const [perioddata,setPerioddata] = useState<any[]>([]);
+  const navigate = useNavigate();
+  const [index, setIndex] = useState<number>(1);
+  const indexHandler = (e: any) => {
+    setIndex((index) => e.target.value);
+  };
+    useEffect(() => {
+      (async () => {
+        await axios
+          .get("https://api.cropdoctor.shop/api/v1/plants/linechart/",{
+            params : {
+              type : index
+            }
+          })
+          .then((res) => {
+            setPerioddata(perioddata => res.data.result);
+          }) // 응답
+          .catch((error) => {
+            console.log(error);
+            alert("차트데이터 불러오기 실패.");
+            navigate('/');
+          });
+      })();
+    }, [index]);
+
   return (
-    <div className="ml-4 w-800 h-80">
-        <ResponsiveContainer>
-        <LineChart data={grapedata}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="포도탄저병" stroke="#82ca9d" />
-              <Line type="monotone" dataKey="포도노균병" stroke="#8884d8" />
-              <Line type="monotone" dataKey="포도축과병" stroke="#000000" />
-              <Line type="monotone" dataKey="포도일소병" stroke="#124fa1" />
-          </LineChart>
-          </ResponsiveContainer>
-          </div>
+    <div className="flex flex-col">
+      <select
+        className="m-auto mr-4 w-auto bg-background text-center font-kor-bold text-2xl md:mt-0"
+        onChange={indexHandler}
+      >
+        <option value="1">고추</option>
+        <option value="2">포도</option>
+        <option value="3">딸기</option>
+        <option value="4">오이</option>
+        <option value="5">파프리카</option>
+        <option value="6">토마토</option>
+      </select>
+      <Periodline perioddata={perioddata} index={index}/>
+    </div>
   );
 };
 

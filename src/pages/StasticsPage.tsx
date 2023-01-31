@@ -6,7 +6,7 @@ import Periodchart from "src/components/Periodchart";
 
 const StasticsPage = () =>{
     return (
-        <div className="flex min-h-screen w-screen flex-col overflow-y-auto bg-background bg-grass bg-no-repeat">
+        <div className="flex min-h-screen w-screen flex-col overflow-y-auto bg-background bg-no-repeat">
             {/*nav바*/}
             <div className="mb-10">
                 <Navbar />
@@ -33,20 +33,8 @@ const StasticsPage = () =>{
                 {/*아래쪽*/}
                 <div>
                     <div className="flex flex-wrap mt-10 align-middle">
-                        <div className="flex flex-col">
-                            <select className="m-auto mr-4 w-auto bg-background text-center font-kor-bold text-2xl md:mt-0">
-                                <option value="0">고추</option>
-                                <option value="1">포도</option>
-                                <option value="2">딸기</option>
-                                <option value="3">오이</option>
-                                <option value="4">파프리카</option>
-                                <option value="5">토마토</option>
-                            </select>
                         {/*아래 차트*/}
-                            <div className="ml-0">
                                 <Periodchart />
-                            </div>
-                        </div>
                         {/*아래 차트 설명*/}
                         <span className="ml-20 xl:ml-10 font-kor-medium">
                             포도관련 질병<br/>
