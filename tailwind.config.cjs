@@ -33,6 +33,7 @@ module.exports = {
         400: "25rem",
         540: "33.75rem",
         500: "31.25rem",
+        750: "46.875rem"
       },
       screens: {
         xs: "650px",
