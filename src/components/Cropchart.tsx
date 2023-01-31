@@ -32,7 +32,7 @@ const Cropchart = () => {
   }, []);
 
   return (
-      <div className="w-600 h-320 sm:w-700 sm:h-356 md:w-800 md:h-540 lg:w-1200">
+      <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
         <ResponsiveContainer>
       <BarChart data={cropdata}>
         <CartesianGrid strokeDasharray="3 3" />

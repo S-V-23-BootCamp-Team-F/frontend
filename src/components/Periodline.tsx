@@ -4,7 +4,7 @@ import { Line, Legend, ResponsiveContainer, CartesianGrid, LineChart, Tooltip, X
 function Periodline(props:any) {
 if (props.index == 1) {
     return (
-        <div className="w-600 h-320 sm:w-700 sm:h-356 md:w-800 md:h-540 lg:w-1200">
+        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -24,7 +24,7 @@ if (props.index == 1) {
     );
   } else if (props.index == 2){
     return (
-        <div className="w-600 h-320 sm:w-700 sm:h-356 md:w-800 md:h-540 lg:w-1200">
+        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -42,7 +42,7 @@ if (props.index == 1) {
     );
   } else if (props.index == 3){
     return (
-        <div className="w-600 h-320 sm:w-700 sm:h-356 md:w-800 md:h-540 lg:w-1200">
+        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -62,7 +62,7 @@ if (props.index == 1) {
     );
   } else if (props.index == 4){
     return (
-        <div className="w-600 h-320 sm:w-700 sm:h-356 md:w-800 md:h-540 lg:w-1200">
+        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -82,7 +82,7 @@ if (props.index == 1) {
     );
   } else if (props.index == 5){
     return (
-        <div className="w-600 h-320 sm:w-700 sm:h-356 md:w-800 md:h-540 lg:w-1200">
+        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -102,7 +102,7 @@ if (props.index == 1) {
     );
   } else if (props.index == 6){
     return (
-        <div className="w-600 h-320 sm:w-700 sm:h-356 md:w-800 md:h-540 lg:w-1200">
+        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
