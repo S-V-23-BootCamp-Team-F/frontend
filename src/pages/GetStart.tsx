@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import "tailwindcss/tailwind.css";
 import SigninPage from "../components/LogInPage";
 import SignupPage from "../components/SignupPage";
+import "src/media.css";
 
 const GetStart = () => {
   const [openTab, setOpenTap] = useState<number>(1);
 
   return (
     <>
-      <div className=" absolute h-full w-screen overflow-hidden bg-background bg-startImg bg-cover bg-center">
+      <div className=" absolute flex h-full w-screen items-center justify-center overflow-hidden bg-background bg-startImg bg-cover bg-center">
         {/* 본문 */}
         <div className="m-20 flex justify-center">
-          <div className="h-750 w-600 rounded-xl bg-black bg-opacity-30 backdrop-blur-sm">
+          <div className="h-750 w-600 rounded-xl bg-black bg-opacity-30 backdrop-blur-sm ">
             {/* 로그인/회원가입 버튼 */}
             <div className="mt-7 flex justify-between">
               <a
