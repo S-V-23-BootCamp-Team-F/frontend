@@ -94,7 +94,28 @@ function Longnav(props:any) {
     } else {
       //전체 map
       return (
-        null
+        <>
+          <div
+            className="cursor-pointer hover:text-button border-b-2 border-black"
+            onClick={moveToMain}
+          >
+            Diagnosis
+          </div>
+          <div
+            className="cursor-pointer hover:text-button text-gray-600"
+            onClick={moveToHistories}
+          >
+            Histories
+            
+          </div>
+          <div
+            className="cursor-pointer hover:text-button text-gray-600"
+            onClick={moveToStatistics}
+          >
+            Statistics
+            
+          </div>
+        </>
       );
     }
   }
