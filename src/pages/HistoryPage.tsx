@@ -77,7 +77,7 @@ const HistoryPage = () => {
   return loading ? (
     <LoadingPage />
   ) : (
-    <div className="box-border h-screen w-screen overflow-x-hidden bg-background bg-grass bg-no-repeat">
+    <div className="box-border h-screen w-screen overflow-x-hidden bg-background bg-grass bg-no-repeat pl-4">
       {/*nav바*/}
       <Navbar />
       <div className="flex flex-col pt-32">

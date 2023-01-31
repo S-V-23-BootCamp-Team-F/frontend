@@ -32,19 +32,9 @@ const Cropchart = () => {
   }, []);
 
   return (
-      <div className="ml-4 w-800 h-80">
+      <div className="w-600 h-320 sm:w-700 sm:h-356 md:w-800 md:h-540 lg:w-1200">
         <ResponsiveContainer>
-      <BarChart
-        data={cropdata}
-        width={600}
-        height={400}
-        margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
+      <BarChart data={cropdata}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
         <YAxis />

@@ -30,7 +30,7 @@ const Periodchart = () => {
     }, [index]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col m-auto">
       <select
         className="m-auto mr-4 w-auto bg-background text-center font-kor-bold text-2xl md:mt-0"
         onChange={indexHandler}
