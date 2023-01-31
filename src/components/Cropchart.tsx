@@ -32,7 +32,8 @@ const Cropchart = () => {
   }, []);
 
   return (
-    <div className="mt-10 ml-4 h-80 w-800">
+      <div className="ml-4 w-800 h-80">
+        <ResponsiveContainer>
       <BarChart
         data={cropdata}
         width={600}
@@ -112,7 +113,8 @@ const Cropchart = () => {
           opacity={0.9}
         />
       </BarChart>
-    </div>
+      </ResponsiveContainer>
+      </div>
   );
 };
 
