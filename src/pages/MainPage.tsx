@@ -91,6 +91,7 @@ const MainPage = () => {
         })
         .catch((error) => {
           console.log(error);
+          alert("진단 실패!");
         });
     } else {
       await axios
@@ -112,6 +113,7 @@ const MainPage = () => {
           })
           .catch((error) => {
             console.log(error);
+            alert("진단 실패!");
           });
 
         }
