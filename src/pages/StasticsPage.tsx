@@ -1,64 +1,94 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Navbar from "src/components/Navbar";
 import Cropchart from "src/components/Cropchart"
 import Periodchart from "src/components/Periodchart";
 
 const StasticsPage = () =>{
+
+    const [seeperiod,setSeeperiod] = useState<boolean>(false);
+
+    function Barswitch() {
+        setSeeperiod(false);
+    }
+
+    function Lineswitch() {
+        setSeeperiod(true);
+    }
+
+    function Chart() {
+        if (seeperiod == false) {
+            return (
+                <div className="flex flex-col items-center">
+                    <span className="mt-12 mb-6 ml-4 font-kor-bold text-2xl">"제일 병이 많이 걸린 작물은 고추에요"</span>
+                    {/*위 차트*/}
+                    <div className="m-auto">
+                        <Cropchart />
+                    </div>
+                    <span className="mt-4 ml-4 font-kor-bold text-xl">작물 별 질병건수</span>
+                </div>
+            )
+        } else {
+            return (
+                <div className="flex flex-col items-center">
+                    <span className="mt-12 ml-4 font-kor-bold text-2xl">"2월에 가장 많이 발생한 고추의 병은 고추탄저병이에요."</span>
+                    <div className="m-auto">
+                        <Periodchart />
+                    </div>
+                    <span className="mt-4 ml-4 font-kor-bold text-xl">기간 별 작물 질병건수</span>
+                </div>
+            )
+        }
+    }
+
     return (
-        <div className="flex min-h-screen w-screen flex-col overflow-y-auto bg-background bg-no-repeat">
+        <div className="flex min-h-screen w-screen flex-col overflow-y-auto bg-background bg-grass bg-no-repeat pr-12">
             {/*nav바*/}
             <div className="mb-10">
                 <Navbar />
             </div>
             {/*내용*/}
-            <div className="mt-10 px-12 pt-4">
-                {/*위쪽*/}
-                <div className="flex flex-wrap align-middle">
-                    {/*위 차트*/}
-                    <div className="ml-0">
-                        <Cropchart />
-                    </div>
-                    {/*위 차트 설명*/}
-                    <span className="ml-20 xl:ml-10 my-auto font-kor-medium">
-                        포도관련 질병<br/>
-                        1. 포도 흰가루병, 30(34%)<br/>
-                        2. 포도탄저병, 23(28%)<br/>
-                        3. 등등<br/>
-                        4. 등등<br/>
-                        5. 등등<br/>
-                        포도에서 가장 많이 걸리는 질병은 {}입니다.<br/>
-                    </span>
-                </div>
+            <div className="my-auto px-12 pt-4">
+                <Chart />
                 {/*아래쪽*/}
-                <div>
-                    <div className="flex flex-wrap mt-10 align-middle">
-                        {/*아래 차트*/}
-                                <Periodchart />
-                        {/*아래 차트 설명*/}
-                        <span className="ml-20 xl:ml-10 font-kor-medium">
-                            포도관련 질병<br/>
-                            월 별로 포도관련 질병 중 가장 많이 발생한 질병은 다음과 같아요<br/>
-                            1월 : 포도 단저병, 30(15%)<br/>
-                            2월 : ~~~<br/>
-                            3월 : ~~~<br/>
-                            4월 : ~~~<br/>
-                            5월 : ~~~<br/>
-                            6월 : ~~~<br/>
-                            7월 : ~~~<br/>
-                            8월 : ~~~<br/>
-                            9월 : ~~~<br/>
-                            10월 : ~~~<br/>
-                            11월 : ~~~<br/>
-                            12월 : ~~~<br/>
-                            {}월에 가장 많이 발생한 질병은 {}이에요<br/>
-                            작물이 {}에 걸리지 않게 미리 돌봐주세요<br/>
-                        </span>
-                    </div>
-                </div>
+                { seeperiod == false 
+                    ?   <div className="mt-4 relative mb-10">
+                            <button
+                                className="ml-48 absolute font-kor-medium border-b-2 border-black"
+                                onClick={Barswitch}
+                            >
+                                작물 별 질병건수
+                            </button>
+                            <button
+                                className="right-36 absolute font-kor-medium text-gray-600"
+                                onClick={Lineswitch}
+                            >
+                                기간 별 작물 질병건수
+                            </button>
+                        </div>
+                    :   <div className="mt-4 relative mb-10">
+                            <button
+                                className="ml-48 absolute font-kor-medium text-gray-600"
+                                onClick={Barswitch}
+                            >
+                                작물 별 질병건수
+                            </button>
+                            <button
+                                className="right-36 absolute font-kor-medium border-b-2 border-black"
+                                onClick={Lineswitch}
+                            >
+                                기간 별 작물 질병건수
+                            </button>
+                        </div> 
+                }
+                        
             </div>
         </div>  
     );
 };
 
 export default StasticsPage;
+
+function usestate(): [any, any] {
+    throw new Error("Function not implemented.");
+}
