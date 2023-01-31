@@ -5,6 +5,7 @@ import Delete from "src/images/delete.svg";
 const DetailModal = (props:any) => {
     const [showModal, setShowModal] = useState<boolean>(false); //모달창 활성화/비활성화
     const resultDate:string = props.items.created_at.substr(0, 10); //날짜 데이터 문자열 잘라서 YYYY-MM-DD형식으로 보이게
+    const imagesrc:string = `https://silicon-valley-bootcamp.s3.ap-northeast-2.amazonaws.com/icons/${props.items.plant.id}.png`
     return (
     <>
       {/*모달창 버튼을 업로드 이미지로*/}
@@ -45,7 +46,7 @@ const DetailModal = (props:any) => {
                       <>
                         {/*마스코트*/}
                         <div>
-                          <img className="w-64 h-auto rounded-lg" src="src/images/nomal.png" />
+                          <img className="max-w-64 max-h-64 rounded-lg" src={imagesrc} />
                         </div>
                         {/*정상시 멘트*/}
                         <div className="mt-24 font-kor-bold text-2xl md:text-left lg:text-left">
