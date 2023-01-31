@@ -44,125 +44,68 @@ const Cropchart = () => {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Legend />
         <Bar stackId="a" dataKey="고추탄저병" fill="#3E6A1D" opacity={1.0} />
-        <Bar
-          stackId="a"
-          dataKey="다량원소결핍 (P)"
-          fill="#3E6A1D"
-          opacity={0.7}
-        />
-        <Bar
-          stackId="a"
-          dataKey="다량원소결핍 (N)"
-          fill="#3E6A1D"
-          opacity={0.4}
-        />
         <Bar stackId="a" dataKey="칼슘결핍" fill="#3E6A1D" opacity={0.4} />
+        <Bar stackId="a" dataKey="고추흰가루병" fill="#85c200" opacity={0.4} />
+        <Bar stackId="a" dataKey="오이노균병" fill="#85c200" opacity={1.0} />
+        <Bar stackId="a" dataKey="냉해피해" fill="#85c200" opacity={0.6} />
+        <Bar stackId="a" dataKey="오이흰가루병" fill="#85c200" opacity={0.4} />
         <Bar
           stackId="a"
-          dataKey="다량원소결핍 (K)"
-          fill="#3E6A1D"
-          opacity={0.4}
-        />
-        <Bar stackId="b" dataKey="고추흰가루병" fill="#85c200" opacity={0.4} />
-        <Bar stackId="b" dataKey="오이노균병" fill="#85c200" opacity={1.0} />
-        <Bar
-          stackId="b"
-          dataKey="다량원소결핍 (K)"
-          fill="#85c200"
-          opacity={0.8}
-        />
-        <Bar stackId="b" dataKey="냉해피해" fill="#85c200" opacity={0.6} />
-        <Bar
-          stackId="b"
-          dataKey="다량원소결핍 (P)"
-          fill="#85c200"
-          opacity={0.4}
-        />
-        <Bar stackId="b" dataKey="오이흰가루병" fill="#85c200" opacity={0.4} />
-        <Bar
-          stackId="b"
-          dataKey="다량원소결핍 (N)"
-          fill="#85c200"
-          opacity={0.4}
-        />
-        <Bar
-          stackId="c"
           dataKey="토마토잿빛곰팡이병"
           fill="#ff6f51"
-          opacity={1.0}
+          opacity={0.6}
         />
-        <Bar stackId="c" dataKey="칼슘결핍" fill="#ff6f51" opacity={0.7} />
+        <Bar stackId="a" dataKey="열과" fill="#ff6f51" opacity={1.0} />
         <Bar
-          stackId="c"
-          dataKey="다량원소결핍 (P)"
-          fill="#ff6f51"
-          opacity={0.4}
-        />
-        <Bar
-          stackId="c"
-          dataKey="다량원소결핍 (K)"
-          fill="#ff6f51"
-          opacity={1.0}
-        />
-        <Bar stackId="c" dataKey="열과" fill="#ff6f51" opacity={1.0} />
-        <Bar
-          stackId="c"
+          stackId="a"
           dataKey="토마토흰가루병"
           fill="#ff6f51"
-          opacity={1.0}
+          opacity={0.8}
         />
         <Bar
-          stackId="c"
-          dataKey="다량원소결핍 (N)"
-          fill="#ff6f51"
-          opacity={1.0}
-        />
-        <Bar
-          stackId="d"
+          stackId="a"
           dataKey="시설포도탄저병"
           fill="#924A70"
           opacity={0.8}
         />
         <Bar
-          stackId="d"
+          stackId="a"
           dataKey="시설포도노균병"
           fill="#924A70"
           opacity={0.6}
         />
-        <Bar stackId="d" dataKey="일소피해" fill="#924A70" opacity={0.4} />
-        <Bar stackId="d" dataKey="축과병" fill="#924A70" opacity={1.0} />
+        <Bar stackId="a" dataKey="일소피해" fill="#924A70" opacity={0.4} />
+        <Bar stackId="a" dataKey="축과병" fill="#924A70" opacity={1.0} />
         <Bar
-          stackId="e"
+          stackId="a"
           dataKey="파프리카흰가루병"
           fill="#df4843"
           opacity={0.9}
         />
         <Bar
-          stackId="e"
+          stackId="a"
           dataKey="파프리카잘록병"
           fill="#df4843"
           opacity={0.7}
         />
-        <Bar stackId="e" dataKey="칼슘결핍" fill="#df4843" opacity={0.5} />
         <Bar
-          stackId="e"
+          stackId="a"
           dataKey="다량원소결핍 (N)"
-          fill="#df4843"
-          opacity={0.4}
+          fill="#dc4343"
+          opacity={0.6}
         />
         <Bar
-          stackId="e"
+          stackId="a"
           dataKey="다량원소결핍 (P)"
           fill="#df4843"
-          opacity={0.4}
+          opacity={0.2}
         />
         <Bar
-          stackId="e"
+          stackId="a"
           dataKey="다량원소결핍 (K)"
-          fill="#df4843"
-          opacity={0.4}
+          fill="#dc4043"
+          opacity={0.9}
         />
       </BarChart>
     </div>
