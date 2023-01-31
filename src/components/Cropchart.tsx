@@ -10,19 +10,23 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { useNavigate } from "react-router";
 
 const Cropchart = () => {
   const [cropdata, setCropdata] = useState<any[]>([]);
+  const navigate = useNavigate();
   useEffect(() => {
     (async () => {
       await axios
-        .get("http://127.0.0.1:8000/api/v1/plants/barchart/")
+        .get("https://api.cropdoctor.shop/api/v1/plants/barchart/")
         .then((res) => {
           setCropdata((cropdata) => res.data.result);
           console.log(cropdata);
         })
         .catch((error) => {
           console.log(error);
+          alert("차트데이터 불러오기 실패.");
+          navigate('/');
         });
     })();
   }, []);
