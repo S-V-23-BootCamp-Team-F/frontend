@@ -14,7 +14,7 @@ const AbnomalResultPage = () => {
     // 전체
     <div className="flex min-h-screen w-screen flex-col overflow-y-auto bg-background bg-grass bg-no-repeat ">
       {/* nav바 */}
-      <div className="mb-10">
+      <div className="mb-28">
         <Navbar />
       </div>
 
@@ -32,14 +32,14 @@ const AbnomalResultPage = () => {
             </div>
           </div>
           <div className="mt-5 h-356 w-600 object-cover">
-            <div className="flex ">
+            <div className="mt-10 flex ">
               <img
                 src={location.state.result.disease.example}
                 className="sub_tomato2 mr-2.5 h-356 w-72 rounded-xl object-cover"
               />
               <img
                 src={location.state.result.disease.example2}
-                className="sub_tomato3 ml-2.5 h-356 w-72 rounded-xl object-cover"
+                className=" sub_tomato3 ml-2.5 h-356 w-72 rounded-xl object-cover"
               />
             </div>
             <div className="mt-2 flex flex-col items-center font-kor-bold text-xl">
@@ -58,8 +58,11 @@ const AbnomalResultPage = () => {
               으로 의심됩니다.
             </div>
             <div className="flex">
-              <img src={location.state.icorn} className="die_tomato"></img>
-              <div className="ml-3 flex place-items-end font-kor-medium">
+              <img
+                src={location.state.icorn}
+                className="h-30 w-28 bg-contain"
+              ></img>
+              <div className="ml-3 flex place-items-end bg-contain font-kor-medium">
                 우리의 {location.state.result.plant.type}는 가셨습니다...
               </div>
             </div>
@@ -73,7 +76,7 @@ const AbnomalResultPage = () => {
             </div>
             <div>
               <div className="mb-2 font-eng-bold text-2xl">Symptom</div>
-              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
+              <div className=" h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
                 {location.state.result.disease.feature}
               </div>
             </div>
