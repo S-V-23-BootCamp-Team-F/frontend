@@ -20,7 +20,7 @@ const StasticsPage = () =>{
         if (seeperiod == false) {
             return (
                 <div className="flex flex-col items-center">
-                    <span className="mt-12 mb-6 ml-4 font-kor-bold text-2xl">"제일 병이 많이 걸린 작물은 {}에요"</span>
+                    <span className="mt-12 mb-6 ml-4 font-kor-bold text-2xl">"제일 병이 많이 걸린 작물은 고추에요"</span>
                     {/*위 차트*/}
                     <div className="m-auto">
                         <Cropchart />
@@ -31,11 +31,11 @@ const StasticsPage = () =>{
         } else {
             return (
                 <div className="flex flex-col items-center">
-                    <span className="mt-12 ml-4 font-kor-bold text-2xl">"{}월에 가장 많이 발생한 {}의 병은 {}이에요."</span>
+                    <span className="mt-12 ml-4 font-kor-bold text-2xl">"2월에 가장 많이 발생한 고추의 병은 고추탄저병이에요."</span>
                     <div className="m-auto">
                         <Periodchart />
                     </div>
-                    <span className="mt-4 ml-4 font-kor-bold text-xl">기간 별 작물 질병률</span>
+                    <span className="mt-4 ml-4 font-kor-bold text-xl">기간 별 작물 질병건수</span>
                 </div>
             )
         }
@@ -57,7 +57,7 @@ const StasticsPage = () =>{
                                 className="ml-48 absolute font-kor-medium border-b-2 border-black"
                                 onClick={Barswitch}
                             >
-                                작물 별 진단건수
+                                작물 별 질병건수
                             </button>
                             <button
                                 className="right-36 absolute font-kor-medium text-gray-600"
@@ -71,7 +71,7 @@ const StasticsPage = () =>{
                                 className="ml-48 absolute font-kor-medium text-gray-600"
                                 onClick={Barswitch}
                             >
-                                작물 별 진단건수
+                                작물 별 질병건수
                             </button>
                             <button
                                 className="right-36 absolute font-kor-medium border-b-2 border-black"
