@@ -45,7 +45,7 @@ const AbnomalResultPage = () => {
           </div>
         </div>
         {/* 본문 오른쪽 */}
-        <div className=" ml-[-40px] place-content-center pt-12 max-md:pt-28 max-sm:pt-28">
+        <div className=" place-content-center pt-12 max-lg:ml-[10px] max-md:ml-[-20px] max-md:pt-28 max-sm:ml-[-40px] ">
           <div className="">
             <div className="font-kor-bold text-2xl">
               진단결과&nbsp;&nbsp;
