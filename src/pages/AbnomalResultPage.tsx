@@ -1,10 +1,7 @@
 import React from "react";
-import tomato2 from "src/images/tomato2.jpg";
-import tomato3 from "src/images/tomato3.jpg";
-import die from "src/images/dietomato.png";
-import "src/media.css";
-import Navbar from "src/components/Navbar";
 import { useLocation } from "react-router-dom";
+import Navbar from "src/components/Navbar";
+import "src/media.css";
 
 const AbnomalResultPage = () => {
   const location = useLocation();
@@ -22,10 +19,10 @@ const AbnomalResultPage = () => {
       <div className="mb-20 mt-10 flex flex-col place-content-evenly items-center px-12 pt-4 md:flex-row">
         {/* 본문 왼쪽 */}
         <div className="">
-          <div className="mr-14 flex flex-col max-md:pt-28 max-sm:pt-28">
+          <div className="max-md:pt-30 mr-14 flex flex-col max-sm:pt-28">
             <img
               src={location.state.result.result_picture} // 수정 ⭕️
-              className="sub_tomato1 h-356 w-600 rounded-xl object-cover"
+              className="h-356 w-600 rounded-xl object-cover"
             />
             <div className="mt-2 flex flex-col items-center font-kor-bold text-xl  ">
               {location.state.result.disease.name}
@@ -35,11 +32,11 @@ const AbnomalResultPage = () => {
             <div className="mt-10 flex ">
               <img
                 src={location.state.result.disease.example}
-                className="sub_tomato2 mr-2.5 h-356 w-72 rounded-xl object-cover"
+                className="mr-2.5 h-356 w-72 rounded-xl object-cover"
               />
               <img
                 src={location.state.result.disease.example2}
-                className=" sub_tomato3 ml-2.5 h-356 w-72 rounded-xl object-cover"
+                className="ml-2.5 h-356 w-72 rounded-xl object-cover"
               />
             </div>
             <div className="mt-2 flex flex-col items-center font-kor-bold text-xl">
@@ -48,7 +45,7 @@ const AbnomalResultPage = () => {
           </div>
         </div>
         {/* 본문 오른쪽 */}
-        <div className="mr-40 ml-[-40px] content-center pt-12 max-md:pt-28 max-sm:pt-28">
+        <div className=" ml-[-40px] place-content-center pt-12 max-md:pt-28 max-sm:pt-28">
           <div className="">
             <div className="font-kor-bold text-2xl">
               진단결과&nbsp;&nbsp;
