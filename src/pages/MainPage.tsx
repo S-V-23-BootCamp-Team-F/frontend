@@ -73,11 +73,11 @@ const MainPage = () => {
   };
   const getResult = async () => {
     setLoading(true);
-    
+
     if (userCookie == null) {
       await axios
         .get("https://api.cropdoctor.shop/api/v1/plants/ais/", {
-          params: { picture: imageName, type: plantIndex }
+          params: { picture: imageName, type: plantIndex },
         })
         .then((res) => {
           console.log(res.data);
@@ -95,28 +95,27 @@ const MainPage = () => {
         });
     } else {
       await axios
-          .get("https://api.cropdoctor.shop/api/v1/plants/ais/", {
-            params: { picture: imageName, type: plantIndex },
-            headers : {
-              Authorization : `Bearer ${userCookie}`
-            },
-          })
-          .then((res) => {
-            console.log(res.data);
-            setLoading(false);
-            if (res.data.result.disease.name === "정상") {
-              //수정 ⭕️
-              navigate("/nomalresult", { state: res.data });
-            } else {
-              navigate("/abnomalresult", { state: res.data });
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-            alert("진단 실패!");
-          });
-
-        }
+        .get("https://api.cropdoctor.shop/api/v1/plants/ais/", {
+          params: { picture: imageName, type: plantIndex },
+          headers: {
+            Authorization: `Bearer ${userCookie}`,
+          },
+        })
+        .then((res) => {
+          console.log(res.data);
+          setLoading(false);
+          if (res.data.result.disease.name === "정상") {
+            //수정 ⭕️
+            navigate("/nomalresult", { state: res.data });
+          } else {
+            navigate("/abnomalresult", { state: res.data });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("진단 실패!");
+        });
+    }
   };
 
   const plantIndexHandler = (e: any) => {
@@ -139,13 +138,13 @@ const MainPage = () => {
         {/* 세로정렬, 너비 꽉차게, 중앙정렬, 상단 패딩, lg너비 이상일 때 가로정렬 */}
         <div
           id="main-wrap"
-          className="flex w-full flex-col justify-center pt-16 max-lg:pt-32 lg:flex-row"
+          className=" mt-10 flex w-full flex-col justify-center pt-16 max-lg:pt-32 lg:flex-row"
         >
           {/** 이미지 업로드 부분 시작 */}
           {/* 너비, 높이 지정 */}
           <div
             id="upload-image-wrap"
-            className=" mt-8 max-lg:mt-24 max-sm:mt-12 lg:h-[700px] lg:w-6/12"
+            className="mt-8 max-lg:mt-24 max-sm:mt-12 lg:h-[700px] lg:w-6/12"
           >
             <div>
               {/* select css 속성 지정 margin top, 테두리 둥글게, border, 글자 속성 */}

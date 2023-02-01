@@ -16,7 +16,7 @@ const AbnomalResultPage = () => {
       </div>
 
       {/* 본문 */}
-      <div className="mb-20 mt-10 flex flex-col place-content-evenly items-center px-12 pt-4 md:flex-row">
+      <div className=" flex flex-col place-content-evenly items-center px-12 md:flex-row">
         {/* 본문 왼쪽 */}
         <div className="">
           <div className="max-md:pt-30 mr-14 flex flex-col max-sm:pt-28">
@@ -29,7 +29,7 @@ const AbnomalResultPage = () => {
             </div>
           </div>
           <div className="mt-5 h-356 w-600 object-cover">
-            <div className="mt-10 flex ">
+            <div className="mt-8 flex ">
               <img
                 src={location.state.result.disease.example}
                 className="mr-2.5 h-356 w-72 rounded-xl object-cover"
