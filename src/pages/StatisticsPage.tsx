@@ -4,7 +4,7 @@ import Navbar from "src/components/Navbar";
 import Cropchart from "src/components/Cropchart"
 import Periodchart from "src/components/Periodchart";
 
-const StasticsPage = () =>{
+const StatisticsPage = () =>{
 
     const [seeperiod,setSeeperiod] = useState<boolean>(false);
 
@@ -85,7 +85,7 @@ const StasticsPage = () =>{
     );
 };
 
-export default StasticsPage;
+export default StatisticsPage;
 
 function usestate(): [any, any] {
     throw new Error("Function not implemented.");
