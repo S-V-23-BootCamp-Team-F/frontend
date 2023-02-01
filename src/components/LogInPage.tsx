@@ -67,13 +67,13 @@ const LogInPage = () => {
     <div>
       {/* 문구 */}
       <div className="text-left">
-        <div className="font-press-bold p-2 text-left text-5xl text-white max-xs:text-2xl sm:text-4xl">
-          welcome to the
+        <div className="p-2 text-left font-eng-bold text-5xl text-white max-xs:text-2xl sm:text-4xl">
+          Welcome to the
         </div>
-        <div className="font-press-bold p-2  text-left text-5xl text-button max-xs:text-2xl sm:text-4xl">
+        <div className="p-2 text-left  font-eng-bold text-5xl text-button max-xs:text-2xl sm:text-4xl">
           Crop Doctor!
         </div>
-        <div className="font-press-bold p-2 text-left text-neutral-300 sm:text-xl">
+        <div className="font-eng-bold p-2 text-left text-neutral-300 sm:text-xl">
           Please enter your detail
         </div>
       </div>
@@ -124,7 +124,7 @@ const LogInPage = () => {
         <div className="mt-14">
           <div>
             <button
-              className="w-full rounded-md bg-button px-10
+              className="font-bold w-full rounded-md bg-button px-10
                             py-3 text-white duration-300 ease-in hover:drop-shadow-md"
               type="submit"
             >

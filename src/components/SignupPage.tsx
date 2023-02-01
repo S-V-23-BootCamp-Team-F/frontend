@@ -57,10 +57,10 @@ const SignupPage = (props: Props) => {
   return (
     <div>
       <div className="text-left">
-        <div className="font-press-bold p-2 text-left text-5xl text-white max-xs:text-2xl sm:text-4xl">
+        <div className="p-2 text-left font-eng-bold text-5xl text-white max-xs:text-2xl sm:text-4xl">
           Create an account
         </div>
-        <div className="font-press-medium p-2  text-left text-5xl text-button max-xs:text-2xl sm:text-4xl">
+        <div className="p-2 text-left  font-eng-bold text-5xl text-button max-xs:text-2xl sm:text-4xl">
           Please enter your detail
         </div>
       </div>
@@ -139,7 +139,7 @@ const SignupPage = (props: Props) => {
         <div className="mt-10">
           <div>
             <button
-              className="w-full rounded-md bg-button px-10 py-2
+              className="mt-10 w-full rounded-md bg-button px-10 py-2 font-bold
                             text-white duration-300 ease-in hover:drop-shadow-md"
               type="submit"
             >
