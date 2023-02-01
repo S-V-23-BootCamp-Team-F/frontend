@@ -46,7 +46,7 @@ const StasticsPage = () =>{
                 <Navbar />
             </div>
             {/*내용*/}
-            <div className="my-auto px-12 pt-4">
+            <div className="my-auto pb-10 px-12 pt-4">
                 <Chart />
                 {/*아래쪽*/}
                 { seeperiod == false 
