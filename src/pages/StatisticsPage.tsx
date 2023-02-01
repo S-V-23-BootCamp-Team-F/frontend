@@ -4,7 +4,7 @@ import Navbar from "src/components/Navbar";
 import Cropchart from "src/components/Cropchart"
 import Periodchart from "src/components/Periodchart";
 
-const StasticsPage = () =>{
+const StatisticsPage = () =>{
 
     const [seeperiod,setSeeperiod] = useState<boolean>(false);
 
@@ -46,7 +46,7 @@ const StasticsPage = () =>{
                 <Navbar />
             </div>
             {/*내용*/}
-            <div className="my-auto px-12 pt-4">
+            <div className="my-auto pb-10 px-12 pt-4">
                 <Chart />
                 {/*아래쪽*/}
                 { seeperiod == false 
@@ -85,7 +85,7 @@ const StasticsPage = () =>{
     );
 };
 
-export default StasticsPage;
+export default StatisticsPage;
 
 function usestate(): [any, any] {
     throw new Error("Function not implemented.");

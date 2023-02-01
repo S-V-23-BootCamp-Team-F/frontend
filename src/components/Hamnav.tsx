@@ -11,7 +11,7 @@ function Hamnav(props:any) {
         navigate("/history");
       };
       const moveToStatistics = () => {
-        navigate("/stastics");
+        navigate("/statistics");
       };
     if (props.location.pathname == "/") {
       //메인 페이지
@@ -79,7 +79,7 @@ function Hamnav(props:any) {
           </div>
         </>
       );
-    } else if (props.location.pathname == "/stastics"){
+    } else if (props.location.pathname == "/statistics"){
       //통계 페이지
       return (
         <>
