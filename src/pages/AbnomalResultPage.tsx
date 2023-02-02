@@ -67,13 +67,13 @@ const AbnomalResultPage = () => {
           <div className="mt-10">
             <div className="place-content-between">
               <div className="mb-2 font-eng-bold text-2xl">Causation</div>
-              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
+              <div className="h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
                 {location.state.result.disease.cause}
               </div>
             </div>
             <div>
               <div className="mb-2 font-eng-bold text-2xl">Symptom</div>
-              <div className=" h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
+              <div className="mb-7 h-130 max-w-2xl overflow-y-auto border-black font-kor-regular text-xl">
                 {location.state.result.disease.feature}
               </div>
             </div>
