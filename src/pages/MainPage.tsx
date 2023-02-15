@@ -13,6 +13,7 @@ import example2 from "src/images/example2.png";
 import example3 from "src/images/example3.png";
 import LoadingPage from "@/components/LoadingPage";
 import { getCookie } from "../Cookie";
+import * as Sentry from "@sentry/react";
 
 const MainPage = () => {
   const [imageName, setImageName] = useState<string | null>(null);
@@ -294,4 +295,4 @@ const MainPage = () => {
     </div>
   );
 };
-export default MainPage;
+export default Sentry.withProfiler(MainPage);

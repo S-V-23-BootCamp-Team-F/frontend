@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "src/components/Navbar";
 import Cropchart from "src/components/Cropchart";
 import Periodchart from "src/components/Periodchart";
+import * as Sentry from "@sentry/react";
 
 const StatisticsPage = () => {
   const [seeperiod, setSeeperiod] = useState<boolean>(false);
@@ -88,7 +89,7 @@ const StatisticsPage = () => {
   );
 };
 
-export default StatisticsPage;
+export default Sentry.withProfiler(StatisticsPage);
 
 function usestate(): [any, any] {
   throw new Error("Function not implemented.");

@@ -3,6 +3,7 @@ import nomal from "src/images/nomal.png";
 import Navbar from "src/components/Navbar";
 import "src/media.css";
 import { useLocation } from "react-router-dom";
+import * as Sentry from "@sentry/react";
 
 const NomalResultPage = () => {
   const location = useLocation();
@@ -29,7 +30,10 @@ const NomalResultPage = () => {
             <span className="font-kor-bold text-disease">정상&nbsp;</span>입니다
             !
           </div>
-          <img src={location.state.icorn} className="h-356 w-600 object-contain" />
+          <img
+            src={location.state.icorn}
+            className="h-356 w-600 object-contain"
+          />
           <div className="mt-24 font-kor-bold text-2xl md:text-left lg:text-left">
             우리의 {location.state.result.plant.type}는 건강합니다.
           </div>
@@ -39,4 +43,4 @@ const NomalResultPage = () => {
   );
 };
 
-export default NomalResultPage;
+export default Sentry.withProfiler(NomalResultPage);

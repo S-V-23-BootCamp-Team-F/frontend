@@ -3,7 +3,7 @@ import "tailwindcss/tailwind.css";
 import SigninPage from "../components/LogInPage";
 import SignupPage from "../components/SignupPage";
 import "src/media.css";
-
+import * as Sentry from "@sentry/react";
 const GetStart = () => {
   const [openTab, setOpenTap] = useState<number>(1);
 
@@ -55,4 +55,4 @@ const GetStart = () => {
   );
 };
 
-export default GetStart;
+export default Sentry.withProfiler(GetStart);

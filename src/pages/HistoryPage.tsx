@@ -7,6 +7,7 @@ import LoadingPage from "src/components/LoadingPage";
 import { useNavigate } from "react-router";
 import "../Cookie";
 import { getCookie } from "../Cookie";
+import * as Sentry from "@sentry/react";
 
 const HistoryPage = () => {
   const [history, setHistory] = useState<any[]>([]); //히스토리 불러올 함수
@@ -83,7 +84,7 @@ const HistoryPage = () => {
       <div className="flex flex-col pt-32">
         {/*카테고리*/}
         <select
-          className="m-auto mt-10 md:mt-0 mr-5 mb-3 w-auto bg-background text-center text-2xl font-bold"
+          className="m-auto mt-10 mr-5 mb-3 w-auto bg-background text-center text-2xl font-bold md:mt-0"
           onChange={indexHandler}
         >
           <option value="0">전체</option>
@@ -103,4 +104,4 @@ const HistoryPage = () => {
   );
 };
 
-export default HistoryPage;
+export default Sentry.withProfiler(HistoryPage);

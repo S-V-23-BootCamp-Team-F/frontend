@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "src/components/Navbar";
 import "src/media.css";
+import * as Sentry from "@sentry/react";
 
 const AbnomalResultPage = () => {
   const location = useLocation();
@@ -90,4 +91,4 @@ const AbnomalResultPage = () => {
   );
 };
 
-export default AbnomalResultPage;
+export default Sentry.withProfiler(AbnomalResultPage);
