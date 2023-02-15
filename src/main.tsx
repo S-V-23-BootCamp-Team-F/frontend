@@ -13,11 +13,8 @@ import { BrowserTracing } from "@sentry/tracing";
 //integrations: 플랫폼 SDK별 통합 구성 설정 (react의 경우 react-router integration 설정가능)
 Sentry.init({
   dsn: "https://e42fe574771b422296f6764163327d8d@o4504683587371008.ingest.sentry.io/4504683725258752",
+  //integrations, tracesSampleRate : performance tracking 설정
   integrations: [new BrowserTracing()],
-
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
   tracesSampleRate: 1.0,
 });
 
