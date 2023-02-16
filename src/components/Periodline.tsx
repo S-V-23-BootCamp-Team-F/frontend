@@ -1,10 +1,20 @@
 import React from "react";
-import { Line, Legend, ResponsiveContainer, CartesianGrid, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import {
+  Line,
+  Legend,
+  ResponsiveContainer,
+  CartesianGrid,
+  LineChart,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
+import * as Sentry from "@sentry/react";
 
-function Periodline(props:any) {
-if (props.index == 1) {
+function Periodline(props: any) {
+  if (props.index == 1) {
     return (
-        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
+      <div className="h-300 w-600 sm:h-350 sm:w-700 md:h-400 md:w-800 lg:h-500 lg:w-1000">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -22,9 +32,9 @@ if (props.index == 1) {
         </ResponsiveContainer>
       </div>
     );
-  } else if (props.index == 2){
+  } else if (props.index == 2) {
     return (
-        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
+      <div className="h-300 w-600 sm:h-350 sm:w-700 md:h-400 md:w-800 lg:h-500 lg:w-1000">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -40,9 +50,9 @@ if (props.index == 1) {
         </ResponsiveContainer>
       </div>
     );
-  } else if (props.index == 3){
+  } else if (props.index == 3) {
     return (
-        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
+      <div className="h-300 w-600 sm:h-350 sm:w-700 md:h-400 md:w-800 lg:h-500 lg:w-1000">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -60,9 +70,9 @@ if (props.index == 1) {
         </ResponsiveContainer>
       </div>
     );
-  } else if (props.index == 4){
+  } else if (props.index == 4) {
     return (
-        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
+      <div className="h-300 w-600 sm:h-350 sm:w-700 md:h-400 md:w-800 lg:h-500 lg:w-1000">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -80,9 +90,9 @@ if (props.index == 1) {
         </ResponsiveContainer>
       </div>
     );
-  } else if (props.index == 5){
+  } else if (props.index == 5) {
     return (
-        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
+      <div className="h-300 w-600 sm:h-350 sm:w-700 md:h-400 md:w-800 lg:h-500 lg:w-1000">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -100,9 +110,9 @@ if (props.index == 1) {
         </ResponsiveContainer>
       </div>
     );
-  } else if (props.index == 6){
+  } else if (props.index == 6) {
     return (
-        <div className="w-600 h-300 sm:w-700 sm:h-350 md:w-800 md:h-400 lg:w-1000 lg:h-500">
+      <div className="h-300 w-600 sm:h-350 sm:w-700 md:h-400 md:w-800 lg:h-500 lg:w-1000">
         <ResponsiveContainer>
           <LineChart data={props.perioddata}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -110,7 +120,11 @@ if (props.index == 1) {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="토마토잿빛곰팡이병" stroke="#FF6347" />
+            <Line
+              type="monotone"
+              dataKey="토마토잿빛곰팡이병"
+              stroke="#FF6347"
+            />
             <Line type="monotone" dataKey="토마토흰가루병" stroke="#FF9500" />
             <Line type="monotone" dataKey="열과" stroke="#8B0000" />
             <Line type="monotone" dataKey="칼슘결핍" stroke="#BBBBBB" />
@@ -122,10 +136,8 @@ if (props.index == 1) {
       </div>
     );
   } else {
-    return (
-      null
-    );
+    return null;
   }
 }
 
-export default Periodline;
+export default Sentry.withProfiler(Periodline);

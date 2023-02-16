@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
+import * as Sentry from "@sentry/react";
 
 interface Props {
   setTap: Dispatch<SetStateAction<number>>;
@@ -152,4 +153,4 @@ const SignupPage = (props: Props) => {
   );
 };
 
-export default SignupPage;
+export default Sentry.withProfiler(SignupPage);

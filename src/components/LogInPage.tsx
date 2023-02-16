@@ -4,6 +4,7 @@ import "tailwindcss/tailwind.css";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { setCookie } from "../Cookie";
+import * as Sentry from "@sentry/react";
 
 const LogInPage = () => {
   const [loginChk, setLoginChk] = useState<boolean>(false);
@@ -73,7 +74,7 @@ const LogInPage = () => {
         <div className="p-2 text-left  font-eng-bold text-5xl text-button max-xs:text-2xl sm:text-4xl">
           Crop Doctor!
         </div>
-        <div className="font-eng-bold p-2 text-left text-neutral-300 sm:text-xl">
+        <div className="p-2 text-left font-eng-bold text-neutral-300 sm:text-xl">
           Please enter your detail
         </div>
       </div>
@@ -124,8 +125,8 @@ const LogInPage = () => {
         <div className="mt-14">
           <div>
             <button
-              className="font-bold w-full rounded-md bg-button px-10
-                            py-3 text-white duration-300 ease-in hover:drop-shadow-md"
+              className="w-full rounded-md bg-button px-10 py-3
+                            font-bold text-white duration-300 ease-in hover:drop-shadow-md"
               type="submit"
             >
               Login
@@ -136,4 +137,4 @@ const LogInPage = () => {
     </div>
   );
 };
-export default LogInPage;
+export default Sentry.withProfiler(LogInPage);

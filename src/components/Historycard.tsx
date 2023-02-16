@@ -4,6 +4,7 @@ import axios from "axios";
 import DetailModal from "src/components/DetailModalscreen";
 import Delete from "src/images/delete.svg";
 import { getCookie } from "../Cookie";
+import * as Sentry from "@sentry/react";
 
 //히스토리 정보 담을 컴포넌트 선언
 function Historycard(props: any) {
@@ -13,7 +14,7 @@ function Historycard(props: any) {
   {
     return (
       <div className="m-auto h-80 w-80">
-        <div className="relative h-52 w-80 flex justify-center">
+        <div className="relative flex h-52 w-80 justify-center">
           {/*모달창 버튼 표시, props로 데이터 전달*/}
           <div className="absolute h-full w-full rounded-lg">
             <DetailModal items={props.items} />
@@ -70,4 +71,4 @@ function Historycard(props: any) {
   }
 }
 
-export default Historycard;
+export default Sentry.withProfiler(Historycard);

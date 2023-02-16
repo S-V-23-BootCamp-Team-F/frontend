@@ -1,5 +1,6 @@
 import React from "react";
 import DotLoader from "react-spinners/DotLoader";
+import * as Sentry from "@sentry/react";
 
 const LoadingPage = () => {
   return (
@@ -19,4 +20,4 @@ const LoadingPage = () => {
   );
 };
 
-export default LoadingPage;
+export default Sentry.withProfiler(LoadingPage);
